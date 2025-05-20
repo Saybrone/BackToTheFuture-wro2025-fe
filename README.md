@@ -15,16 +15,19 @@ This repository contains engineering materials of a self-driven vehicle's model 
 ## Content of README
 - [Hardware](#hardware)
   - [Components](#components)
+  - [Mobility Management](#mobility-management)
 ## Hardware      
 ## Components
 |         Name         | Product | Price |
 |----------------------|---------|------------------|
 |Motor with Encoder|[Pololu Metal Gearmotor](https://www.pololu.com/product/4845)|65$| 
-|         |    |              |
+|Servo motor       |[Tower Pro MG995 (270 degrees)]    |              |
 |   |    |               |
 |       |    |               |
 |              |   |             |
-| **Total**           |      | **₺**       
+| **Total**           |      | ** **       
+
+## Mobility Management
 
 
 
