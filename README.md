@@ -19,7 +19,7 @@ This repository contains engineering materials of a self-driven vehicle's model 
 ## Components
 |         Name         | Product | Price |
 |----------------------|---------|------------------|
-|Motor with Encoder|Pololu Metal Gearmotor(https://www.pololu.com/product/4845)|65$| 
+|Motor with Encoder|[Pololu Metal Gearmotor](https://www.pololu.com/product/4845)|65$| 
 |         |    |              |
 |   |    |               |
 |       |    |               |
