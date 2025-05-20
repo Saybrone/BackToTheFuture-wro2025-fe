@@ -24,7 +24,7 @@ This repository contains engineering materials of a self-driven vehicle's model 
 |Servo motor       |[Tower Pro MG995 (270 degrees)]    |              |
 |   |    |               |
 |       |    |               |
-|              |   |             |
+|         |   |             |
 | **Total**           |      | ** **       
 
 ## Mobility Management
