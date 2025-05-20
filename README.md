@@ -1,7 +1,6 @@
-Engineering materials
+Engineering Documentation
 ===
-
-This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2022.
+This repository details Team Back To The Future's building and programming process in our first participating yearof the 2025 WRO Future Engineers Competition.
 
 ## Content of Repository
 
