@@ -14,9 +14,8 @@ This repository details Team Back To The Future's building and programming proce
 ## Content of README
 - [Hardware](#hardware)
   - [Components](#components)
-  - [Mobility Management](#mobility-management)
 - [Software]
-- [Assembly]
+- [VehicleAssembly]
 ## Hardware      
 ### Components
 |         Name         | Product | Price |
@@ -25,10 +24,9 @@ This repository details Team Back To The Future's building and programming proce
 |Servo Motor       |[Tower Pro MG995 (270 degrees)]()| $|
 |Motor Controller|[EVN Alpha](https://coresg.tech/product/evn-alpha/)  |168$|
 |Camera and Processor|[Samsung Galaxy A53 5G](https://www.samsung.com/latin_en/smartphones/galaxy-a/galaxy-a53-5g-awesome-black-128gb-sm-a536ezkdtpa/)||
-|         |   |             |
-| **Total**           |      | ** **       
+|         |   |             |    
 
-## Mobility Management
+
 
 
 
