@@ -15,14 +15,16 @@ This repository details Team Back To The Future's building and programming proce
 - [Hardware](#hardware)
   - [Components](#components)
   - [Mobility Management](#mobility-management)
+- [Software]
+- [Assembly]
 ## Hardware      
-## Components
+### Components
 |         Name         | Product | Price |
 |----------------------|---------|------------------|
 |Motor with Encoder|[Pololu Metal Gearmotor](https://www.pololu.com/product/4845)|65$| 
-|Servo motor       |[Tower Pro MG995 (270 degrees)]    |              |
-|   |    |               |
-|       |    |               |
+|Servo Motor       |[Tower Pro MG995 (270 degrees)]()| $|
+|Motor Controller|[EVN Alpha](https://coresg.tech/product/evn-alpha/)  |168$|
+|Camera and Processor|[Samsung Galaxy A53 5G](https://www.samsung.com/latin_en/smartphones/galaxy-a/galaxy-a53-5g-awesome-black-128gb-sm-a536ezkdtpa/)||
 |         |   |             |
 | **Total**           |      | ** **       
 
