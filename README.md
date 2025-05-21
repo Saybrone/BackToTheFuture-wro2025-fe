@@ -2,7 +2,7 @@ Engineering Documentation
 ===
 This repository details Team Back To The Future's building and programming process in our first participating yearof the 2025 WRO Future Engineers Competition.
 
-## Content of Repository
+## Contents
 
 * `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
 * `v-photos` contains 6 photos of the vehicle (from every side, from top and bottom)
