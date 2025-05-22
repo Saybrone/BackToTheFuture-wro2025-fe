@@ -1,6 +1,6 @@
 Engineering Documentation
 ===
-This repository details Team Back To The Future's building and programming process in our first participating yearof the 2025 WRO Future Engineers Competition.
+This repository details team *Back To The Future*'s building and programming process in our first participating year of the 2025 WRO Future Engineers Competition.
 
 ## Contents
 
