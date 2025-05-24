@@ -30,7 +30,8 @@ This repository details team *Back To The Future*'s building and programming pro
 |         Name         | Product | Price |
 |----------------------|---------|------------------|
 |Motor with Encoder|[Pololu Metal Gearmotor](https://www.pololu.com/product/4752)|90$| 
-|Servo Motor       |[Tower Pro MG995 (270 degrees)](https://www.ebay.com/itm/192002483556)| 12$|(https://github.com/user-attachments/assets/24153173-324e-47f3-af15-a5b4c12d5f1b)|
+|Servo Motor       |[Tower Pro MG995 (270 degrees) ![servo mg995](https://github.com/user-attachments/assets/4564541a-04db-420c-b0ef-59bb5d8f4203)
+](https://www.ebay.com/itm/192002483556)| 12$|(https://github.com/user-attachments/assets/24153173-324e-47f3-af15-a5b4c12d5f1b)|
 |Motor Controller|[EVN Alpha](https://coresg.tech/product/evn-alpha/)  |168$|
 |Camera and Processor|[Samsung Galaxy A53 5G](https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1)|142$|
 |Total cost:          387   $ |
@@ -42,8 +43,9 @@ This repository details team *Back To The Future*'s building and programming pro
  ## Design
  ## Motors
  Our robot uses `Pololu Metal Gearmotor`. This gearmotor is a powerful 12V brushed DC motor with a 30:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 1920 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
- 
+
  To control steering we use a  `Tower Pro MG995`. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo motor can rotate 270 degrees.
+
 
  
 ## Software
