@@ -14,12 +14,15 @@ This repository details team *Back To The Future*'s building and programming pro
   ## Team Members
   *  `Ayca Nisa Cerci`, `16`, [aycanisa2009@gmail.com]()
   * `Tibet Ozkarslioglu`,`17`,[]()
-  * `Mert Ata Makinacı`, `17`, []()
+  * `Mert Ata Makinaci`, `17`, []()
 
 ## Content of README
 - [Hardware](#hardware)
   - [Components](#components)
   - [Mobility Management](mobility-management)
+    - [Chassis](chassis)
+    - [Design](design)
+    - [Motors](motors)
 - [Software](#software)
 - [VehicleAssembly](vehicle-assembly)
 ## Hardware      
@@ -33,6 +36,13 @@ This repository details team *Back To The Future*'s building and programming pro
 |Total cost:          387   $ |
 
 ## Mobility Management
+
+ ## Chassis
+ 
+ ## Design
+ ## Motors
+ Our robot uses [Pololu Metal Gearmotor](pololu-metal-gearmotor)
+ 
 ## Software
 
 
