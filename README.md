@@ -65,10 +65,4 @@ Total cost:          412$
 
 ## Software
 
-
-
-
-
-
-
 ## Vehicle Assembly  
