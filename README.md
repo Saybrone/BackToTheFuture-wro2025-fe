@@ -21,7 +21,7 @@ This repository details team *Back To The Future*'s building and programming pro
 |         Name         | Product | Price |
 |----------------------|---------|------------------|
 |Motor with Encoder|[Pololu Metal Gearmotor](https://www.pololu.com/product/4845)|65$| 
-|Servo Motor       |[Tower Pro MG995 (270 degrees)]()| $|
+|Servo Motor       |[Tower Pro MG995 (270 degrees)](https://www.ebay.com/itm/192002483556)| 12$|
 |Motor Controller|[EVN Alpha](https://coresg.tech/product/evn-alpha/)  |168$|
 |Camera and Processor|[Samsung Galaxy A53 5G](https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1)|142$|
 |         |   |             |    
