@@ -46,14 +46,20 @@ Total cost:          387$
  
  ## Design
  ## Motors
+ ![pololu](https://github.com/user-attachments/assets/98ad7a46-8e2f-4e3d-b88e-eaa1144e8000)
+
  Our robot uses `Pololu Metal Gearmotor`. This gearmotor is a powerful 12V brushed DC motor with a 30:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 1920 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
  
+ ![servo mg995](https://github.com/user-attachments/assets/b2d15c89-af1f-4998-85a2-f57b6c1cd723)
+
  To control steering we use a  `Tower Pro MG995`. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo motor can rotate 270 degrees.
 
 
 ## Power and Sense Management
  ## Power and Wiring
  ## Sensors
+ ![samsung-galaxy-a53-5g-1649224506](https://github.com/user-attachments/assets/c52c331c-2ae9-4525-b641-e5fa8973589e)
+
  We use a `Samsung Galaxy A53 5G ` for the camera. It has a Quad Camera Array system that includes 64MP main, 12MP ultrawide, 5MP macro, and 5MP depth cameras for versatile photography.
 
 ## Software
