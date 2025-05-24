@@ -14,8 +14,8 @@ This repository details team *Back To The Future*'s building and programming pro
 ## Content of README
 - [Hardware](#hardware)
   - [Components](#components)
-- [Software]
-- [VehicleAssembly]
+- [Software](#software)
+- [VehicleAssembly](vehicle-assembly)
 ## Hardware      
 ### Components
 |         Name         | Product | Price |
