@@ -12,26 +12,29 @@ This repository details team *Back To The Future*'s building and programming pro
 * `models` is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
 * `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
   
-  ## Team Members
-  *  `Ayca Nisa Cerci`, `16`, [aycanisa2009@gmail.com]()
-  * `Tibet Ozkarslioglu`,`17`,[]()
-  * `Mert Ata Makinaci`, `17`, []()
+## Team Members
+* `Ayça Nisa Çerçi`, `16`, aycanisa2009@gmail.com
+* `Mert Ata Makinacı`, `17`, atamakinaci@gmail.com
+* `Tibet Özkarslıoğlu`,`17`, <!-- Tibonun mail -->
+
 
 ## Content of README
 - [Hardware](#hardware)
-  - [Components](#components)
-  - [Mobility Management](mobility-management)
-    - [Chassis](chassis)
-    - [Design](design)
-    - [Motors](motors)
-- [Power and Sense Management](power-and-sense-management)
-    - [Power and Wiring](power-and-wiring)
-    - [Sensors](sensors)
-    
+  - [Main Components](#main-components)
+  - [Mobility Management](#mobility-management)
+    - [Chassis](#chassis)
+    - [Design](#design)
+    - [Motors](#motors)
+- [Power and Sense Management](#power-and-sense-management)
+    - [Power and Wiring](#power-and-wiring)
+    - [Sensors](#sensors)
 - [Software](#software)
+  - [Smartphone](#smartphone)
+  - [EVN Alpha](#evn-alpha)
 - [VehicleAssembly](vehicle-assembly)
+
 ## Hardware      
-### Components
+## Main Components
 |         Name         | Product |  | Price |
 |----------------------|---------|--|---------------|
 |Motor with Encoder|[Pololu Metal Gearmotor](https://www.pololu.com/product/4752)|![pololu](https://github.com/user-attachments/assets/db46a09a-2283-45f6-b2ed-86b1f961ca40)|90$| 
@@ -43,26 +46,30 @@ Total cost:          412$
 
 ## Mobility Management
 
- ## Chassis
+### Chassis
  
- ## Design
- ## Motors
+### Design
+
+### Motors
  ![pololu](https://github.com/user-attachments/assets/98ad7a46-8e2f-4e3d-b88e-eaa1144e8000)
 
- Our robot uses `Pololu Metal Gearmotor`. This gearmotor is a powerful 12V brushed DC motor with a 30:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 1920 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
+ Our robot **does not use** 'Pololu Metal Gearmotor'. This gearmotor is a powerful 12V brushed DC motor with a 30:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 1920 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
  
- ![servo mg995](https://github.com/user-attachments/assets/b2d15c89-af1f-4998-85a2-f57b6c1cd723)
+ ![MG995 Servo](https://github.com/user-attachments/assets/b2d15c89-af1f-4998-85a2-f57b6c1cd723)
 
- To control steering we use a  `Tower Pro MG995`. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo motor can rotate 270 degrees.
+ To control steering we use a 'Tower Pro MG995'. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo motor can rotate 270 degrees.
 
 
 ## Power and Sense Management
- ## Power and Wiring
- ## Sensors
+### Power and Wiring
+### Sensors
  ![samsung-galaxy-a53-5g-1649224506](https://github.com/user-attachments/assets/c52c331c-2ae9-4525-b641-e5fa8973589e)
 
  We use a `Samsung Galaxy A53 5G ` for the camera. It has a Quad Camera Array system that includes 64MP main, 12MP ultrawide, 5MP macro, and 5MP depth cameras for versatile photography.
 
 ## Software
+
+### Smarthpone
+### EVN Alpha
 
 ## Vehicle Assembly  
