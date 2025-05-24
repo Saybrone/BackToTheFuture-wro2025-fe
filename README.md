@@ -29,7 +29,7 @@ This repository details team *Back To The Future*'s building and programming pro
 ### Components
 |         Name         | Product | Price |
 |----------------------|---------|------------------|
-|Motor with Encoder|[Pololu Metal Gearmotor](https://www.pololu.com/product/4845)|65$| 
+|Motor with Encoder|[Pololu Metal Gearmotor](https://www.pololu.com/product/4752)|90$| 
 |Servo Motor       |[Tower Pro MG995 (270 degrees)](https://www.ebay.com/itm/192002483556)| 12$|
 |Motor Controller|[EVN Alpha](https://coresg.tech/product/evn-alpha/)  |168$|
 |Camera and Processor|[Samsung Galaxy A53 5G](https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1)|142$|
@@ -41,7 +41,9 @@ This repository details team *Back To The Future*'s building and programming pro
  
  ## Design
  ## Motors
- Our robot uses [Pololu Metal Gearmotor](pololu-metal-gearmotor)
+ Our robot uses `Pololu Metal Gearmotor`. This gearmotor is a powerful 12V brushed DC motor with a 30:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 1920 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
+
+
  
 ## Software
 
