@@ -11,6 +11,7 @@ This repository details team *Back To The Future*'s building and programming pro
 * `src` contains code of control software for all components which were programmed to participate in the competition
 * `models` is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
 * `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
+  
   ## Team Members
   *  `Ayca Nisa Cerci`, `16`, [aycanisa2009@gmail.com]()
   * `Tibet Ozkarslioglu`,`17`,[]()
@@ -38,7 +39,7 @@ This repository details team *Back To The Future*'s building and programming pro
 |Motor Controller|[EVN Alpha](https://coresg.tech/product/evn-alpha/)|![evn](https://github.com/user-attachments/assets/ea11b87a-3cdb-4b34-91df-56fa9f72e148)|168$|
 |Camera and Processor|[Samsung Galaxy A53 5G](https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1)|![samsung-galaxy-a53-5g-1649224506](https://github.com/user-attachments/assets/bb0c2284-e31f-4d1e-9894-2a4d427404f4)|142$|
 
-Total cost:          387$
+Total cost:          412$
 
 ## Mobility Management
 
