@@ -14,7 +14,7 @@ This repository details team *Back To The Future*'s building and programming pro
   
 ## Team Members
 * `Ayça Nisa Çerçi`, `16`, aycanisa2009@gmail.com
-* `Mert Ata Makinacı`, `17`, atamakinaci@gmail.com
+* `Mert Ata Makinacı`, `16`, atamakinaci@gmail.com
 * `Tibet Özkarslıoğlu`,`17`, <!-- Tibonun mail -->
 
 
@@ -37,12 +37,12 @@ This repository details team *Back To The Future*'s building and programming pro
 ## Main Components
 |         Name         | Product |  | Price |
 |----------------------|---------|--|---------------|
-|Motor with Encoder|[Pololu Metal Gearmotor](https://www.pololu.com/product/4752)|![pololu](https://github.com/user-attachments/assets/db46a09a-2283-45f6-b2ed-86b1f961ca40)|90$| 
+|Motor with Encoder| | | | 
 |Servo Motor|[Tower Pro MG995 (270 degrees)](https://www.ebay.com/itm/192002483556)|![servo mg995](https://github.com/user-attachments/assets/775db116-2eb7-49bd-b430-ee684dd2f643)|12$|(https://github.com/user-attachments/assets/24153173-324e-47f3-af15-a5b4c12d5f1b)|
 |Motor Controller|[EVN Alpha](https://coresg.tech/product/evn-alpha/)|![evn](https://github.com/user-attachments/assets/ea11b87a-3cdb-4b34-91df-56fa9f72e148)|168$|
 |Camera and Processor|[Samsung Galaxy A53 5G](https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1)|![samsung-galaxy-a53-5g-1649224506](https://github.com/user-attachments/assets/bb0c2284-e31f-4d1e-9894-2a4d427404f4)|142$|
 
-Total cost:          412$
+Total cost: *To be determined*
 
 ## Mobility Management
 
