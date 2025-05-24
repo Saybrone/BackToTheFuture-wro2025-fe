@@ -11,6 +11,11 @@ This repository details team *Back To The Future*'s building and programming pro
 * `src` contains code of control software for all components which were programmed to participate in the competition
 * `models` is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
 * `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
+  ## Team Members
+  *  `Ayca Nisa Cerci`, `16`, [aycanisa2009@gmail.com]()
+  * `Tibet Ozkarslioglu`,`17`,[]()
+  * `Mert Ata Makinacı`, `17`, []()
+
 ## Content of README
 - [Hardware](#hardware)
   - [Components](#components)
