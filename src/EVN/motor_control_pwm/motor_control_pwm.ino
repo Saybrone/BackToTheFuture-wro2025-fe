@@ -4,7 +4,7 @@
 #define SERVO_PORT 1
 
 EVNAlpha board;
-EVNMotor motor(MOTOR_PORT, CUSTOM_MOTOR);
+EVNMotor motor(MOTOR_PORT, CUSTOM_MOTOR, DIRECT, REVERSE);
 EVNServo servo(SERVO_PORT);
 
 void setup1() {
@@ -18,6 +18,13 @@ void setup() {
 }
 
 void loop() {
+  
+  //debug code
+  char strBuf[128];
+  sprintf(strBuf, "pos:%3.0f, speed:%3.1f", motor.getPosition(), motor.getSpeed());
+  Serial.println(strBuf);
+  
+
   if (Serial.available()) {
     String command = Serial.readStringUntil('\n');
     command.trim();  // Remove whitespace/newlines
