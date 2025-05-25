@@ -1,11 +1,13 @@
+![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
+
 Engineering Documentation
 ===
 This repository details team *Back To The Future*'s building and programming process in our first participating year of the 2025 WRO Future Engineers Competition.
 
 ## Contents
 
-* `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
-* `v-photos` contains 6 photos of the vehicle (from every side, from top and bottom)
+* `t-photos` contains 2 photos of the team
+* `v-photos` contains 6 photos of the vehicle
 * `video` contains the video.md file with the link to a video where driving demonstration exists
 * `schemes` contains one or several schematic diagrams in form of JPEG, PNG or PDF of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
 * `src` contains code of control software for all components which were programmed to participate in the competition
@@ -28,10 +30,10 @@ This repository details team *Back To The Future*'s building and programming pro
 - [Power and Sense Management](#power-and-sense-management)
     - [Power and Wiring](#power-and-wiring)
     - [Sensors](#sensors)
-- [Software](#software)
+- [Software and Control](#software-and-control)
   - [Smartphone](#smartphone)
   - [EVN Alpha](#evn-alpha)
-- [VehicleAssembly](vehicle-assembly)
+- [Vehicle Assembly](vehicle-assembly)
 
 ## Hardware      
 ## Main Components
@@ -65,11 +67,13 @@ Total cost: *To be determined*
 ### Sensors
  ![samsung-galaxy-a53-5g-1649224506](https://github.com/user-attachments/assets/c52c331c-2ae9-4525-b641-e5fa8973589e)
 
-Our robot uses a `Samsung Galaxy A53 5G ` for the camera. It has a Quad Camera Array system that includes 64MP main, 12MP ultrawide, 5MP macro, and 5MP depth cameras for versatile photography.
+Our robot uses the `Samsung Galaxy A53 5G`'s cameras for visual input. The code accesses the 64 MP ƒ/1.6 Main Camera with OIS for driving forward and 32 MP ƒ/2.2 Front Camera for going backwards.
 
-## Software
 
-### Smarthpone
+## Software and Control
+
+### Smarthphone
+
 ### EVN Alpha
-
+For controlling the DC Motor With Encoder and the Servo Motor, our robot utilizes an EVN Alpha, based on the [RP2040](https://www.raspberrypi.com/products/rp2040/) microcontroller designed by Raspberry Pi. It features 4 motor drivers with encoder inputs, 2 UART controllers, 16 I2C ports (achieved with multiplexing of the 2 I2C controllers on RP2040), 4 Servo controllers and a USB-C port for charging and data transfer. It can be programmed with the [Arduino IDE](https://www.arduino.cc/en/software/), after installing the [Arduino Pico Core](github.com/earlephilhower/arduino-pico/) and [EVN Library](https://github.com/EVNdevs/EVN-arduino).
 ## Vehicle Assembly  
