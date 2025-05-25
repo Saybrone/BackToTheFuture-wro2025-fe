@@ -2,11 +2,11 @@
 
 #define MOTOR_PORT 1  
 #define SERVO_PORT 1
-#define PPR_VALUE 480  // Gear ratio × encoder PPR
-#define MAX_RPM 1300
+#define PPR_VALUE 1600  // Gear ratio * encoder PPR
+#define MAX_DPS 480
 
 EVNAlpha board;
-EVNMotor motor(1, CUSTOM_MOTOR);
+EVNMotor motor(1, CUSTOM_MOTOR, DIRECT, REVERSE);
 EVNServo servo(1);
 
 void setup() {
@@ -19,10 +19,11 @@ void setup1() {  //calling motor begin on 2nd core improves performance
   servo.begin();
 
   motor.setPPR(PPR_VALUE);
-  motor.setMaxRPM(MAX_RPM);
+  motor.setMaxRPM(MAX_DPS / 6);
   motor.resetPosition();
 }
-int speed = 0;
+int throttle = 0;
+float speed = 0;
 void loop() {
   motor.runSpeed(speed);
   if (Serial.available()) {
@@ -36,18 +37,15 @@ void loop() {
       servo.write(angle + 90);
       
     } else if (command.startsWith("M")) { //if command is to run motor forward
-      int throttle = command.substring(1).toInt();
-      speed = (throttle / 100.0) * MAX_RPM;
-      //Serial.println(speed);
-      //motor.stop();
-      //motor.runSpeed(speed);
+      int throttle = command.substring(1).toInt();  //get motor speed as percentage (0-100)
+      throttle = constrain(throttle, 0, 100);
+      speed = (throttle / 100.0) * MAX_DPS;
 
     } else if (command.startsWith("W")) { //if command is to run motor backward
       int throttle = command.substring(1).toInt();
-      speed = (throttle / -100.0) * MAX_RPM;
-      //Serial.println(speed);
-      //motor.stop();
-      //motor.runSpeed(speed);
+      throttle = constrain(throttle, 0, 100);
+      speed = (throttle / -100.0) * MAX_DPS;
+
     }
     Serial.flush();
   }

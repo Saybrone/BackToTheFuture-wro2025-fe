@@ -1,14 +1,18 @@
 #include <EVN.h>
 
 #define MOTOR_PORT 1
-#define PPR_VALUE 480            // Gear ratio × encoder PPR
-#define MAX_RPM 1300
+#define PPR_VALUE 1600  // Gear ratio * encoder PPR
+#define MAX_DPS 480
 
 EVNAlpha board;
-EVNMotor motor(MOTOR_PORT, CUSTOM_MOTOR, DIRECT, DIRECT);
+EVNMotor motor(MOTOR_PORT, CUSTOM_MOTOR, DIRECT, REVERSE);
 
 void setup1() {
-    motor.begin();
+  motor.begin();
+  //motor.setDebug(true);
+  motor.setPPR(PPR_VALUE);
+  //motor.setMaxRPM(MAX_RPM);
+  //motor.resetPosition();
 }
 
 void setup() {
@@ -16,22 +20,14 @@ void setup() {
   board.begin();
   delay(1000);
 
-  //motor.setDebug(true);
-  motor.setPPR(PPR_VALUE);
-  motor.setMaxRPM(MAX_RPM);
-  motor.resetPosition();
-
-
-  Serial.println("Starting");
-
-    
+  //Serial.println("Starting");
 }
 
 void loop() {
   motor.runPWM(100);
 
   char strBuf[128];
-  sprintf(strBuf, "pos:%3.0f, speed:%3.1f, ", motor.getPosition(), motor.getSpeed());
+  sprintf(strBuf, "pos:%3.0f, speed:%3.1f", motor.getPosition(), motor.getSpeed());
   Serial.println(strBuf);
   //delay(5);
 }
