@@ -2,7 +2,7 @@
 
 #define MOTOR_PORT 1
 #define PPR_VALUE 1600  // Gear ratio * encoder PPR
-#define MAX_DPS 480
+#define MAX_DPS 380
 
 EVNAlpha board;
 EVNMotor motor(MOTOR_PORT, CUSTOM_MOTOR, DIRECT, REVERSE);

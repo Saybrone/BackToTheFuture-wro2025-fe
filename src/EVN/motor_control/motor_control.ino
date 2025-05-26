@@ -32,7 +32,7 @@ Copyright (C) 2025, Mert Ata Makinaci, Tibet Ozkarslioglu, Ayca Nisa Cerci
 
 #define MOTOR_PORT 1
 #define PPR_VALUE 1600 	// Gear ratio * encoder PPR
-#define MAX_DPS 480	// Max speed in degrees per second of motor, can be calculated with motor.runPWM(100)
+#define MAX_DPS 380	// Max speed in degrees per second of motor, can be calculated with motor.runPWM(100)
 #define ENC_DIR 1 //0 for DIRECT, 1 for REVERSE
 
 #define SERVO_PORT 1	
@@ -59,6 +59,7 @@ void setup1() {  //calling motor begin on 2nd core improves performance
 int throttle = 0;
 float speed = 0;
 void loop() {
+  Serial.println(speed);
   motor.runSpeed(speed);
   if (Serial.available()) {
     String command = Serial.readStringUntil('\n');
@@ -78,7 +79,6 @@ void loop() {
       int throttle = command.substring(1).toInt();
       throttle = constrain(throttle, 0, 100);
       speed = (throttle / -100.0) * MAX_DPS;
-
     }
     Serial.flush();
   }
