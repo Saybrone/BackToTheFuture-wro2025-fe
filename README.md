@@ -15,7 +15,17 @@ TEAM BACK TO THE FUTURE
     </td>
     <td valign="top" style="padding-left: 20px;">
       <p>
-        This repository details team <em>Back To The Future</em>'s building and programming process in our first participating year of the 2025 WRO Future Engineers Competition.
+        This repository details team <em>Back To The Future</em>'s building and programming process in our first participating year of the 2025 WRO Future Engineers Competition. 
+      </p>
+      We are team <em> Back To The Future</em>, three students who are passionate about technology and robotics. For this competition we built an autonomous robot. We worked after school and on weekends. Through this competition, we learned how to work as a team and solve problems related to robotics.
+       </p>
+        Team Members:
+          </p>
+          Ayça Nisa Çerçi, 16
+        </p>
+          Mert Ata Makinacı,16
+    </p>
+          Tibet Özkarslıoğlu,17
       </p>
     </td>
   </tr>
@@ -30,11 +40,7 @@ TEAM BACK TO THE FUTURE
 * `src` contains code of control software for all components which were programmed to participate in the competition
 * `models` is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
 * `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
-  
-## Team Members
-* `Ayça Nisa Çerçi`, `16`
-* `Mert Ata Makinacı`, `16`
-* `Tibet Özkarslıoğlu`,`17`
+
 
 
 ## Content of README
