@@ -7,12 +7,11 @@
 
 #define SERVO_PORT 1
 
-#define L_DIST_PORT 2
-#define R_DIST_PORT 1
-
-#define FALLBACK_DIST 150
-#define TARGET_DIST 150
-#define W_KP 0.15
+#define L_DIST_PORT 1
+#define R_DIST_PORT 2
+#define FALLBACK_DIST 250
+//#define TARGET_DIST 150
+#define W_KP 0.2
 
 
 EVNAlpha board;
@@ -70,17 +69,17 @@ void loop(){
 
   uint16_t dist_L = ds_L.read();
   uint16_t dist_R = ds_R.read();
-
-  dist_L = (dist_L == 0) ? FALLBACK_DIST : dist_L;
-  dist_R = (dist_R == 0) ? FALLBACK_DIST : dist_R ; 
-
+  
   char strBuf[128]; //debug
   sprintf(strBuf, "L:%d, R:%d", dist_L, dist_R);
   Serial.println(strBuf);
 
+  dist_L = (dist_L == 0) ? FALLBACK_DIST : dist_L;
+  dist_R = (dist_R == 0) ? FALLBACK_DIST : dist_R ; 
+
   error = dist_R - dist_L;
   float command = error * W_KP;
-  int angle = constrain(command + 90, 45, 135);
+  int angle = constrain(command + 90, 30, 150);
   servo.write(90 + angle);
 
 }
