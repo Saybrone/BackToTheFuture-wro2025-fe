@@ -13,19 +13,16 @@ TEAM BACK TO THE FUTURE
       <img src="t-photos/TeamOfficial.jpg" alt="Official Photo" width="48%">
       <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="48%">
     </td>
-    <td valign="top" style="padding-left: 20px;">
+    <td valign="top" style="padding-left: 0px;">
       <p>
         This repository details team <em>Back To The Future</em>'s building and programming process in our first participating year of the 2025 WRO Future Engineers Competition. 
       </p>
       We are team <em> Back To The Future</em>, three students who are passionate about technology and robotics. For this competition we built an autonomous robot. We worked after school and on weekends. Through this competition, we learned how to work as a team and solve problems related to robotics.
        </p>
         Team Members:
-          </p>
           Ayça Nisa Çerçi, 16
-        </p>
-          Mert Ata Makinacı,16
-    </p>
-          Tibet Özkarslıoğlu,17
+          Mert Ata Makinacı, 16
+          Tibet Özkarslıoğlu, 17
       </p>
     </td>
   </tr>
