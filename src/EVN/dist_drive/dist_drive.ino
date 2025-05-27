@@ -1,6 +1,6 @@
 #include <EVN.h>  //include neccessary header for EVN
 
-#define MOTOR_PORT 1	
+#define MOTOR_PORT 4
 #define PPR_VALUE 1600 	// Gear ratio * encoder PPR
 #define MAX_DPS 480	// Max speed in degrees per second of motor, can be calculated with motor.runPWM(100)
 #define ENC_DIR 1 //0 for DIRECT, 1 for REVERSE
@@ -14,8 +14,8 @@
 #define W_KP 0.1
 
 EVNAlpha board;
-EVNMotor motor(1, CUSTOM_MOTOR, DIRECT, ENC_DIR);
-EVNServo servo(1);
+EVNMotor motor(MOTOR_PORT, CUSTOM_MOTOR, DIRECT, ENC_DIR);
+EVNServo servo(SERVO_PORT);
 EVNDistanceSensor ds_L(L_DIST_PORT);
 EVNDistanceSensor ds_R(R_DIST_PORT);
 
