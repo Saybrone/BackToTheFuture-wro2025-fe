@@ -1,6 +1,6 @@
 #include <EVN.h>  //include neccessary header for EVN
 
-#define MOTOR_PORT 4
+#define MOTOR_PORT 1
 #define PPR_VALUE 1600 	// Gear ratio * encoder PPR
 #define MAX_DPS 480	// Max speed in degrees per second of motor, can be calculated with motor.runPWM(100)
 #define ENC_DIR 1 //0 for DIRECT, 1 for REVERSE
@@ -10,8 +10,10 @@
 #define L_DIST_PORT 2
 #define R_DIST_PORT 1
 
+#define FALLBACK_DIST 150
 #define TARGET_DIST 150
-#define W_KP 0.1
+#define W_KP 0.15
+
 
 EVNAlpha board;
 EVNMotor motor(MOTOR_PORT, CUSTOM_MOTOR, DIRECT, ENC_DIR);
@@ -38,7 +40,7 @@ void setup1() {  //calling motor begin on 2nd core improves performance
   motor.resetPosition();
 }
 
-int throttle = 75;
+int throttle = 60;
 float speed = (throttle / 100.0) * MAX_DPS;
 int error = 0;
 
@@ -68,6 +70,9 @@ void loop(){
 
   uint16_t dist_L = ds_L.read();
   uint16_t dist_R = ds_R.read();
+
+  dist_L = (dist_L == 0) ? FALLBACK_DIST : dist_L;
+  dist_R = (dist_R == 0) ? FALLBACK_DIST : dist_R ; 
 
   char strBuf[128]; //debug
   sprintf(strBuf, "L:%d, R:%d", dist_L, dist_R);
