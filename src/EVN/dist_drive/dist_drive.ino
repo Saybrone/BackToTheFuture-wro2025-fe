@@ -7,8 +7,8 @@
 
 #define SERVO_PORT 1
 
-#define L_DIST_PORT 15
-#define R_DIST_PORT 16
+#define L_DIST_PORT 2
+#define R_DIST_PORT 1
 
 #define TARGET_DIST 150
 #define W_KP 0.1
