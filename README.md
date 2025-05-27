@@ -1,8 +1,25 @@
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
-BACK TO THE FUTURE
+TEAM BACK TO THE FUTURE
 ===
-This repository details team *Back To The Future*'s building and programming process in our first participating year of the 2025 WRO Future Engineers Competition.
+<table>
+  <tr>
+    <td colspan="2">
+      <img src="t-photos/logo/Banner.png" alt="Banner" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td width="60%">
+      <img src="t-photos/TeamOfficial.jpg" alt="Official Photo" width="48%">
+      <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="48%">
+    </td>
+    <td valign="top" style="padding-left: 20px;">
+      <p>
+        This repository details team <em>Back To The Future</em>'s building and programming process in our first participating year of the 2025 WRO Future Engineers Competition.
+      </p>
+    </td>
+  </tr>
+</table>
 
 ## Contents
 
@@ -24,12 +41,12 @@ This repository details team *Back To The Future*'s building and programming pro
 - [Hardware](#hardware)
   - [Main Components](#main-components)
   - [Mobility Management](#mobility-management)
-    - [Chassis](#chassis)
     - [Locomotion](#locomotion)
+    - [Chassis](#chassis)
     - [Steering](#steering)
-- [Power and Sense Management](#power-and-sense-management)
-    - [Power and Wiring](#power-and-wiring)
-    - [Sensors](#sensors)
+  - [Power and Sense Management](#power-and-sense-management)
+      - [Power and Wiring](#power-and-wiring)
+      - [Sensors](#sensors)
 - [Software and Control](#software-and-control) <!-- split open & obstacle -->
   - [Smartphone](#smartphone)
   - [EVN Alpha](#evn-alpha) 
