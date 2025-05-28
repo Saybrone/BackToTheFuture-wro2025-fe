@@ -1,4 +1,4 @@
-Engineering Documentation
+Engineering Documentation  
 ===
 <table>
   <tr>
@@ -10,6 +10,7 @@ Engineering Documentation
     <td width="60%">
       <img src="t-photos/TeamOfficial.jpg" alt="Official Photo" width="48%">
       <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="48%">
+      
     </td>
     <td valign="top" style="padding-left: 0px;">
       <p>
@@ -52,7 +53,7 @@ Engineering Documentation
 ### Components
 |         Name         | Product |  | Price |
 |----------------------|---------|--|---------------|
-|Motor with Encoder|[Pololu Metal Gearmotor](https://www.pololu.com/product/4752)|![pololu](https://github.com/user-attachments/assets/e8bd4c36-ca0f-4c64-bb8d-ea3aa640c46d)|90$| 
+|Motor with Encoder|[Metal Gearmotor](https://www.pololu.com/product/4755)| <img other="" alt="" width="55%">
 |Servo Motor       |[Tower Pro MG995 (270 degrees)](https://www.ebay.com/itm/192002483556)| ![servo mg995](https://github.com/user-attachments/assets/dfcc7500-9c63-4463-907d-12806d3642b5) |12$|(https://github.com/user-attachments/assets/24153173-324e-47f3-af15-a5b4c12d5f1b)|
 |Motor Controller|[EVN Alpha](https://coresg.tech/product/evn-alpha/)  |![evn](https://github.com/user-attachments/assets/3d026de1-0574-455a-9870-d88abe7020cf)
  |168$|
