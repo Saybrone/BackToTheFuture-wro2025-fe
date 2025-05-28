@@ -38,7 +38,10 @@ TEAM BACK TO THE FUTURE
 * `models` is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
 * `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
 
-
+  ## Team Members
+  *  `Ayca Nisa Cerci`, `16`
+  * `Tibet Ozkarslioglu`,`17`
+  * `Mert Ata Makinaci`, `17`
 
 ## Content of README
 - [Hardware](#hardware)
@@ -55,11 +58,12 @@ TEAM BACK TO THE FUTURE
   - [EVN Alpha](#evn-alpha) 
 - [Vehicle Assembly](vehicle-assembly)
 
-## Hardware      
+## Hardware     
+
 ## Main Components
 |         Name         | Product |  | Price |
 |----------------------|---------|--|---------------|
-|Motor with Encoder| | | | 
+|Motor with Encoder|[Pololu Metal Gearmotor](https://www.pololu.com/product/4752)|![pololu](https://github.com/user-attachments/assets/e8bd4c36-ca0f-4c64-bb8d-ea3aa640c46d)|90$| 
 |Servo Motor|[Tower Pro MG995 (270 degrees)](https://www.ebay.com/itm/192002483556)|![5636c657-0cd0-4d13-8898-64bef9c5e61f](https://github.com/user-attachments/assets/547408d4-09bc-4009-9e1d-5a8174e7c158) |12$|(https://github.com/user-attachments/assets/24153173-324e-47f3-af15-a5b4c12d5f1b)|
 |Motor Controller|[EVN Alpha](https://coresg.tech/product/evn-alpha/)|![51e03d1a-d107-451d-8259-466d851f1624](https://github.com/user-attachments/assets/5b57c9b9-c09f-42b9-89eb-908f45598b74)|168$|
 |Camera and Processor|[Samsung Galaxy A53 5G](https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1)|![313c07cd-1411-4db1-8fcf-41a2f3f53fa0](https://github.com/user-attachments/assets/588559a9-8b7e-48d5-888c-0a5fe9707440)|142$|
@@ -74,7 +78,7 @@ Total cost: *To be determined*
 ### Locomotion
  ![pololu](https://github.com/user-attachments/assets/98ad7a46-8e2f-4e3d-b88e-eaa1144e8000)
 
- Our robot **does not use** 'Pololu Metal Gearmotor'. This gearmotor is a powerful 12V brushed DC motor with a 30:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 1920 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
+ Our robot uses 'Pololu Metal Gearmotor'. This gearmotor is a powerful 12V brushed DC motor with a 30:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 1920 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
  <!-- update motor -->
  ![5636c657-0cd0-4d13-8898-64bef9c5e61f](https://github.com/user-attachments/assets/496ba26b-fb70-4716-afa9-adf85f60039e)
 
