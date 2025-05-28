@@ -1,0 +1,481 @@
+package com.howthe.flux
+
+import android.Manifest
+import android.annotation.SuppressLint
+import android.app.PendingIntent
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.content.pm.PackageManager
+import android.hardware.usb.UsbDevice
+import android.hardware.usb.UsbManager
+import android.os.Bundle
+import android.util.Log
+import android.view.WindowManager
+import android.widget.Button
+import android.widget.SeekBar
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import org.opencv.android.CameraBridgeViewBase
+import org.opencv.android.OpenCVLoader
+import org.opencv.core.CvType
+import org.opencv.core.Mat
+import org.opencv.core.MatOfPoint
+import org.opencv.core.Point
+import org.opencv.core.Rect
+import org.opencv.core.Scalar
+import com.hoho.android.usbserial.driver.UsbSerialPort
+import com.hoho.android.usbserial.driver.UsbSerialProber
+import org.opencv.core.Core
+import org.opencv.imgproc.Imgproc
+import org.opencv.core.Size
+import android.graphics.Bitmap
+import android.os.Environment
+import org.opencv.android.Utils
+import android.content.ContentValues
+import android.provider.MediaStore
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+
+class MainActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewListener2 {
+    private var brightnessThreshold = 150.0
+
+    private var isPreviewActive = false
+    private var isOpenCvInitialized = false
+    private val cameraPermissionRequestCode = 100
+
+    private lateinit var openCvCameraView: CameraBridgeViewBase
+    private lateinit var buttonTogglePreview: Button
+    private lateinit var usbManager: UsbManager
+    private var serialPort: UsbSerialPort? = null
+    private val lowerBlue  = Scalar(100.0, 100.0,  30.0)
+    private val upperBlue  = Scalar(160.0, 255.0, 160.0)
+    private val lowerBlack = Scalar(  0.0,   0.0, brightnessThreshold)
+    private val upperBlack = Scalar(170.0, 255.0, 255.0)
+    
+    private val frameInterval = 1000L / 15L
+    @Volatile private var lastProcessTime = 0L
+    @Volatile private var busy            = false
+
+    companion object {
+        private const val ACTION_USB_PERMISSION = "com.example.myapplication.USB_PERMISSION"
+    }
+
+    private val usbReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            if (intent.action == ACTION_USB_PERMISSION &&
+                intent.getBooleanExtra(UsbManager.EXTRA_PERMISSION_GRANTED, false)
+            ) {
+                val device = intent.getParcelableExtra<UsbDevice>(UsbManager.EXTRA_DEVICE)
+                if (device != null) {
+                    connectToDevice(device)
+                }
+        }
+    }
+
+    @SuppressLint("ClickableViewAccessibility", "SetTextI18n")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+        buttonTogglePreview = findViewById(R.id.buttonTogglePreview)
+        openCvCameraView = findViewById(R.id.cameraView)
+        usbManager = getSystemService(USB_SERVICE) as UsbManager
+
+        val thresholdSeek = findViewById<SeekBar>(R.id.thresholdSeek)
+
+        thresholdSeek.progress = brightnessThreshold.toInt()
+        findViewById<TextView>(R.id.thresholdValue)?.text = "Threshold: ${thresholdSeek.progress}"
+
+        thresholdSeek.onChange {
+            brightnessThreshold = it.toDouble()
+            findViewById<TextView>(R.id.thresholdValue)?.text = "Threshold: $it"
+        }
+
+
+        findViewById<Button>(R.id.btnUsbConnect).setOnClickListener {
+            requestPermissionAndConnect()
+        }
+
+        buttonTogglePreview.setOnClickListener {
+            requestPermissionAndConnect()
+            if (isPreviewActive) {
+                openCvCameraView.disableView()
+            } else {
+                openCvCameraView.setCameraPermissionGranted()
+                openCvCameraView.enableView()
+            }
+            updateControls()
+        }
+
+        isOpenCvInitialized = OpenCVLoader.initLocal()
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.CAMERA),
+                cameraPermissionRequestCode
+            )
+            Core.setUseOptimized(true)
+            Core.setNumThreads(Runtime.getRuntime().availableProcessors())
+        }
+        openCvCameraView.setCvCameraViewListener(this)
+        openCvCameraView.setCameraIndex(2)
+        openCvCameraView.setMaxFrameSize(700, 500)
+
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        Core.setUseOptimized(true)
+        Core.setNumThreads(Runtime.getRuntime().availableProcessors())
+
+        updateControls()
+    }
+
+    private fun requestPermissionAndConnect() {
+        Log.d("USB", "requestPermissionAndConnect called")
+        val drivers = UsbSerialProber.getDefaultProber().findAllDrivers(usbManager)
+        if (drivers.isEmpty()) {
+            Log.e("USB", "No USB drivers found")
+            return
+        }
+
+        val device = drivers[0].device
+
+        if (usbManager.hasPermission(device)) {
+            connectToDevice(device)
+            return
+        }
+
+        val permissionIntent = PendingIntent.getBroadcast(
+            this, 0, Intent(ACTION_USB_PERMISSION), PendingIntent.FLAG_IMMUTABLE
+        )
+
+        try {
+            unregisterReceiver(usbReceiver)
+        } catch (_: Exception) {
+        }
+
+        val filter = IntentFilter(ACTION_USB_PERMISSION)
+        registerReceiver(usbReceiver, filter, RECEIVER_NOT_EXPORTED)
+
+        Log.d("USB", "Requesting permission…")
+        if (usbManager.hasPermission(device)) {
+            connectToDevice(device)
+        } else {
+            usbManager.requestPermission(device, permissionIntent)
+        }
+
+    }
+
+    private fun connectToDevice(device: UsbDevice) {
+        val connection = usbManager.openDevice(device)
+        if (connection == null) {
+            Log.e("USB", "Failed to open USB connection")
+            return
+        }
+
+        val driver = UsbSerialProber.getDefaultProber().probeDevice(device)
+        if (driver == null || driver.ports.isEmpty()) {
+            Log.e("USB", "No USB serial driver or ports found")
+            return
+        }
+
+        val port = driver.ports[0]
+        try {
+            port.open(connection)
+            port.setParameters(9600, 8, UsbSerialPort.STOPBITS_1, UsbSerialPort.PARITY_NONE)
+            serialPort = port
+            Toast.makeText(this, "USB Connected", Toast.LENGTH_SHORT).show()
+        } catch (e: Exception) {
+            Log.e("USB", "Failed to open port", e)
+        }
+    }
+
+
+    private fun send(marker: Char, x: Int, y: Int) {
+        val port = serialPort ?: return
+        val x = x.coerceIn(0, 255)
+        val y = y.coerceIn(0, 255)
+        try {
+            val data = byteArrayOf(
+                marker.code.toByte(),
+                x.toByte(),
+                y.toByte()
+            )
+            port.write(data, 0)
+        } catch (e: Exception) {
+            Log.e("BT-SEND", "Write failed", e)
+        }
+    }
+
+
+    private fun updateControls() {
+        if (!isOpenCvInitialized) {
+            buttonTogglePreview.isEnabled = false
+        } else {
+            buttonTogglePreview.isEnabled = true
+            buttonTogglePreview.text =
+                if (isPreviewActive) "Stop Processing" else "Start Processing"
+        }
+    }
+
+    override fun onCameraViewStarted(width: Int, height: Int) {
+        isPreviewActive = true
+        updateControls()
+        rgbaMat         = Mat()
+        rgbMat          = Mat()
+        rgbCopy         = Mat()
+        hsv1            = Mat()
+        hsv2            = Mat()
+        blueMask        = Mat()
+        blueWhiteMask   = Mat()
+        blackMask       = Mat()
+        inverted        = Mat()
+        holes           = Mat()
+        filledBlackMask = Mat()
+        cleanedMask     = Mat()
+        frameMat        = Mat()
+        floodMask1      = Mat()
+        mask            = Mat()
+        contourMask     = Mat()
+        hierarchy       = Mat()
+        contours        = mutableListOf()
+        kernel          = Imgproc.getStructuringElement(
+            Imgproc.MORPH_RECT, Size(5.0, 5.0)
+        )
+        lastFrame       = Mat()
+
+    }
+
+    override fun onCameraViewStopped() {
+        isPreviewActive = false
+        updateControls()
+    }
+
+    private fun saveMatAsJpeg(mat: Mat) {
+        val bmp = Bitmap.createBitmap(mat.cols(), mat.rows(), Bitmap.Config.ARGB_8888)
+        Utils.matToBitmap(mat, bmp)
+
+        val filename = "IMG_${System.currentTimeMillis()}.jpg"
+        val values = ContentValues().apply {
+            put(MediaStore.Images.Media.DISPLAY_NAME, filename)
+            put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
+            put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES + "/FLUX")
+        }
+        val uri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+        uri?.let {
+            contentResolver.openOutputStream(it)?.use { out ->
+                bmp.compress(Bitmap.CompressFormat.JPEG, 100, out)
+            }
+        } ?: run {
+        }
+
+    }
+    private lateinit var rgbaMat:         Mat
+    private lateinit var rgbMat:          Mat
+    private lateinit var rgbCopy:         Mat
+    private lateinit var hsv1:            Mat
+    private lateinit var hsv2:            Mat
+    private lateinit var blueMask:        Mat
+    private lateinit var blueWhiteMask:   Mat
+    private lateinit var blackMask:       Mat
+    private lateinit var inverted:        Mat
+    private lateinit var holes:           Mat
+    private lateinit var filledBlackMask: Mat
+    private lateinit var cleanedMask:     Mat
+    private lateinit var frameMat:        Mat
+    private lateinit var floodMask1:      Mat
+    private lateinit var mask:            Mat
+    private lateinit var contourMask:     Mat
+    private lateinit var hierarchy:       Mat
+    private lateinit var contours:        MutableList<MatOfPoint>
+    private lateinit var kernel:          Mat
+    private lateinit var lastFrame:       Mat
+
+var hasSaved=true
+    override fun onCameraFrame(inputFrame: CameraBridgeViewBase.CvCameraViewFrame?): Mat {
+        inputFrame!!.rgba().copyTo(rgbaMat)
+
+        val now = System.currentTimeMillis()
+        if (!busy && now - lastProcessTime >= frameInterval) {
+            busy = true
+            lastProcessTime = now
+
+            GlobalScope.launch(Dispatchers.Default) {
+                Imgproc.cvtColor(rgbaMat, rgbMat, Imgproc.COLOR_RGBA2RGB)
+                rgbMat.copyTo(rgbCopy)
+                if (hasSaved) saveMatAsJpeg(rgbMat)
+
+                Imgproc.cvtColor(rgbMat, hsv1, Imgproc.COLOR_RGB2HSV)
+                Core.inRange(hsv1, lowerBlue, upperBlue, blueMask)
+                Imgproc.cvtColor(blueMask, blueWhiteMask, Imgproc.COLOR_GRAY2BGR)
+                blueWhiteMask.setTo(Scalar(255.0, 255.0, 255.0), blueMask)
+                Core.bitwise_or(rgbMat, blueWhiteMask, rgbMat)
+                if (hasSaved) saveMatAsJpeg(rgbMat)
+
+                Imgproc.cvtColor(rgbMat, hsv2, Imgproc.COLOR_RGB2HSV)
+                Core.inRange(hsv2, lowerBlack, upperBlack, blackMask)
+                Core.bitwise_not(blackMask, inverted)
+                if (hasSaved) saveMatAsJpeg(blackMask)
+
+                floodMask1.create(inverted.rows() + 2, inverted.cols() + 2, CvType.CV_8UC1)
+                floodMask1.setTo(Scalar(0.0))
+                Imgproc.floodFill(inverted, floodMask1, Point(0.0, 0.0), Scalar(255.0))
+                if (hasSaved) saveMatAsJpeg(inverted)
+
+                Core.bitwise_not(inverted, holes)
+                Core.bitwise_or(blackMask, holes, filledBlackMask)
+
+                Imgproc.morphologyEx(
+                    filledBlackMask, cleanedMask,
+                    Imgproc.MORPH_CLOSE, kernel
+                )
+                Imgproc.morphologyEx(
+                    cleanedMask, cleanedMask,
+                    Imgproc.MORPH_OPEN, kernel
+                )
+                if (hasSaved) saveMatAsJpeg(cleanedMask)
+
+                cleanedMask.copyTo(frameMat)
+                mask.create(frameMat.rows() + 2, frameMat.cols() + 2, CvType.CV_8UC1)
+                mask.setTo(Scalar(0.0))
+                val seed = Point(frameMat.cols() / 2.0, frameMat.rows() - 1.0)
+                Imgproc.floodFill(
+                    frameMat, mask, seed,
+                    Scalar(255.0), Rect(),
+                    Scalar(0.0), Scalar(0.0),
+                    Imgproc.FLOODFILL_MASK_ONLY or 8
+                )
+                Imgproc.cvtColor(frameMat, frameMat, Imgproc.COLOR_GRAY2RGB)
+                if (hasSaved) saveMatAsJpeg(frameMat)
+
+                val filledRegion = mask.submat(1, mask.rows() - 1, 1, mask.cols() - 1)
+                contours.clear()
+                hierarchy.create(1, 1, CvType.CV_8UC4)
+                Imgproc.findContours(
+                    filledRegion, contours, hierarchy,
+                    Imgproc.RETR_CCOMP,
+                    Imgproc.CHAIN_APPROX_SIMPLE
+                )
+
+                for (i in contours.indices) {
+                    val h = hierarchy.get(0, i)
+                    if (h[3].toInt() != -1) {
+                        Imgproc.drawContours(
+                            frameMat, contours, i,
+                            Scalar(255.0, 255.0, 0.0), 2
+                        )
+                    }
+                }
+
+                if (hasSaved) {
+                    saveMatAsJpeg(frameMat)
+                }
+
+                val bottomX = frameMat.cols() / 2
+                val bottomY = frameMat.rows() - 1
+                for (i in contours.indices) {
+                    val h = hierarchy.get(0, i)
+                    if (h[3].toInt() == -1) continue
+
+                    val cnt = contours[i]
+                    if (Imgproc.contourArea(cnt) < 40.0) continue
+
+                    contourMask.create(rgbCopy.size(), CvType.CV_8UC1)
+                    contourMask.setTo(Scalar(0.0))
+                    Imgproc.drawContours(
+                        contourMask, listOf(cnt), -1,
+                        Scalar(255.0), Imgproc.FILLED
+                    )
+
+                    val mc = Core.mean(rgbCopy, contourMask).`val`
+                    val r = mc[0]; val g = mc[1]; val b = mc[2]
+
+                    val (label, dotColor) = when {
+                        r > (g + b)/2 + 10 -> 'R' to Scalar(255.0, 0.0, 0.0)
+                        g > (r + b)/2 + 10 -> 'G' to Scalar(0.0, 255.0, 0.0)
+                        else               -> continue
+                    }
+
+                    val M = Imgproc.moments(cnt)
+                    val cx = (M.m10 / M.m00).toInt()
+                    val cy = (M.m01 / M.m00).toInt()
+                    val dx = cx - bottomX
+                    val dy = bottomY - cy
+                    send(label, dx, dy)
+
+                    Imgproc.circle(
+                        frameMat,
+                        Point(cx.toDouble(), cy.toDouble()), 5,
+                        dotColor, 1
+                    )
+                    Imgproc.circle(
+                        frameMat,
+                        Point(cx.toDouble(), cy.toDouble()), 2,
+                        dotColor, -1
+                    )
+                    Imgproc.line(
+                        frameMat,
+                        Point(cx.toDouble(), cy.toDouble()),
+                        Point(cx.toDouble(), bottomY.toDouble()),
+                        dotColor, 1
+                    )
+                    Imgproc.line(
+                        frameMat,
+                        Point(cx.toDouble(), bottomY.toDouble()),
+                        Point(bottomX.toDouble(), bottomY.toDouble()),
+                        dotColor, 1
+                    )
+                }
+                if (hasSaved) {
+                    saveMatAsJpeg(frameMat)
+                    hasSaved=false
+                }
+                frameMat.copyTo(lastFrame)
+                busy = false
+            }
+        }
+
+        return if (!lastFrame.empty()) lastFrame else inputFrame.rgba()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        serialPort?.close()
+        try {
+            unregisterReceiver(usbReceiver)
+        } catch (_: Exception) {
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        val thresholdSeek = findViewById<SeekBar>(R.id.thresholdSeek)
+        thresholdSeek.progress = brightnessThreshold.toInt()
+        findViewById<TextView>(R.id.thresholdValue).text = "Threshold: ${thresholdSeek.progress}"
+
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    private fun SeekBar.onChange(block: (Int) -> Unit) {
+        this.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(sb: SeekBar?, value: Int, fromUser: Boolean) {
+                if (fromUser) block(value)
+            }
+
+            override fun onStartTrackingTouch(sb: SeekBar?) {}
+            override fun onStopTrackingTouch(sb: SeekBar?) {}
+        })
+    }
+}
