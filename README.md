@@ -1,7 +1,30 @@
 Engineering Documentation
 ===
-This repository details team *Back To The Future*'s building and programming process in our first participating year of the 2025 WRO Future Engineers Competition.
-
+<table>
+  <tr>
+    <td colspan="2">
+      <img src="t-photos/logo/Banner.png" alt="Banner" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td width="60%">
+      <img src="t-photos/TeamOfficial.jpg" alt="Official Photo" width="48%">
+      <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="48%">
+    </td>
+    <td valign="top" style="padding-left: 0px;">
+      <p>
+        This repository details team <em>Back To The Future</em>'s building and programming process in our first participating year of the 2025 WRO Future Engineers Competition. 
+      </p>
+      We are team <em> Back To The Future</em>, three students who are passionate about technology and robotics. For this competition we built an autonomous robot. We worked after school and on weekends. Through this competition, we learned how to work as a team and solve problems related to robotics.
+       </p>
+        Team Members:
+          Ayça Nisa Çerçi, 16
+          Mert Ata Makinacı, 16
+          Tibet Özkarslıoğlu, 17
+      </p>
+    </td>
+  </tr>
+</table>
 ## Contents
 
 * `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
