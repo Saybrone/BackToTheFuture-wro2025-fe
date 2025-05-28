@@ -75,7 +75,7 @@ Engineering Documentation
         <tr>
             <td>Motor Controller</td>
             <td><a href="https://coresg.tech/product/evn-alpha/">EVN Alpha</a></td>
-            <td><img src="https://github.com/user-attachments/assets/3d026de1-0574-455a-9870-d88abe7020cf" alt="evn" width="120"></td>
+            <td><img src="other/evn/evn2.png" alt="evn" width="120"></td>
             <td>168$</td>
         </tr>
         <tr>
