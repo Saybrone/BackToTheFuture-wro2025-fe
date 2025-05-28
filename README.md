@@ -78,6 +78,10 @@ Engineering Documentation
             <td><img src="other/evn/evn2.png" alt="evn" width="120"></td>
             <td>168$</td>
         </tr>
+            <td>Sensor</td>
+            <td><a href="-">Time Of Flight Sensor</a></td>
+            <td><img src="other/servo/servo2.png" alt="time-of-flight" width="120"></td>
+            <td>-</td>
         <tr>
             <td>Camera and Processor</td>
             <td><a href="https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1">Samsung Galaxy A53 5G</a></td>
