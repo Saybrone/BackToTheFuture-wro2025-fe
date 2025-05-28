@@ -79,9 +79,9 @@ Engineering Documentation
             <td>168$</td>
         </tr>
             <td>Sensor</td>
-            <td><a href="https://www.aliexpress.us/item/3256804423140189.html?spm=a2g0o.productlist.main.10.2690RpmLRpmLIR&algo_pvid=b3e42385-61b9-45e9-8710-9c3b9c852c3d&algo_exp_id=b3e42385-61b9-45e9-8710-9c3b9c852c3d-9&pdp_ext_f=%7B%22order%22%3A%226%22%2C%22eval%22%3A%221%22%7D&pdp_npi=4%40dis%21USD%211.40%211.40%21%21%211.40%211.40%21%402103956b17484416859833638e2f95%2112000029818090884%21sea%21US%210%21ABX&curPageLogUid=1Up68rA5UIHX&utparam-url=scene%3Asearch%7Cquery_from%3A&_gl=1*8x5tmt*_gcl_au*ODczNzMyNzI4LjE3NDg0NDE2NDE.*_ga*MTYwOTE1NzI1MC4xNzQ4NDQxNjQx*_ga_VED1YSGNC7*czE3NDg0NDE2NDEkbzEkZzEkdDE3NDg0NDE2ODgkajEzJGwwJGgw">Time Of Flight Sensor</a></td>
+            <td><a href="https://www.amazon.com/VKLSVAN-Measurements-Breakout-Accurate-Distance/dp/B099N2JW89/ref=sr_1_21?dib=eyJ2IjoiMSJ9.FHoX1s21bwww8-NUEd8BDmuIcVpW6rD7ehPzn9Nrcnr83wpj7UbUi9nTPdVbzD0BZQBe4NcTkUF81jqL1nH1B1oWyGsGmJvVDI9LizHIMgQa-9x9Kawya7KRBut3eaMHHIsh7hhXHszMiLL41TcW_TsiRXD4baq3nEYucGFwMjmp6Hhz-geVCebnKhqtsht6ni7oUUj8yK9zkh-7uDRcyYCAQC9mr7VNeh2rTVr-RnM.0Bbbq1BQlA3MnEtffctAFpx3Wft-0tIANuMAgv0CXwg&dib_tag=se&keywords=time+of+flight+sensor&qid=1748441943&sr=8-21">Time Of Flight Sensor</a></td>
             <td><img src="other/time_of_flight_sensor/time_of.png" alt="time-of-flight" width="120"></td>
-            <td>1.5$</td>
+            <td>9$</td>
         <tr>
             <td>Camera and Processor</td>
             <td><a href="https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1">Samsung Galaxy A53 5G</a></td>
@@ -90,7 +90,7 @@ Engineering Documentation
         </tr>
         <tr>
             <td colspan="3"><strong>Total cost:</strong></td>
-            <td><strong>413.5$</strong></td>
+            <td><strong>421$</strong></td>
         </tr>
     </tbody>
 </table>
