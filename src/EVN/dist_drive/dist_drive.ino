@@ -1,14 +1,14 @@
 #include <EVN.h>  //include neccessary header for EVN
 
-#define MOTOR_PORT 1
+#define MOTOR_PORT 4
 #define PPR_VALUE 1600 	// Gear ratio * encoder PPR
 #define MAX_DPS 480	// Max speed in degrees per second of motor, can be calculated with motor.runPWM(100)
 #define ENC_DIR 1 //0 for DIRECT, 1 for REVERSE
 
 #define SERVO_PORT 1
 
-#define L_DIST_PORT 1
-#define R_DIST_PORT 2
+#define R_DIST_PORT 1
+#define L_DIST_PORT 2
 #define FALLBACK_DIST 250
 //#define TARGET_DIST 150
 #define W_KP 0.2
@@ -79,7 +79,7 @@ void loop(){
 
   error = dist_R - dist_L;
   float command = error * W_KP;
-  int angle = constrain(command + 90, 30, 150);
+  int angle = constrain(command + 90, 40, 140);
   servo.write(90 + angle);
 
 }
