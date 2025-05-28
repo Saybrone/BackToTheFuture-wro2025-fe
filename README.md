@@ -26,14 +26,75 @@ Engineering Documentation
 - [VehicleAssembly](vehicle-assembly)
 ## Hardware      
 ### Components
-|         Name         | Product |  | Price |
-|----------------------|---------|--|---------------|
-|Motor with Encoder|[Metal Gearmotor](https://www.pololu.com/product/4755)|<img motor="other/motor/motor tr.png" alt="motor tr.png" width="55%">
-|Servo Motor       |[Tower Pro MG995 (270 degrees)](https://www.ebay.com/itm/192002483556)| ![servo mg995](https://github.com/user-attachments/assets/dfcc7500-9c63-4463-907d-12806d3642b5) |12$|(https://github.com/user-attachments/assets/24153173-324e-47f3-af15-a5b4c12d5f1b)|
-|Motor Controller|[EVN Alpha](https://coresg.tech/product/evn-alpha/)  |![evn](https://github.com/user-attachments/assets/3d026de1-0574-455a-9870-d88abe7020cf)
- |168$|
-|Camera and Processor|[Samsung Galaxy A53 5G](https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1)|![samsung-galaxy-a53-5g-1649224506](https://github.com/user-attachments/assets/11472760-da84-4123-ab61-4599d9e857b1)|142$|
-|Total cost:          387   $ |
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Components Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Motor Components Table</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Component</th>
+            <th>Product Link</th>
+            <th>Image</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Motor with Encoder</td>
+            <td><a href="https://www.pololu.com/product/4755">Metal Gearmotor</a></td>
+            <td><img src="other/motor/motor_tr.png" alt="motor tr.png" width="120"></td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>Servo Motor</td>
+            <td><a href="https://www.ebay.com/itm/192002483556">Tower Pro MG995 (270 degrees)</a></td>
+            <td><img src="https://github.com/user-attachments/assets/dfcc7500-9c63-4463-907d-12806d3642b5" alt="servo mg995" width="120"></td>
+            <td>12$</td>
+        </tr>
+        <tr>
+            <td>Motor Controller</td>
+            <td><a href="https://coresg.tech/product/evn-alpha/">EVN Alpha</a></td>
+            <td><img src="https://github.com/user-attachments/assets/3d026de1-0574-455a-9870-d88abe7020cf" alt="evn" width="120"></td>
+            <td>168$</td>
+        </tr>
+        <tr>
+            <td>Camera and Processor</td>
+            <td><a href="https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1">Samsung Galaxy A53 5G</a></td>
+            <td><img src="https://github.com/user-attachments/assets/11472760-da84-4123-ab61-4599d9e857b1" alt="samsung-galaxy-a53-5g-1649224506" width="120"></td>
+            <td>142$</td>
+        </tr>
+        <tr>
+            <td colspan="3"><strong>Total cost:</strong></td>
+            <td><strong>387$</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
+
+
 
 ## Mobility Management
 
