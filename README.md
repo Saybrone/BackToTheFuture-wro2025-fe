@@ -11,9 +11,9 @@ Engineering Documentation
 * `models` is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
 * `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
   ## Team Members
-  *  `Ayca Nisa Cerci`, `16`, [aycanisa2009@gmail.com]()
-  * `Tibet Ozkarslioglu`,`17`,[]()
-  * `Mert Ata Makinaci`, `17`, []()
+  *  `Ayca Nisa Cerci`, `16`
+  * `Tibet Ozkarslioglu`,`17`
+  * `Mert Ata Makinaci`, `16`
 
 ## Content of README
 - [Hardware](#hardware)
@@ -64,7 +64,7 @@ Engineering Documentation
             <td>Motor with Encoder</td>
             <td><a href="https://www.pololu.com/product/4755">Metal Gearmotor</a></td>
             <td><img src="other/motor/motor_tr.png" alt="motor tr.png" width="120"></td>
-            <td>-</td>
+            <td>90</td>
         </tr>
         <tr>
             <td>Servo Motor</td>
