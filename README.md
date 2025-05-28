@@ -86,7 +86,7 @@ Engineering Documentation
         </tr>
         <tr>
             <td colspan="3"><strong>Total cost:</strong></td>
-            <td><strong>387$</strong></td>
+            <td><strong>412$</strong></td>
         </tr>
     </tbody>
 </table>
