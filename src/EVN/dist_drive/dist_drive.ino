@@ -10,7 +10,7 @@
 #define R_DST_PORT 1
 #define L_DST_PORT 2
 #define FALLBACK_DIST 250
-//#define TARGET_DIST 150
+#define DIST_DIFF 0
 #define W_KP 0.2
 #define DST_DELAY 5
 
