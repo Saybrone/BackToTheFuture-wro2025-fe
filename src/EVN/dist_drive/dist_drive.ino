@@ -7,18 +7,18 @@
 
 #define SERVO_PORT 1
 
-#define R_DIST_PORT 1
-#define L_DIST_PORT 2
+#define R_DST_PORT 1
+#define L_DST_PORT 2
 #define FALLBACK_DIST 250
 //#define TARGET_DIST 150
 #define W_KP 0.2
-
+#define DST_DELAY 5
 
 EVNAlpha board;
 EVNMotor motor(MOTOR_PORT, CUSTOM_MOTOR, DIRECT, ENC_DIR);
 EVNServo servo(SERVO_PORT);
-EVNDistanceSensor ds_L(L_DIST_PORT);
-EVNDistanceSensor ds_R(R_DIST_PORT);
+EVNDistanceSensor ds_L(L_DST_PORT);
+EVNDistanceSensor ds_R(R_DST_PORT);
 
 void setup() {
   board.begin();
@@ -67,7 +67,9 @@ void loop(){
     Serial.flush();
   }
 
+  delay(DST_DELAY);
   uint16_t dist_L = ds_L.read();
+  delay(DST_DELAY);
   uint16_t dist_R = ds_R.read();
   
   char strBuf[128]; //debug
