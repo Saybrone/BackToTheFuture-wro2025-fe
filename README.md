@@ -80,7 +80,7 @@ Engineering Documentation
         </tr>
             <td>Sensor</td>
             <td><a href="-">Time Of Flight Sensor</a></td>
-            <td><img src="other/servo/servo2.png" alt="time-of-flight" width="120"></td>
+            <td><img src="other/time_of_flight_sensor/time_of.png" alt="time-of-flight" width="120"></td>
             <td>-</td>
         <tr>
             <td>Camera and Processor</td>
