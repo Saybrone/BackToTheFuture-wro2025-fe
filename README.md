@@ -39,11 +39,6 @@ TEAM BACK TO THE FUTURE
 * `models` is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
 * `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
 
-## Team Members
-*  `Ayca Nisa Cerci`, `16`
-* `Tibet Ozkarslioglu`,`17`
-* `Mert Ata Makinaci`, `16`
-
 ## Content of README
 - [Hardware](#hardware)
   - [Components](#components)
