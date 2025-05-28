@@ -1,31 +1,6 @@
 Engineering Documentation  
 ===
-<table>
-  <tr>
-    <td colspan="2">
-      <img src="t-photos/logo/Banner.png" alt="Banner" width="100%">
-    </td>
-  </tr>
-  <tr>
-    <td width="60%">
-      <img src="t-photos/TeamOfficial.jpg" alt="Official Photo" width="48%">
-      <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="48%">
-      
-    </td>
-    <td valign="top" style="padding-left: 0px;">
-      <p>
-        This repository details team <em>Back To The Future</em>'s building and programming process in our first participating year of the 2025 WRO Future Engineers Competition. 
-      </p>
-      We are team <em> Back To The Future</em>, three students who are passionate about technology and robotics. For this competition we built an autonomous robot. We worked after school and on weekends. Through this competition, we learned how to work as a team and solve problems related to robotics.
-       </p>
-        Team Members:
-          Ayça Nisa Çerçi, 16
-          Mert Ata Makinacı, 16
-          Tibet Özkarslıoğlu, 17
-      </p>
-    </td>
-  </tr>
-</table>
+
 ## Contents
 
 * `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
@@ -53,7 +28,7 @@ Engineering Documentation
 ### Components
 |         Name         | Product |  | Price |
 |----------------------|---------|--|---------------|
-|Motor with Encoder|[Metal Gearmotor](https://www.pololu.com/product/4755)| <img other="" alt="" width="55%">
+|Motor with Encoder|[Metal Gearmotor](https://www.pololu.com/product/4755)| <img motor="other/motor/motor tr.png" alt="motor" width="55%">
 |Servo Motor       |[Tower Pro MG995 (270 degrees)](https://www.ebay.com/itm/192002483556)| ![servo mg995](https://github.com/user-attachments/assets/dfcc7500-9c63-4463-907d-12806d3642b5) |12$|(https://github.com/user-attachments/assets/24153173-324e-47f3-af15-a5b4c12d5f1b)|
 |Motor Controller|[EVN Alpha](https://coresg.tech/product/evn-alpha/)  |![evn](https://github.com/user-attachments/assets/3d026de1-0574-455a-9870-d88abe7020cf)
  |168$|
