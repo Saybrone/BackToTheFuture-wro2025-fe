@@ -69,7 +69,7 @@ Engineering Documentation
         <tr>
             <td>Servo Motor</td>
             <td><a href="https://www.ebay.com/itm/192002483556">Tower Pro MG995 (270 degrees)</a></td>
-            <td><img src="https://github.com/user-attachments/assets/dfcc7500-9c63-4463-907d-12806d3642b5" alt="servo mg995" width="120"></td>
+            <td><img src="other/servo/servo2.png" alt="servo mg995" width="120"></td>
             <td>12$</td>
         </tr>
         <tr>
