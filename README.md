@@ -64,7 +64,7 @@ Engineering Documentation
             <td>Motor with Encoder</td>
             <td><a href="https://www.pololu.com/product/4755">Metal Gearmotor</a></td>
             <td><img src="other/motor/motor_tr.png" alt="motor tr.png" width="120"></td>
-            <td>90</td>
+            <td>90$</td>
         </tr>
         <tr>
             <td>Servo Motor</td>
