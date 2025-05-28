@@ -20,8 +20,8 @@ TEAM BACK TO THE FUTURE
       We are team <em> Back To The Future</em>, three students who are passionate about technology and robotics. For this competition we built an autonomous robot. We worked after school and on weekends. Through this competition, we learned how to work as a team and solve problems related to robotics.
        </p>
         Team Members:
-          Ayça Nisa Çerçi, 16
-          Mert Ata Makinacı, 16
+          Ayça Nisa Çerçi, 16,
+          Mert Ata Makinacı, 16,
           Tibet Özkarslıoğlu, 17
       </p>
     </td>
