@@ -1,3 +1,4 @@
+
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
 TEAM BACK TO THE FUTURE
@@ -41,34 +42,91 @@ TEAM BACK TO THE FUTURE
   ## Team Members
   *  `Ayca Nisa Cerci`, `16`
   * `Tibet Ozkarslioglu`,`17`
-  * `Mert Ata Makinaci`, `17`
+  * `Mert Ata Makinaci`, `16`
 
 ## Content of README
 - [Hardware](#hardware)
-  - [Main Components](#main-components)
-  - [Mobility Management](#mobility-management)
-    - [Locomotion](#locomotion)
-    - [Chassis](#chassis)
-    - [Steering](#steering)
-  - [Power and Sense Management](#power-and-sense-management)
-      - [Power and Wiring](#power-and-wiring)
-      - [Sensors](#sensors)
-- [Software and Control](#software-and-control) <!-- split open & obstacle -->
-  - [Smartphone](#smartphone)
-  - [EVN Alpha](#evn-alpha) 
-- [Vehicle Assembly](vehicle-assembly)
+  - [Components](#components)
+  - [Mobility Management](mobility-management)
+    - [Chassis](chassis)
+    - [Design](design)
+    - [Motors](motors)
+- [Software](#software)
+- [VehicleAssembly](vehicle-assembly)
+## Hardware      
+### Components
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Components Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
 
-## Hardware     
+<h2>Motor Components Table</h2>
 
-## Main Components
-|         Name         | Product |  | Price |
-|----------------------|---------|--|---------------|
-|Motor with Encoder|[Pololu Metal Gearmotor](https://www.pololu.com/product/4752)|![pololu](https://github.com/user-attachments/assets/e8bd4c36-ca0f-4c64-bb8d-ea3aa640c46d)|90$| 
-|Servo Motor|[Tower Pro MG995 (270 degrees)](https://www.ebay.com/itm/192002483556)|![5636c657-0cd0-4d13-8898-64bef9c5e61f](https://github.com/user-attachments/assets/547408d4-09bc-4009-9e1d-5a8174e7c158) |12$|(https://github.com/user-attachments/assets/24153173-324e-47f3-af15-a5b4c12d5f1b)|
-|Motor Controller|[EVN Alpha](https://coresg.tech/product/evn-alpha/)|![51e03d1a-d107-451d-8259-466d851f1624](https://github.com/user-attachments/assets/5b57c9b9-c09f-42b9-89eb-908f45598b74)|168$|
-|Camera and Processor|[Samsung Galaxy A53 5G](https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1)|![313c07cd-1411-4db1-8fcf-41a2f3f53fa0](https://github.com/user-attachments/assets/588559a9-8b7e-48d5-888c-0a5fe9707440)|142$|
-<!-- add TOF -->
-Total cost: *To be determined*
+<table>
+    <thead>
+        <tr>
+            <th>Component</th>
+            <th>Product Link</th>
+            <th>Image</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Motor with Encoder</td>
+            <td><a href="https://www.pololu.com/product/4755">Metal Gearmotor</a></td>
+            <td><img src="other/motor/motor_tr.png" alt="motor tr.png" width="120"></td>
+            <td>90$</td>
+        </tr>
+        <tr>
+            <td>Servo Motor</td>
+            <td><a href="https://www.ebay.com/itm/192002483556">Tower Pro MG995 (270 degrees)</a></td>
+            <td><img src="other/servo/servo2.png" alt="servo mg995" width="120"></td>
+            <td>12$</td>
+        </tr>
+        <tr>
+            <td>Motor Controller</td>
+            <td><a href="https://coresg.tech/product/evn-alpha/">EVN Alpha</a></td>
+            <td><img src="other/evn/evn2.png" alt="evn" width="150"></td>
+            <td>168$</td>
+        </tr>
+            <td>Sensor</td>
+            <td><a href="https://www.amazon.com/VKLSVAN-Measurements-Breakout-Accurate-Distance/dp/B099N2JW89/ref=sr_1_21?dib=eyJ2IjoiMSJ9.FHoX1s21bwww8-NUEd8BDmuIcVpW6rD7ehPzn9Nrcnr83wpj7UbUi9nTPdVbzD0BZQBe4NcTkUF81jqL1nH1B1oWyGsGmJvVDI9LizHIMgQa-9x9Kawya7KRBut3eaMHHIsh7hhXHszMiLL41TcW_TsiRXD4baq3nEYucGFwMjmp6Hhz-geVCebnKhqtsht6ni7oUUj8yK9zkh-7uDRcyYCAQC9mr7VNeh2rTVr-RnM.0Bbbq1BQlA3MnEtffctAFpx3Wft-0tIANuMAgv0CXwg&dib_tag=se&keywords=time+of+flight+sensor&qid=1748441943&sr=8-21">Time Of Flight Sensor</a></td>
+            <td><img src="other/time_of_flight_sensor/timeof3.png" alt="time-of-flight" width="79"></td>
+            <td>9$</td>
+        <tr>
+            <td>Camera and Processor</td>
+            <td><a href="https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1">Samsung Galaxy A53 5G</a></td>
+            <td><img src="other/phone/samsung.png" alt="samsung-galaxy-a53-5g-1649224506" width="120"></td>
+            <td>142$</td>
+        </tr>
+        <tr>
+            <td colspan="3"><strong>Total cost:</strong></td>
+            <td><strong>421$</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
+
 
 ## Mobility Management
 
