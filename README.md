@@ -81,7 +81,7 @@ Engineering Documentation
         <tr>
             <td>Camera and Processor</td>
             <td><a href="https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1">Samsung Galaxy A53 5G</a></td>
-            <td><img src="https://github.com/user-attachments/assets/11472760-da84-4123-ab61-4599d9e857b1" alt="samsung-galaxy-a53-5g-1649224506" width="120"></td>
+            <td><img src="other/phone/samsung.png" alt="samsung-galaxy-a53-5g-1649224506" width="120"></td>
             <td>142$</td>
         </tr>
         <tr>
