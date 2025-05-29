@@ -88,7 +88,7 @@ This section discusses all the parts used in the vehicle including the motors, s
     </tr>
       <td>Ultrasonic Sensor</td>
       <td><a href = "https://www.amazon.com/WWZMDiB-HC-SR04-Ultrasonic-Distance-Measuring/dp/B0B1MJJLJP/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.E2SIkElJhtFWCJCHL5Q6YwwtxyRhETnroFHfs4vAAJOjcW1L9dEwbj7bGniy3Pzy6L27ZFLNRdwTI4FVcgYKtnYKHKahio9ZyZa72jk1DZa4pvnNpjMaBYwEafzMDsrU1DWy1_HOlRrWNFoFsfeGA-Seq8DXEae_iaU754X9KoDaoDFvAMEwwrnDM6CdTvT420uo2v9w7A_ooCAaUVxTJlxzYv8n0E07VG6Ycfd5lS8.OEUDh4z78lpkOdU7BLjVaoVRoDB7bjIllFkaE5OLfrQ&dib_tag=se&keywords=Ultrasonic+Sensors&qid=1748517699&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"</td>ULTRASONIC</a></td>
-      <td><img src = "other/ultrasonic_sensor/ultra2.png" alt = "ultrasonic" width = "150"></td>
+      <td><img src = "other/ultrasonic_sensor/ultra2.png" alt = "ultrasonic" width = "120"></td>
       <td>$7</td>
     <tr>
       <td>Time of flight sensor</td>
@@ -104,7 +104,7 @@ This section discusses all the parts used in the vehicle including the motors, s
     </tr>
     <tr>
       <td colspan="3"><strong>Total Cost</strong></td>
-      <td><strong>$421</strong></td>
+      <td><strong>$428</strong></td>
     </tr>
   </tbody>
 </table>
