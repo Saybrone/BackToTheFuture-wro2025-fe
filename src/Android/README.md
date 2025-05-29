@@ -8,13 +8,20 @@ It takes in images from the 0.5x zoom camera for better FOV. Then filters and si
 ## Folder Structure
 ```
 AndroidStudio/
-├── app/                   # Kotlin source code
-├── build.gradle.kts       # Gradle configuration
-├── settings.gradle.kts    # Project settings
-└── README.md              # This file
+├── app/
+  └──src
+    └──main
+      └──java
+        └──com
+          └──howthe
+            └──flux
+              └──Mainactivity.kt  #main code
+├── build.gradle.kts
+├── settings.gradle.kts
+└── README.md
 ```
 The main body of the code is in this directory:
-AndroidStudio/app/src/main
+src/Android/AndroidStudio/app/src/main/java/com/howthe/flux/MainActivity.kt
 
 ---
 ## Camera Processing Example

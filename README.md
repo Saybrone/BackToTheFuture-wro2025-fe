@@ -10,14 +10,12 @@ TEAM BACK TO THE FUTURE
     </td>
   </tr>
   <tr>
-    <td width="60%">
+    <td width="65%">
       <img src="t-photos/TeamOfficial.jpg" alt="Official Photo" width="48%">
       <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="48%">
     </td>
     <td valign="top" style="padding-left: 0px;">
-      <p>
-        This repository details team <em>Back To The Future</em>'s building and programming process in our first participating year of the 2025 WRO Future Engineers Competition. 
-      </p>
+        This repository details team <em>Back To The Future</em>'s building and programming process in the 2025 WRO Future Engineers Competition. 
       We are team <em> Back To The Future</em>, three students who are passionate about technology and robotics. For this competition we built an autonomous vehicle. We worked after school and on weekends. Through this competition, we learned how to work as a team and solve problems related to robotics.
        </p>
         Team Members:
@@ -30,15 +28,14 @@ TEAM BACK TO THE FUTURE
 </table>
 
 ## Contents
-
-* `t-photos` contains photos of the team and logos
-* `v-photos` contains 6 photos of the vehicle
-* `video` contains the video.md file with the link to a video where driving demonstration exists
-* `schemes` contains one or several schematic diagrams in form of JPEG, PNG or PDF of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
+* `models` is for the 3D files we used to print our parts
+* `other` includes other files which can be used to understand how to prepare the vehicle for the competition. It includes documentations, datasets, hardware specifications, communication protocols,  descriptions etc.
+* `schemes` contains schematic diagrams of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
 * `src` contains code of control software for all components which were programmed to participate in the competition
-* `models` is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
-* `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
-
+* `t-photos` contains photos of the team and logos
+* `v-photos` contains 6 photos of the vehicle from various angles
+* `video` contains the video.md file with the link to our YouTube channel and the respective videos
+---
 ## Content of README
 - [Hardware](#hardware)
   - [Components](#components)
@@ -51,11 +48,9 @@ TEAM BACK TO THE FUTURE
     - [Sensors](#sensors)
 - [Software and Control](#software-and-control)
 - [Vehicle Assembly](#vehicle-assembly)
-
-
+---
 ## Hardware      
 This section discusses all the parts used in the vehicle including the motors, sensors, controllers, chassis, mechanisms and other elements.
-
 ### Components
 <table border="1" cellpadding="8" cellspacing="0">
   <thead>
@@ -138,16 +133,30 @@ This gearmotor is a powerful 12V brushed DC motor with a 102.08:1 metal gearbox 
 ### Power and Wiring
 
 ### Sensors
-Our vehicle uses the `Samsung Galaxy A53 5G`'s cameras for visual input. The code accesses the 64 MP ƒ/1.6 Main Camera with OIS for driving forward and 32 MP ƒ/2.2 Front Camera for going backwards.
-
+Our vehicle uses the `Samsung Galaxy A53 5G`'s cameras for visual input. The code accesses the 12MP(F2.2) 0.5x zoom back camera for input to maximise the field of view.
+To determine direction and keep track of turns, we utilize the Samsung Galaxy A53 5G's `GAME_ROTATION_VECTOR` sensor to measure the azimuth(yaw) angle.
 
 ## Software and Control
 This section discusses the control software for both rounds. It contains codes for each round. Both the open and obstacle rounds contain the turn direction identification code that uses the blue/orange lines and logic to count turns using the phones gyroscope. We only use the traffic sign identification on the obstacle round.
 ### Image Processing
+We use many steps to filter and manipulate the camera input to achieve our goal. Here you can see a simplified visualisation of what happens behind scenes.
+
+<img src="src/Android/examples/flowchart.png" alt="Flowchart" width="80%">
+
+These are the broad steps of our process to identify the traffic signs.
+<table>
+  <tr>
+    <td width="60%"><img src="src/Android/examples/process.gif" alt="gif" align="center"></td>
+    <td>We use OpenCV for processing the images. First we take the frame from the camera at 15fps and 640x480px resolution. Then we perform a flood fill from the bottom middle pixel of the screen while thresholding black and blue pixels to isolate the game mat. Then we find all the contours of this mask and filter out the ones that are on the outside edge and thereby are left with the borders of the traffic light rectangles. After finding the rectangles, we calculate their centres and send the distance between them and the bottom middle pixel to the EVN.</td>
+  </tr>
+</table>
+
+
 
 ### EVN Alpha
 For controlling the DC Motor With Encoder and the Servo Motor, our vehicle utilizes an EVN Alpha, based on the [RP2040](https://www.raspberrypi.com/products/rp2040/) microcontroller designed by Raspberry Pi. It features 4 motor drivers with encoder inputs, 2 UART controllers, 16 I2C ports (achieved with multiplexing of the 2 I2C controllers on RP2040), 4 Servo controllers and a USB-C port for charging and data transfer. It can be programmed with the [Arduino IDE](https://www.arduino.cc/en/software/), after installing the [Arduino Pico Core](github.com/earlephilhower/arduino-pico/) and [EVN Library](https://github.com/EVNdevs/EVN-arduino).
 
 ### Smarthphone
+Our vehicle uses the Samsung Galaxy A53 5G as the main processing unit and vision system. It runs the custom-built Android app responsible for all high-level decision-making. The smartphone's 12MP ultra-wide rear camera provides a broad field of view for traffic sign recognition and lane detection. Additionally, we leverage its GAME_ROTATION_VECTOR sensor to track yaw orientation and count turns accurately, enabling navigation through the open and obstacle rounds. The phone connects to the EVN Alpha via USB and communicates using a custom serial protocol. This setup eliminates the need for additional processing hardware, reducing complexity and cost.
 
 ## Vehicle Assembly  
