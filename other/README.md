@@ -10,4 +10,6 @@ When you click to  ` tof_sensor `  you can find time of flight sensor.
 
 When you click to  ` phone ` you can see the phone model that we used for obstacle challenge.
 
+When you click to  `arduino_nano ` you can see the photo of the arduino nano.
+
 When you click to  `ultrasonic_sensor` you can see the photo of the ultrasonic sensor.
