@@ -15,9 +15,7 @@ TEAM BACK TO THE FUTURE
       <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="48%">
     </td>
     <td valign="top" style="padding-left: 0px;">
-      <p>
-        This repository details team <em>Back To The Future</em>'s building and programming process in our first participating year of the 2025 WRO Future Engineers Competition. 
-      </p>
+        This repository details team <em>Back To The Future</em>'s building and programming process in the 2025 WRO Future Engineers Competition. 
       We are team <em> Back To The Future</em>, three students who are passionate about technology and robotics. For this competition we built an autonomous vehicle. We worked after school and on weekends. Through this competition, we learned how to work as a team and solve problems related to robotics.
        </p>
         Team Members:
