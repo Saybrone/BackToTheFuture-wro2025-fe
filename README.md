@@ -153,6 +153,8 @@ This gearmotor is a powerful 12V brushed DC motor with a 102.08:1 metal gearbox 
 Our robot uses the `Samsung Galaxy A53 5G`'s cameras for visual input. The code accesses the 64 MP ƒ/1.6 Main Camera with OIS for driving forward and 32 MP ƒ/2.2 Front Camera for going backwards.
 
   <td><img src="other/tof_sensor/tof3.png" alt="time-of-flight" width="80"></td>
+
+ Time-of-flight range sensor is a cutting-edge laser range module. It is a fully integrated device featuring an embedded infrared laser that is safe for human eyes, advanced filters, and ultra-high-speed photon detection arrays, all designed to enhance range, speed and accuracy. It can measure absolute distances up to 2 meters, establishing a new standard in ranging performance and enabling numerous new applications.
 <!-- add TOF -->
 
 ## Software and Control
