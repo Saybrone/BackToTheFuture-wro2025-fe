@@ -57,12 +57,12 @@ This section discusses all the parts used in the vehicle including the motors, s
       <img src="v-photos/left.jpg" width="100%"><br>
     </td>
     <td width="45%"; vertical-align: top;">
-      <img src="models/Differential.gif"><br>
+      <img src="models/Visuals/Differential.gif"><br>
     </td>
   </tr>
   <tr>
     <td style="vertical-align: top;">
-      <img src="models/SensorSteer.gif"><br>
+      <img src="models/Visuals/SensorSteer.gif"><br>
     </td>
   </tr>
 </table>
@@ -138,7 +138,7 @@ This section contains information about the vehicle's movement.
 ### Chassis and Design
 <table border="0">
   <tr>
-    <td width=%20><div class="wrap"><img src="models/Robot Chassis 2.1 v5.png" alt="motor tr.png" width=%50></div></td><td width=%80>The vehicle's chassis was designed completely by our team using Autodesk Fusion® program. It was designed to have a rectangular shape with a tapered front to increase steering range. It has cutouts for the motor, servo, sensors, cables and screw holes for mounting parts with M3 screws and LEGO® TECHNIC compatible pin holes to make assembly easier.
+    <td width=%20><div class="wrap"><img src="models/Visuals/Robot Chassis 2.1 v5.png" alt="motor tr.png" width=%50></div></td><td width=%80>The vehicle's chassis was designed completely by our team using Autodesk Fusion® program. It was designed to have a rectangular shape with a tapered front to increase steering range. It has cutouts for the motor, servo, sensors, cables and screw holes for mounting parts with M3 screws and LEGO® TECHNIC compatible pin holes to make assembly easier.
 It measures 171.2 mm in length, 100 mm in width and 25.7 mm in height, without the steering assembly.
 It was 3D printed with Hyper PLA filament on Ender 3 V3. The chassis has a mostly flat top side to increase 3D printing quality.
 The chassis was designed to fit all the components on one layer. It is also directly connected to the steering mechanism's main (stationary) part.
@@ -164,7 +164,7 @@ A gear compatible with the motor and the differential's gears was 3D printed
 ### Steering
 <table>
   <tr>
-    <td><img src="models/Steering.gif">
+    <td><img src="models/Visuals/Steering.gif">
     </td><td>The steering mechanism was designed by our team using Autodesk Fusion® to make adjustments easier. It was designed with respect to <a href=https://en.wikipedia.org/wiki/Ackermann_steering_geometry>Ackermann Steering Geometry</a> to increase turning predictability and accuracy. The design has been optimised in regards to wheel base and vehicle length to minimise slipping. It is mounted to the main steering part on the chassis using M3 screws and lock nuts.
     </td>
   </tr>
