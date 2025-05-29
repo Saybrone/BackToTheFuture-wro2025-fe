@@ -133,7 +133,7 @@ To determine direction and keep track of turns, we utilize the Samsung Galaxy A5
 This section discusses the control software for both rounds. It contains codes for each round. Both the open and obstacle rounds contain the turn direction identification code that uses the blue/orange lines and logic to count turns using the phones gyroscope. We only use the traffic sign identification on the obstacle round.
 ### Image Processing
 We use many steps to filter and manipulate the camera input to achieve our goal. Here you can see a simplified visualisation of what happens behind scenes.
-
+<img src="src/Android/examples/flowchart.png" alt="Flowchart" width="100%">
 Here you can see the broad steps of our process to identify the traffic signs.
 
 ### EVN Alpha
