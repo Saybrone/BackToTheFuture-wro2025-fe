@@ -143,7 +143,7 @@ With the mechanism, the steering assembly can turn -25 to +25 degrees relative t
 ## Power and Sense Management
 This section discusses the powering, wiring and sensing of the vehicle.
 
-### Power and Wiring
+<!-- ### Power and Wiring -->
 
 
 ### Sensors
