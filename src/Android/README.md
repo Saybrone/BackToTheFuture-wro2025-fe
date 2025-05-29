@@ -21,7 +21,7 @@ AndroidStudio/
 └── README.md
 ```
 The main body of the code is in this directory:
-[src/Android/AndroidStudio/app/src/main/java/com/howthe/flux/MainActivity.kt](src/Android/AndroidStudio/app/src/main/java/com/howthe/flux/MainActivity.kt)
+[src/Android/AndroidStudio/app/src/main/java/com/howthe/flux/MainActivity.kt](https://github.com/OzzyBozy/BackToTheFuture-wro2025-fe)
 
 ---
 ## Camera Processing Example
