@@ -141,7 +141,7 @@ This gearmotor is a powerful 12V brushed DC motor with a 102.08:1 metal gearbox 
 <img src="other/servo/servo2.png" alt="servo mg995" width="150"></td>
 
 ### Steering
- To control steering we use a 'Tower Pro MG995'. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo motor can rotate 270 degrees.
+ To control steering we use a `Tower Pro MG995`. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo motor can rotate 270 degrees.
 
 
 ## Power and Sense Management
