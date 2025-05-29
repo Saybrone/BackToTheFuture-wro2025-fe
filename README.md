@@ -86,16 +86,22 @@ This section discusses all the parts used in the vehicle including the motors, s
       <td><img src="other/evn/evn2.png" alt="evn" width="150"></td>
       <td>$168</td>
     </tr>
+    <tr>
+      <td>Battery</td>
+      <td><a href="https://www.pilpaketi.com/molicel-inr18650-p28a-2800-mah-35a-li-ion-pil?srsltid=AfmBOoq0NI6NCh02JlGpFI8KTAQyYEYrH5VP3xPdYOHkjVYT9HXYP0vB">Molicel 35A Li-ion battery</td>
+      <td><img src="other/battery/Battery.png" alt="battery" width="150"</td>
+      <td>$10x2</td>
+    </tr>
     </tr>
       <td>Ultrasonic Sensor</td>
       <td><a href = "https://www.amazon.com/WWZMDiB-HC-SR04-Ultrasonic-Distance-Measuring/dp/B0B1MJJLJP/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.E2SIkElJhtFWCJCHL5Q6YwwtxyRhETnroFHfs4vAAJOjcW1L9dEwbj7bGniy3Pzy6L27ZFLNRdwTI4FVcgYKtnYKHKahio9ZyZa72jk1DZa4pvnNpjMaBYwEafzMDsrU1DWy1_HOlRrWNFoFsfeGA-Seq8DXEae_iaU754X9KoDaoDFvAMEwwrnDM6CdTvT420uo2v9w7A_ooCAaUVxTJlxzYv8n0E07VG6Ycfd5lS8.OEUDh4z78lpkOdU7BLjVaoVRoDB7bjIllFkaE5OLfrQ&dib_tag=se&keywords=Ultrasonic+Sensors&qid=1748517699&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"</td>HC-SR04</a></td>
       <td><img src = "other/ultrasonic_sensor/ultra2.png" alt = "ultrasonic" width = "120"></td>
-      <td>$7</td>
+      <td>$7x2</td>
     <tr>
       <td>Time of Flight Sensor</td>
       <td><a href="https://www.amazon.com/dp/B099N2JW89">VL53L0X</a></td>
       <td><img src="other/tof_sensor/tof3.png" alt="time-of-flight" width="79"></td>
-      <td>$9</td>
+      <td>$9x2</td>
     </tr>
     <tr>
       <td>Camera and Processor</td>
@@ -105,7 +111,7 @@ This section discusses all the parts used in the vehicle including the motors, s
     </tr>
     <tr>
       <td colspan="3"><strong>Total Cost</strong></td>
-      <td><strong>$446</strong></td>
+      <td><strong>$928</strong></td>
     </tr>
   </tbody>
 </table>
