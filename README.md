@@ -3,18 +3,18 @@
 
 Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 ===
-<table>
-  <tr>
-    <td colspan="2">
+<table border="0">
+  <tr border="0">
+    <td  border="0" colspan="2">
       <img src="t-photos/logo/Banner.png" alt="Banner" width="100%">
     </td>
   </tr>
-  <tr>
-    <td width="65%">
+  <tr border="0">
+    <td width="65%"  border="0">
       <img src="t-photos/TeamOfficial.jpg" alt="Official Photo" width="48%">
       <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="48%">
     </td>
-    <td valign="top" style="padding-left: 0px;">
+    <td valign="top" style="padding-left: 0px;" border="0">
         This repository details team <em>Back To The Future</em>'s building and programming process in the 2025 WRO Future Engineers Competition. 
       We are team <em> Back To The Future</em>, three students who are passionate about technology and robotics. For this competition we built an autonomous vehicle. We worked after school and on weekends. Through this competition, we learned how to work as a team and solve problems related to robotics.
        </p>
@@ -123,22 +123,38 @@ The chassis was designed to fit all the components on one layer. It is also dire
 The front and back tires used are LEGO® #39367pb02 wheels. They were chosen because they have smaller contact area with the ground thus increasing predictability and decreasing slippage.
 
 ### Locomotion
-<!-- ADD RUNNING BACK AXLE .gif -->
+<!-- ADD RUNNING BACK AXLE .gif --> 
 The robot moves forward-backward with a rear wheel drive (RWD) mechanism. The wheels are connected to the motor with a LEGO® differential (#65413, #65414, 5x #6589) to prevent slipping of wheels while cornering.
 The back axle is held in place by the chassis' supporting legs.
+<table border="0">
+  <tr>
+    <td width=%20><img src="other/motor/motor_trn.png" alt="motor tr.png"></td><td>The motor driving the differential is a powerful 12V brushed DC gearmotor with a 102.08:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 6533 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
+A gear compatible with the motor and the differential's gears was 3D printed
+</td>
+  </tr>
+</table>
 
-<img src="other/motor/motor_trn.png" alt="motor tr.png" width="150"></td>
 The motor driving the differential is a powerful 12V brushed DC gearmotor with a 102.08:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 6533 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
 A gear compatible with the motor and the differential's gears was 3D printed
 
 ### Steering
-The steering mechanism was designed by our team using the same program to make adjustments easier. It was designed with respect to [Ackermann Steering Geometry](https://en.wikipedia.org/wiki/Ackermann_steering_geometry) to increase turning predictability and accuracy.
-It is mounted to the main steering part on the chassis using M3 screws and lock nuts.
+<table>
+  <tr>
+    <td><img src="models/Steering.gif">
+    </td><td>The steering mechanism was designed by our team using Autodesk Fusion® to make adjustments easier. It was designed with respect to <a href=https://en.wikipedia.org/wiki/Ackermann_steering_geometry>Ackermann Steering Geometry</a> to increase turning predictability and accuracy. The design has been optimised in regards to wheel base and vehicle length to minimise slipping. It is mounted to the main steering part on the chassis using M3 screws and lock nuts.
+    </td>
+  </tr>
+</table>
 
-<img src="other/servo/servo2.png" alt="servo mg995" width="150"></td>
-To control steering we use a `Tower Pro MG995`. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo motor can rotate 270 degrees.
+<table>
+  <tr>
+    <td>To control steering we use a `Tower Pro MG995`. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo   motor can rotate 270 degrees.
 The linear extension part was screwed on the servo's output shaft. Steering control rod was screwed on the hole furthest from the shaft.
 With the mechanism, the steering assembly can turn -25 to +25 degrees relative to the servo. This was enough to maneuver around the obstacles, considering the small turning radius of the vehicle (~42 cm).
+</td><td width="%30"><img src="other/servo/servo2.png" alt="servo mg995" ></td>
+  </tr>
+</table>
+
 
 ## Power and Sense Management
 This section discusses the powering, wiring and sensing of the vehicle.
@@ -149,7 +165,7 @@ This section discusses the powering, wiring and sensing of the vehicle.
 ### Sensors
 Our vehicle uses the `Samsung Galaxy A53 5G`'s cameras for visual input. The code accesses the 12MP(F2.2) 0.5x zoom back camera for input to maximise the field of view.
 To determine direction and keep track of turns, we utilize the Samsung Galaxy A53 5G's `GAME_ROTATION_VECTOR` sensor to measure the azimuth(yaw) angle.
-
+<!--add distance sensor-->
 ## Software and Control
 This section discusses the control software for both rounds. It contains codes for each round. Both the open and obstacle rounds contain the turn direction identification code that uses the blue/orange lines and logic to count turns using the smartphone's gyroscope. We only use the traffic sign identification on the obstacle round.
 
@@ -159,7 +175,7 @@ We use many steps to filter and manipulate the camera input to achieve our goal.
 <img src="src/Android/examples/flowchart.png" alt="Flowchart" width="80%">
 
 These are the broad steps of our process to identify the traffic signs.
-<table>
+<table border="0">
   <tr>
     <td width="60%"><img src="src/Android/examples/process.gif" alt="gif" align="center"></td>
     <td>We use OpenCV for processing the images. First we take the frame from the camera at 15fps and 640x480px resolution. Then we perform a flood fill from the bottom middle pixel of the screen while thresholding black and blue pixels to isolate the game mat. Then we find all the contours of this mask and filter out the ones that are on the outside edge and thereby are left with the borders of the traffic light rectangles. After finding the rectangles, we calculate their centres and send the distance between them and the bottom middle pixel to the EVN.</td>
@@ -171,7 +187,7 @@ These are the broad steps of our process to identify the traffic signs.
 ### EVN Alpha
 For controlling the DC Motor With Encoder and the Servo Motor, our vehicle utilizes an EVN Alpha, based on the [RP2040](https://www.raspberrypi.com/products/rp2040/) microcontroller designed by Raspberry Pi. It features 4 motor drivers with encoder inputs, 2 UART controllers, 16 I2C ports (achieved with multiplexing of the 2 I2C controllers on RP2040), 4 Servo controllers and a USB-C port for charging and data transfer. It can be programmed with the [Arduino IDE](https://www.arduino.cc/en/software/), after installing the [Arduino Pico Core](github.com/earlephilhower/arduino-pico/) and [EVN Library](https://github.com/EVNdevs/EVN-arduino).
 
-### Smarthphone
+### Smartphone
 Our vehicle uses the Samsung Galaxy A53 5G as the main processing unit and vision system. It runs the custom-built Android app responsible for all high-level decision-making. The smartphone's 12MP ultra-wide rear camera provides a broad field of view for traffic sign recognition and lane detection. Additionally, we leverage its GAME_ROTATION_VECTOR sensor to track yaw orientation and count turns accurately, enabling navigation through the open and obstacle rounds. The phone connects to the EVN Alpha via USB and communicates using a custom serial protocol. This setup eliminates the need for additional processing hardware, reducing complexity and cost.
 
 <!-- ## Vehicle Assembly -->  
