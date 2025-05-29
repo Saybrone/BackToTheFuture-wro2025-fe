@@ -134,12 +134,11 @@ TEAM BACK TO THE FUTURE
 
 
 ### Locomotion
- ![pololu](https://github.com/user-attachments/assets/98ad7a46-8e2f-4e3d-b88e-eaa1144e8000)
+<img src="other/motor/motor_trn.png" alt="motor tr.png" width="150"></td>
 
  Our robot uses 'Pololu Metal Gearmotor'. This gearmotor is a powerful 12V brushed DC motor with a 30:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 1920 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
  <!-- update motor -->
- ![5636c657-0cd0-4d13-8898-64bef9c5e61f](https://github.com/user-attachments/assets/496ba26b-fb70-4716-afa9-adf85f60039e)
-
+<img src="other/servo/servo2.png" alt="servo mg995" width="150"></td>
 
 ### Steering
  To control steering we use a 'Tower Pro MG995'. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo motor can rotate 270 degrees.
@@ -148,7 +147,7 @@ TEAM BACK TO THE FUTURE
 ## Power and Sense Management
 ### Power and Wiring
 ### Sensors
-![313c07cd-1411-4db1-8fcf-41a2f3f53fa0](https://github.com/user-attachments/assets/1457b2ef-e899-43d1-bb90-d939aba67b07)
+<img src="other/phone/samsung.png" alt="samsung-galaxy-a53-5g-1649224506" width="170"></td>
 
 
 Our robot uses the `Samsung Galaxy A53 5G`'s cameras for visual input. The code accesses the 64 MP ƒ/1.6 Main Camera with OIS for driving forward and 32 MP ƒ/2.2 Front Camera for going backwards.
