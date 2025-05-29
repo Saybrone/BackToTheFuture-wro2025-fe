@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewListe
     private val upperBlue  = Scalar(160.0, 255.0, 160.0)
     private val lowerBlack = Scalar(  0.0,   0.0, brightnessThreshold)
     private val upperBlack = Scalar(170.0, 255.0, 255.0)
-    
+
     private val frameInterval = 1000L / 15L
     @Volatile private var lastProcessTime = 0L
     @Volatile private var busy            = false
@@ -76,6 +76,7 @@ class MainActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewListe
                 if (device != null) {
                     connectToDevice(device)
                 }
+            }
         }
     }
 
@@ -141,7 +142,6 @@ class MainActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewListe
         Log.d("USB", "requestPermissionAndConnect called")
         val drivers = UsbSerialProber.getDefaultProber().findAllDrivers(usbManager)
         if (drivers.isEmpty()) {
-            Log.e("USB", "No USB drivers found")
             return
         }
 
@@ -176,13 +176,11 @@ class MainActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewListe
     private fun connectToDevice(device: UsbDevice) {
         val connection = usbManager.openDevice(device)
         if (connection == null) {
-            Log.e("USB", "Failed to open USB connection")
             return
         }
 
         val driver = UsbSerialProber.getDefaultProber().probeDevice(device)
         if (driver == null || driver.ports.isEmpty()) {
-            Log.e("USB", "No USB serial driver or ports found")
             return
         }
 
@@ -208,7 +206,7 @@ class MainActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewListe
                 x.toByte(),
                 y.toByte()
             )
-            port.write(data, 0)
+            port.write(data, 10)
         } catch (e: Exception) {
             Log.e("BT-SEND", "Write failed", e)
         }
@@ -298,10 +296,10 @@ class MainActivity : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewListe
     private lateinit var kernel:          Mat
     private lateinit var lastFrame:       Mat
 
-var hasSaved=true
+    var hasSaved=false
+    var findDir=true
     override fun onCameraFrame(inputFrame: CameraBridgeViewBase.CvCameraViewFrame?): Mat {
         inputFrame!!.rgba().copyTo(rgbaMat)
-
         val now = System.currentTimeMillis()
         if (!busy && now - lastProcessTime >= frameInterval) {
             busy = true
@@ -311,8 +309,8 @@ var hasSaved=true
                 Imgproc.cvtColor(rgbaMat, rgbMat, Imgproc.COLOR_RGBA2RGB)
                 rgbMat.copyTo(rgbCopy)
                 if (hasSaved) saveMatAsJpeg(rgbMat)
-
                 Imgproc.cvtColor(rgbMat, hsv1, Imgproc.COLOR_RGB2HSV)
+                if (findDir) findTurnDirection(hsv1)
                 Core.inRange(hsv1, lowerBlue, upperBlue, blueMask)
                 Imgproc.cvtColor(blueMask, blueWhiteMask, Imgproc.COLOR_GRAY2BGR)
                 blueWhiteMask.setTo(Scalar(255.0, 255.0, 255.0), blueMask)
@@ -385,7 +383,7 @@ var hasSaved=true
                     if (h[3].toInt() == -1) continue
 
                     val cnt = contours[i]
-                    if (Imgproc.contourArea(cnt) < 40.0) continue
+                    if (Imgproc.contourArea(cnt) < 400.0) continue
 
                     contourMask.create(rgbCopy.size(), CvType.CV_8UC1)
                     contourMask.setTo(Scalar(0.0))
@@ -408,7 +406,7 @@ var hasSaved=true
                     val cy = (M.m01 / M.m00).toInt()
                     val dx = cx - bottomX
                     val dy = bottomY - cy
-                    send(label, dx, dy)
+                    send(label, dx/2, dy/2)
 
                     Imgproc.circle(
                         frameMat,
@@ -460,12 +458,59 @@ var hasSaved=true
         val thresholdSeek = findViewById<SeekBar>(R.id.thresholdSeek)
         thresholdSeek.progress = brightnessThreshold.toInt()
         findViewById<TextView>(R.id.thresholdValue).text = "Threshold: ${thresholdSeek.progress}"
-
     }
-
 
     override fun onPause() {
         super.onPause()
+    }
+
+    fun findTurnDirection(hsv1: Mat) {
+        val vChannel = Mat()
+        Core.extractChannel(hsv1, vChannel, 2)
+        val floorMask = Mat()
+        Imgproc.threshold(vChannel, floorMask, brightnessThreshold, 255.0, Imgproc.THRESH_BINARY)
+
+        val floodMask = Mat(floorMask.rows() + 2, floorMask.cols() + 2, CvType.CV_8UC1, Scalar(0.0))
+        val seed = Point(floorMask.cols() / 2.0, floorMask.rows() - 1.0)
+        Imgproc.floodFill(floorMask, floodMask, seed, Scalar(255.0), null, Scalar(0.0), Scalar(0.0), Imgproc.FLOODFILL_MASK_ONLY)
+
+        val floodArea = floodMask.submat(1, floodMask.rows() - 1, 1, floodMask.cols() - 1)
+
+        val blueMask = Mat()
+        val orangeMask = Mat()
+        Core.inRange(hsv1, Scalar(100.0, 100.0, 50.0), Scalar(130.0, 255.0, 255.0), blueMask)
+        Core.inRange(hsv1, Scalar(10.0, 100.0, 100.0), Scalar(25.0, 255.0, 255.0), orangeMask)
+
+        var lowestBlueY = -1
+        var lowestOrangeY = -1
+
+        fun processColor(mask: Mat, floodArea: Mat, update: (Int) -> Unit) {
+            val contours = mutableListOf<MatOfPoint>()
+            Imgproc.findContours(mask, contours, Mat(), Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE)
+            for (cnt in contours) {
+                if (Imgproc.contourArea(cnt) < 50) continue
+                val colorMask = Mat.zeros(mask.size(), CvType.CV_8UC1)
+                Imgproc.drawContours(colorMask, listOf(cnt), -1, Scalar(255.0), -1)
+
+                val intersection = Mat()
+                Core.bitwise_and(colorMask, floodArea, intersection)
+
+                if (Core.countNonZero(intersection) > 0) {
+                    for (pt in cnt.toArray()) {
+                        update(pt.y.toInt())
+                    }
+                }
+            }
+        }
+
+        processColor(blueMask, floodArea) { y -> if (y > lowestBlueY) lowestBlueY = y }
+        processColor(orangeMask, floodArea) { y -> if (y > lowestOrangeY) lowestOrangeY = y }
+
+        when {
+            lowestBlueY > lowestOrangeY ->send('B', 0, 0)
+            lowestOrangeY > lowestBlueY ->send('O', 0, 0)
+        }
+        findDir=false
     }
 
     private fun SeekBar.onChange(block: (Int) -> Unit) {
