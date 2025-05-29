@@ -51,8 +51,24 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 
 ## Hardware      
 This section discusses all the parts used in the vehicle including the motors, sensors, controllers, chassis, mechanisms and other elements.
+<table style="width: 100%">
+  <tr>
+    <td rowspan="2" style="width: 50%; vertical-align: top;">
+      <img src="v-photos/left.jpg" width="100%"><br>
+    </td>
+    <td width="45%"; vertical-align: top;">
+      <img src="models/Differential.gif"><br>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;">
+      <img src="models/SensorSteer.gif"><br>
+    </td>
+  </tr>
+</table>
+
 ### Electronic Components
-<table border="1" cellpadding="8" cellspacing="0">
+<table border="1" cellpadding="12" cellspacing="0">
   <thead>
     <tr>
       <th>Component</th>
@@ -85,16 +101,22 @@ This section discusses all the parts used in the vehicle including the motors, s
       <td><img src="other/evn/evn2.png" alt="evn" width="150"></td>
       <td>$168</td>
     </tr>
+    <tr>
+      <td>Battery</td>
+      <td><a href="https://www.pilpaketi.com/molicel-inr18650-p28a-2800-mah-35a-li-ion-pil?srsltid=AfmBOoq0NI6NCh02JlGpFI8KTAQyYEYrH5VP3xPdYOHkjVYT9HXYP0vB">Molicel 35A Li-ion battery</td>
+      <td><img src="other/battery/Battery.png" alt="battery" width="150"</td>
+      <td>$10x2</td>
+    </tr>
     </tr>
       <td>Ultrasonic Sensor</td>
       <td><a href = "https://www.amazon.com/WWZMDiB-HC-SR04-Ultrasonic-Distance-Measuring/dp/B0B1MJJLJP/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.E2SIkElJhtFWCJCHL5Q6YwwtxyRhETnroFHfs4vAAJOjcW1L9dEwbj7bGniy3Pzy6L27ZFLNRdwTI4FVcgYKtnYKHKahio9ZyZa72jk1DZa4pvnNpjMaBYwEafzMDsrU1DWy1_HOlRrWNFoFsfeGA-Seq8DXEae_iaU754X9KoDaoDFvAMEwwrnDM6CdTvT420uo2v9w7A_ooCAaUVxTJlxzYv8n0E07VG6Ycfd5lS8.OEUDh4z78lpkOdU7BLjVaoVRoDB7bjIllFkaE5OLfrQ&dib_tag=se&keywords=Ultrasonic+Sensors&qid=1748517699&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"</td>HC-SR04</a></td>
       <td><img src = "other/ultrasonic_sensor/ultra2.png" alt = "ultrasonic" width = "120"></td>
-      <td>$7</td>
+      <td>$7x2</td>
     <tr>
       <td>Time of Flight Sensor</td>
       <td><a href="https://www.amazon.com/dp/B099N2JW89">VL53L0X</a></td>
       <td><img src="other/tof_sensor/tof3.png" alt="time-of-flight" width="79"></td>
-      <td>$9</td>
+      <td>$9x2</td>
     </tr>
     <tr>
       <td>Camera and Processor</td>
@@ -104,7 +126,7 @@ This section discusses all the parts used in the vehicle including the motors, s
     </tr>
     <tr>
       <td colspan="3"><strong>Total Cost</strong></td>
-      <td><strong>$446</strong></td>
+      <td><strong>$928</strong></td>
     </tr>
   </tbody>
 </table>
@@ -114,12 +136,15 @@ This section discusses all the parts used in the vehicle including the motors, s
 This section contains information about the vehicle's movement.
 
 ### Chassis and Design
-<!-- ADD CHASSIS PHOTO -->
-The vehicle's chassis was designed completely by our team using Autodesk Fusion® program. It was designed to have a rectangular shape with a tapered front to increase steering range. It has cutouts for the motor, servo, sensors, cables and screw holes for mounting parts with M3 screws and LEGO® TECHNIC compatible pin holes to make assembly easier.
+<table border="0">
+  <tr>
+    <td width=%20><div class="wrap"><img src="models/Robot Chassis 2.1 v5.png" alt="motor tr.png" width=%50></div></td><td width=%80>The vehicle's chassis was designed completely by our team using Autodesk Fusion® program. It was designed to have a rectangular shape with a tapered front to increase steering range. It has cutouts for the motor, servo, sensors, cables and screw holes for mounting parts with M3 screws and LEGO® TECHNIC compatible pin holes to make assembly easier.
 It measures 171.2 mm in length, 100 mm in width and 25.7 mm in height, without the steering assembly.
 It was 3D printed with Hyper PLA filament on Ender 3 V3. The chassis has a mostly flat top side to increase 3D printing quality.
 The chassis was designed to fit all the components on one layer. It is also directly connected to the steering mechanism's main (stationary) part.
-The front and back tires used are LEGO® #39367pb02 wheels. They were chosen because they have smaller contact area with the ground thus increasing predictability and decreasing slippage.
+The front and back tires used are LEGO® #39367pb02 wheels. They were chosen because they have smaller contact area with the ground thus increasing predictability and decreasing slippage.</td>
+  </tr>
+</table>
 
 ### Locomotion
 <!-- ADD RUNNING BACK AXLE .gif --> 
@@ -164,7 +189,7 @@ This section discusses the powering, wiring and sensing of the vehicle.
 ### Sensors
 Our vehicle uses the `Samsung Galaxy A53 5G`'s cameras for visual input. The code accesses the 12MP(F2.2) 0.5x zoom back camera for input to maximise the field of view.
 To determine direction and keep track of turns, we utilize the Samsung Galaxy A53 5G's `GAME_ROTATION_VECTOR` sensor to measure the azimuth(yaw) angle.
-<!--add distance sensor-->
+
 ## Software and Control
 This section discusses the control software for both rounds. It contains codes for each round. Both the open and obstacle rounds contain the turn direction identification code that uses the blue/orange lines and logic to count turns using the smartphone's gyroscope. We only use the traffic sign identification on the obstacle round.
 
