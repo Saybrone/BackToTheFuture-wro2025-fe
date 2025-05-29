@@ -82,7 +82,7 @@ This section discusses all the parts used in the vehicle including the motors, s
   <tr>
     <td>Arduino Nano</td>
       <td><a href="https://www.amazon.com/Arduino-Nano-Every-headers-Mounted/dp/B07WWK29XF/ref=sr_1_6?dib=eyJ2IjoiMSJ9.6QPRL9EGieCqVheJYNSvYLiNSaIKqAuyrl-iTXMnEEFxjRF91-4yBiNZ6nyKh5ycpBOX44QOmPRK7fL3HVLo2QC2_QmAm-7GL2P5Z-mCouxmwDNTEQJyOoxRi9AEIPjNBUgLOiy90Prhtw6UN2BxDhMu7ViOaG3R5O15E3tL0jTF4MEzSOtHVFYsoVMhNjp9DDzrsWomxCVR0Mx8RJisD0e4Xk5l8poPY9SfpBqtgK8.0iYflxus7jVqie86k-tM8DtWQV5-URD3P1OsP7q5PeI&dib_tag=se&keywords=arduino+nano&qid=1748520860&sr=8-6">Arduino Nano</a></td>
-      <td><img src="other/arduino_nano" alt="nano" width="120"></td>
+      <td><img src="other/arduino_nano/nano1.png" alt="nano" width="120"></td>
       <td>$18</td>
     <tr>
       <td>Motor Controller</td>
@@ -109,7 +109,7 @@ This section discusses all the parts used in the vehicle including the motors, s
     </tr>
     <tr>
       <td colspan="3"><strong>Total Cost</strong></td>
-      <td><strong>$428</strong></td>
+      <td><strong>$446</strong></td>
     </tr>
   </tbody>
 </table>
