@@ -1,7 +1,7 @@
 
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
-TEAM BACK TO THE FUTURE
+Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 ===
 <table>
   <tr>
@@ -49,9 +49,10 @@ TEAM BACK TO THE FUTURE
 - [Software and Control](#software-and-control)
 - [Vehicle Assembly](#vehicle-assembly)
 ---
+
 ## Hardware      
 This section discusses all the parts used in the vehicle including the motors, sensors, controllers, chassis, mechanisms and other elements.
-### Components
+### Electronic Components
 <table border="1" cellpadding="8" cellspacing="0">
   <thead>
     <tr>
@@ -76,7 +77,7 @@ This section discusses all the parts used in the vehicle including the motors, s
     </tr>
   <tr>
     <td>Arduino Nano</td>
-      <td><a href="https://www.amazon.com/Arduino-Nano-Every-headers-Mounted/dp/B07WWK29XF/ref=sr_1_6?dib=eyJ2IjoiMSJ9.6QPRL9EGieCqVheJYNSvYLiNSaIKqAuyrl-iTXMnEEFxjRF91-4yBiNZ6nyKh5ycpBOX44QOmPRK7fL3HVLo2QC2_QmAm-7GL2P5Z-mCouxmwDNTEQJyOoxRi9AEIPjNBUgLOiy90Prhtw6UN2BxDhMu7ViOaG3R5O15E3tL0jTF4MEzSOtHVFYsoVMhNjp9DDzrsWomxCVR0Mx8RJisD0e4Xk5l8poPY9SfpBqtgK8.0iYflxus7jVqie86k-tM8DtWQV5-URD3P1OsP7q5PeI&dib_tag=se&keywords=arduino+nano&qid=1748520860&sr=8-6">Arduino Nano</a></td>
+      <td><a href="https://www.amazon.com/Arduino-Nano-Every-headers-Mounted/dp/B07WWK29XF/ref=sr_1_6?dib=eyJ2IjoiMSJ9.6QPRL9EGieCqVheJYNSvYLiNSaIKqAuyrl-iTXMnEEFxjRF91-4yBiNZ6nyKh5ycpBOX44QOmPRK7fL3HVLo2QC2_QmAm-7GL2P5Z-mCouxmwDNTEQJyOoxRi9AEIPjNBUgLOiy90Prhtw6UN2BxDhMu7ViOaG3R5O15E3tL0jTF4MEzSOtHVFYsoVMhNjp9DDzrsWomxCVR0Mx8RJisD0e4Xk5l8poPY9SfpBqtgK8.0iYflxus7jVqie86k-tM8DtWQV5-URD3P1OsP7q5PeI&dib_tag=se&keywords=arduino+nano&qid=1748520860&sr=8-6">ABX00033</a></td>
       <td><img src="other/arduino_nano/nano1.png" alt="nano" width="120"></td>
       <td>$18</td>
     <tr>
@@ -87,12 +88,12 @@ This section discusses all the parts used in the vehicle including the motors, s
     </tr>
     </tr>
       <td>Ultrasonic Sensor</td>
-      <td><a href = "https://www.amazon.com/WWZMDiB-HC-SR04-Ultrasonic-Distance-Measuring/dp/B0B1MJJLJP/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.E2SIkElJhtFWCJCHL5Q6YwwtxyRhETnroFHfs4vAAJOjcW1L9dEwbj7bGniy3Pzy6L27ZFLNRdwTI4FVcgYKtnYKHKahio9ZyZa72jk1DZa4pvnNpjMaBYwEafzMDsrU1DWy1_HOlRrWNFoFsfeGA-Seq8DXEae_iaU754X9KoDaoDFvAMEwwrnDM6CdTvT420uo2v9w7A_ooCAaUVxTJlxzYv8n0E07VG6Ycfd5lS8.OEUDh4z78lpkOdU7BLjVaoVRoDB7bjIllFkaE5OLfrQ&dib_tag=se&keywords=Ultrasonic+Sensors&qid=1748517699&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"</td>ULTRASONIC</a></td>
+      <td><a href = "https://www.amazon.com/WWZMDiB-HC-SR04-Ultrasonic-Distance-Measuring/dp/B0B1MJJLJP/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.E2SIkElJhtFWCJCHL5Q6YwwtxyRhETnroFHfs4vAAJOjcW1L9dEwbj7bGniy3Pzy6L27ZFLNRdwTI4FVcgYKtnYKHKahio9ZyZa72jk1DZa4pvnNpjMaBYwEafzMDsrU1DWy1_HOlRrWNFoFsfeGA-Seq8DXEae_iaU754X9KoDaoDFvAMEwwrnDM6CdTvT420uo2v9w7A_ooCAaUVxTJlxzYv8n0E07VG6Ycfd5lS8.OEUDh4z78lpkOdU7BLjVaoVRoDB7bjIllFkaE5OLfrQ&dib_tag=se&keywords=Ultrasonic+Sensors&qid=1748517699&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"</td>HC-SR04</a></td>
       <td><img src = "other/ultrasonic_sensor/ultra2.png" alt = "ultrasonic" width = "120"></td>
       <td>$7</td>
     <tr>
-      <td>Time of flight sensor</td>
-      <td><a href="https://www.amazon.com/dp/B099N2JW89">Time Of Flight Sensor</a></td>
+      <td>Time of Flight Sensor</td>
+      <td><a href="https://www.amazon.com/dp/B099N2JW89">VL53L0X</a></td>
       <td><img src="other/tof_sensor/tof3.png" alt="time-of-flight" width="79"></td>
       <td>$9</td>
     </tr>
@@ -111,33 +112,47 @@ This section discusses all the parts used in the vehicle including the motors, s
 
 
 ## Mobility Management
-This section contains information about the vehicle's movement. 
+This section contains information about the vehicle's movement.
 
 ### Chassis and Design
-
+<!-- ADD CHASSIS PHOTO -->
+The vehicle's chassis was designed completely by our team using Autodesk Fusion® program. It was designed to have a rectangular shape with a tapered front to increase steering range. It has cutouts for the motor, servo, sensors, cables and screw holes for mounting parts with M3 screws and LEGO® TECHNIC compatible pin holes to make assembly easier.
+It measures 171.2 mm in length, 100 mm in width and 25.7 mm in height, without the steering assembly.
+It was 3D printed with Hyper PLA filament on Ender 3 V3. The chassis has a mostly flat top side to increase 3D printing quality.
+The chassis was designed to fit all the components on one layer. It is also directly connected to the steering mechanism's main (stationary) part.
+The front and back tires used are LEGO® #39367pb02 wheels. They were chosen because they have smaller contact area with the ground thus increasing predictability and decreasing slippage.
 
 ### Locomotion
+<!-- ADD RUNNING BACK AXLE .gif -->
+The robot moves forward-backward with a rear wheel drive (RWD) mechanism. The wheels are connected to the motor with a LEGO® differential (#65413, #65414, 5x #6589) to prevent slipping of wheels while cornering.
+The back axle is held in place by the chassis' supporting legs.
 
 <img src="other/motor/motor_trn.png" alt="motor tr.png" width="150"></td>
-
-This gearmotor is a powerful 12V brushed DC motor with a 102.08:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 6533 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
- <!-- update motor -->
-<img src="other/servo/servo2.png" alt="servo mg995" width="150"></td>
+The motor driving the differential is a powerful 12V brushed DC gearmotor with a 102.08:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 6533 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
+A gear compatible with the motor and the differential's gears was 3D printed
 
 ### Steering
- To control steering we use a `Tower Pro MG995`. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo motor can rotate 270 degrees.
+The steering mechanism was designed by our team using the same program to make adjustments easier. It was designed with respect to [Ackermann Steering Geometry](https://en.wikipedia.org/wiki/Ackermann_steering_geometry) to increase turning predictability and accuracy.
+It is mounted to the main steering part on the chassis using M3 screws and lock nuts.
 
+<img src="other/servo/servo2.png" alt="servo mg995" width="150"></td>
+To control steering we use a `Tower Pro MG995`. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo motor can rotate 270 degrees.
+The linear extension part was screwed on the servo's output shaft. Steering control rod was screwed on the hole furthest from the shaft.
+With the mechanism, the steering assembly can turn -25 to +25 degrees relative to the servo. This was enough to maneuver around the obstacles, considering the small turning radius of the vehicle (~42 cm).
 
 ## Power and Sense Management
+This section discusses the powering, wiring and sensing of the vehicle.
 
 ### Power and Wiring
+
 
 ### Sensors
 Our vehicle uses the `Samsung Galaxy A53 5G`'s cameras for visual input. The code accesses the 12MP(F2.2) 0.5x zoom back camera for input to maximise the field of view.
 To determine direction and keep track of turns, we utilize the Samsung Galaxy A53 5G's `GAME_ROTATION_VECTOR` sensor to measure the azimuth(yaw) angle.
 
 ## Software and Control
-This section discusses the control software for both rounds. It contains codes for each round. Both the open and obstacle rounds contain the turn direction identification code that uses the blue/orange lines and logic to count turns using the phones gyroscope. We only use the traffic sign identification on the obstacle round.
+This section discusses the control software for both rounds. It contains codes for each round. Both the open and obstacle rounds contain the turn direction identification code that uses the blue/orange lines and logic to count turns using the smartphone's gyroscope. We only use the traffic sign identification on the obstacle round.
+
 ### Image Processing
 We use many steps to filter and manipulate the camera input to achieve our goal. Here you can see a simplified visualisation of what happens behind scenes.
 
@@ -159,4 +174,4 @@ For controlling the DC Motor With Encoder and the Servo Motor, our vehicle utili
 ### Smarthphone
 Our vehicle uses the Samsung Galaxy A53 5G as the main processing unit and vision system. It runs the custom-built Android app responsible for all high-level decision-making. The smartphone's 12MP ultra-wide rear camera provides a broad field of view for traffic sign recognition and lane detection. Additionally, we leverage its GAME_ROTATION_VECTOR sensor to track yaw orientation and count turns accurately, enabling navigation through the open and obstacle rounds. The phone connects to the EVN Alpha via USB and communicates using a custom serial protocol. This setup eliminates the need for additional processing hardware, reducing complexity and cost.
 
-## Vehicle Assembly  
+<!-- ## Vehicle Assembly -->  
