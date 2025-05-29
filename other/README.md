@@ -8,4 +8,6 @@ When you click to  ` motor `  you can find our metal gearmotor with encoder.
 
 When you click to  ` tof_sensor `  you can find time of flight sensor.
 
-When you click to  ` phone ` you can see the phone model that we used for obstacle challenge
+When you click to  ` phone ` you can see the phone model that we used for obstacle challenge.
+
+When you click to  `ultrasonic_sensor` you can see the photo of the ultrasonic sensor.
