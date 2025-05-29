@@ -136,7 +136,7 @@ TEAM BACK TO THE FUTURE
 ### Locomotion
 <img src="other/motor/motor_trn.png" alt="motor tr.png" width="150"></td>
 
- Our robot uses 'Pololu Metal Gearmotor'. This gearmotor is a powerful 12V brushed DC motor with a 30:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 1920 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
+This gearmotor is a powerful 12V brushed DC motor with a 102.08:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 6533 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
  <!-- update motor -->
 <img src="other/servo/servo2.png" alt="servo mg995" width="150"></td>
 
