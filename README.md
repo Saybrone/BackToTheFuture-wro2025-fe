@@ -52,53 +52,62 @@ TEAM BACK TO THE FUTURE
 ## Hardware      
 This section discusses all the parts used in the vehicle including the motors, sensors, controllers, chassis, mechanisms and other elements.
 ### Components
-<table>
-    <thead>
-        <tr>
-            <th>Component</th>
-            <th>Product Link</th>
-            <th>Image</th>
-            <th>Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Motor with Encoder</td>
-            <td><a href="https://www.pololu.com/product/4755">Metal Gearmotor</a></td>
-            <td><img src="other/motor/motor_trn.png" alt="motor trn" width="120"></td>
-            <td>90$</td>
-        </tr>
-        <tr>
-            <td>Servo Motor</td>
-            <td><a href="https://www.ebay.com/itm/192002483556">Tower Pro MG995 (270 degrees)</a></td>
-            <td><img src="other/servo/servo2.png" alt="servo mg995" width="120"></td>
-            <td>12$</td>
-        </tr>
-        <tr>
-            <td>Motor Controller</td>
-            <td><a href="https://coresg.tech/product/evn-alpha/">EVN Alpha</a></td>
-            <td><img src="other/evn/evn2.png" alt="evn" width="150"></td>
-            <td>168$</td>
-        </tr>
-            <td>Sensor</td>
-            <td><a href="https://www.amazon.com/VKLSVAN-Measurements-Breakout-Accurate-Distance/dp/B099N2JW89/ref=sr_1_21?dib=eyJ2IjoiMSJ9.FHoX1s21bwww8-NUEd8BDmuIcVpW6rD7ehPzn9Nrcnr83wpj7UbUi9nTPdVbzD0BZQBe4NcTkUF81jqL1nH1B1oWyGsGmJvVDI9LizHIMgQa-9x9Kawya7KRBut3eaMHHIsh7hhXHszMiLL41TcW_TsiRXD4baq3nEYucGFwMjmp6Hhz-geVCebnKhqtsht6ni7oUUj8yK9zkh-7uDRcyYCAQC9mr7VNeh2rTVr-RnM.0Bbbq1BQlA3MnEtffctAFpx3Wft-0tIANuMAgv0CXwg&dib_tag=se&keywords=time+of+flight+sensor&qid=1748441943&sr=8-21">Time Of Flight Sensor</a></td>
-            <td><img src="other/tof_sensor/tof3.png" alt="time-of-flight" width="79"></td>
-            <td>9$</td>
-        <tr>
-            <td>Camera and Processor</td>
-            <td><a href="https://www.amazon.com/SAMSUNG-Smartphone-Unlocked-Android-Battery/dp/B09XP9FX25?th=1">Samsung Galaxy A53 5G</a></td>
-            <td><img src="other/phone/samsung.png" alt="samsung-galaxy-a53-5g" width="120"></td>
-            <td>142$</td>
-        </tr>
-        <tr>
-            <td colspan="3"><strong>Total cost:</strong></td>
-            <td><strong>421$</strong></td>
-        </tr>
-    </tbody>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description / Link</th>
+      <th>Image</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Motor</td>
+      <td><a href="https://www.pololu.com/product/4755">Metal Gearmotor</a></td>
+      <td><img src="other/motor/motor_trn.png" alt="motor trn" width="120"></td>
+      <td>$90</td>
+    </tr>
+    <tr>
+      <td>Servo Motor</td>
+      <td><a href="https://www.ebay.com/itm/192002483556">Tower Pro MG995 (270 degrees)</a></td>
+      <td><img src="other/servo/servo2.png" alt="servo mg995" width="120"></td>
+      <td>$12</td>
+    </tr>
+  <tr>
+    <td>Arduino Nano</td>
+      <td><a href="https://www.amazon.com/Arduino-Nano-Every-headers-Mounted/dp/B07WWK29XF/ref=sr_1_6?dib=eyJ2IjoiMSJ9.6QPRL9EGieCqVheJYNSvYLiNSaIKqAuyrl-iTXMnEEFxjRF91-4yBiNZ6nyKh5ycpBOX44QOmPRK7fL3HVLo2QC2_QmAm-7GL2P5Z-mCouxmwDNTEQJyOoxRi9AEIPjNBUgLOiy90Prhtw6UN2BxDhMu7ViOaG3R5O15E3tL0jTF4MEzSOtHVFYsoVMhNjp9DDzrsWomxCVR0Mx8RJisD0e4Xk5l8poPY9SfpBqtgK8.0iYflxus7jVqie86k-tM8DtWQV5-URD3P1OsP7q5PeI&dib_tag=se&keywords=arduino+nano&qid=1748520860&sr=8-6">Arduino Nano</a></td>
+      <td><img src="other/arduino_nano/nano1.png" alt="nano" width="120"></td>
+      <td>$18</td>
+    <tr>
+      <td>Motor Controller</td>
+      <td><a href="https://coresg.tech/product/evn-alpha/">EVN Alpha</a></td>
+      <td><img src="other/evn/evn2.png" alt="evn" width="150"></td>
+      <td>$168</td>
+    </tr>
+    </tr>
+      <td>Ultrasonic Sensor</td>
+      <td><a href = "https://www.amazon.com/WWZMDiB-HC-SR04-Ultrasonic-Distance-Measuring/dp/B0B1MJJLJP/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.E2SIkElJhtFWCJCHL5Q6YwwtxyRhETnroFHfs4vAAJOjcW1L9dEwbj7bGniy3Pzy6L27ZFLNRdwTI4FVcgYKtnYKHKahio9ZyZa72jk1DZa4pvnNpjMaBYwEafzMDsrU1DWy1_HOlRrWNFoFsfeGA-Seq8DXEae_iaU754X9KoDaoDFvAMEwwrnDM6CdTvT420uo2v9w7A_ooCAaUVxTJlxzYv8n0E07VG6Ycfd5lS8.OEUDh4z78lpkOdU7BLjVaoVRoDB7bjIllFkaE5OLfrQ&dib_tag=se&keywords=Ultrasonic+Sensors&qid=1748517699&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"</td>ULTRASONIC</a></td>
+      <td><img src = "other/ultrasonic_sensor/ultra2.png" alt = "ultrasonic" width = "120"></td>
+      <td>$7</td>
+    <tr>
+      <td>Time of flight sensor</td>
+      <td><a href="https://www.amazon.com/dp/B099N2JW89">Time Of Flight Sensor</a></td>
+      <td><img src="other/tof_sensor/tof3.png" alt="time-of-flight" width="79"></td>
+      <td>$9</td>
+    </tr>
+    <tr>
+      <td>Camera and Processor</td>
+      <td><a href="https://www.amazon.com/dp/B09XP9FX25?th=1">Samsung Galaxy A53 5G</a></td>
+      <td><img src="other/phone/samsung.png" alt="samsung-galaxy-a53-5g" width="120"></td>
+      <td>$142</td>
+    </tr>
+    <tr>
+      <td colspan="3"><strong>Total Cost</strong></td>
+      <td><strong>$446</strong></td>
+    </tr>
+  </tbody>
 </table>
-
-</body>
-</html>
 
 
 ## Mobility Management
