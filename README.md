@@ -141,7 +141,7 @@ A gear compatible with the motor and the differential's gears was 3D printed
 <table>
   <tr>
     <td><img src="models/Steering.gif">
-    </td><td>The steering mechanism was designed by our team using Autodesk Fusion® to make adjustments easier. It was designed with respect to [Ackermann Steering Geometry](https://en.wikipedia.org/wiki/Ackermann_steering_geometry) to increase turning predictability and accuracy. The design has been optimised in regards to wheel base and vehicle length to minimise slipping. It is mounted to the main steering part on the chassis using M3 screws and lock nuts.
+    </td><td>The steering mechanism was designed by our team using Autodesk Fusion® to make adjustments easier. It was designed with respect to <a href=https://en.wikipedia.org/wiki/Ackermann_steering_geometry>Ackermann Steering Geometry</a> to increase turning predictability and accuracy. The design has been optimised in regards to wheel base and vehicle length to minimise slipping. It is mounted to the main steering part on the chassis using M3 screws and lock nuts.
     </td>
   </tr>
 </table>
