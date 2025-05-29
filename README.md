@@ -37,7 +37,7 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 ---
 ## Content of README
 - [Hardware](#hardware)
-  - [Components](#components)
+  - [Electronic Components](#electronic-components)
   - [Mobility Management](#mobility-management)
     - [Chassis and Design](#chassis-and-design)
     - [Locomotion](#locomotion)
@@ -46,7 +46,7 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
     - [Power and Wiring](#power-and-wiring)
     - [Sensors](#sensors)
 - [Software and Control](#software-and-control)
-- [Vehicle Assembly](#vehicle-assembly)
+<!--  - [Vehicle Assembly](#vehicle-assembly)  -->
 ---
 
 ## Hardware      
@@ -80,7 +80,7 @@ This section discusses all the parts used in the vehicle including the motors, s
   <tbody>
     <tr>
       <td>Motor</td>
-      <td><a href="https://www.pololu.com/product/4755">Metal Gearmotor</a></td>
+      <td><a href="https://www.pololu.com/product/4755">Pololu PL-4755</a></td>
       <td><img src="other/motor/motor_trn.png" alt="motor trn" width="120"></td>
       <td>$90</td>
     </tr>
@@ -151,14 +151,21 @@ The robot moves forward-backward with a rear wheel drive (RWD) mechanism. The wh
 The back axle is held in place by the chassis' supporting legs.
 <table border="0">
   <tr>
-    <td width=%20><img src="other/motor/motor_trn.png" alt="motor tr.png"></td><td>The motor driving the differential is a powerful 12V brushed DC gearmotor with a 102.08:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 6533 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
-A gear compatible with the motor and the differential's gears was 3D printed
+    <td width=%20><img src="other/motor/motor_trn.png" alt="motor tr.png"></td><td>The motor driving the differential is a powerful 12V brushed DC gearmotor with a 102.08:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 6533 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft. 
+A gear compatible with the motor and the differential's gears was 3D printed.
 </td>
   </tr>
 </table>
 
-The motor driving the differential is a powerful 12V brushed DC gearmotor with a 102.08:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 6533 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
-A gear compatible with the motor and the differential's gears was 3D printed
+| Motor Specs | Values |
+| --- | --- |
+| Stall Current | 3.5 A |
+| No Load Current | 100 mA |
+| No Load Speed | 65 rpm |
+| Stall Torque | 22 kg cm |
+
+*Values were measured and/or calculated at ~8V*
+
 
 ### Steering
 <table>
@@ -181,6 +188,8 @@ With the mechanism, the steering assembly can turn -25 to +25 degrees relative t
 
 ## Power and Sense Management
 This section discusses the powering, wiring and sensing of the vehicle.
+
+### Power and Wiring
 <img src="schemes/SchematicPic.jpg">
 
 This schematic illustrates the core electromechanical connections for an autonomous vehicle's control system. The system is built around the **EVN Alpha board (US1)**, which interfaces with a **DC motor with encoder (US2)** for locomotion and a **servo motor (US3)** for steering. Power is supplied by two **18650 batteries** in series, regulated to 5V and 3.3V for different components. The EVN board receives encoder signals from the motor and provides motor and servo control outputs. Additionally, two **VL53L0X Time-of-Flight sensors (US6 and US7)** are used for distance measurement, connected via I2C. Each sensor includes an **XSHUT** pin to allow individual addressing, enabling them to coexist on the same bus. The circuit is designed to ensure coordinated motor control, steering, and real-time distance sensing, supporting autonomous navigation.
