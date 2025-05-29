@@ -140,14 +140,13 @@ This section contains information about the vehicle's movement.
   <tr>
     <td width=%20><div class="wrap"><img src="models/Visuals/Robot Chassis 2.1 v5.png" alt="motor tr.png" width=%50></div></td><td width=%80>The vehicle's chassis was designed completely by our team using Autodesk Fusion® program. It was designed to have a rectangular shape with a tapered front to increase steering range. It has cutouts for the motor, servo, sensors, cables and screw holes for mounting parts with M3 screws and LEGO® TECHNIC compatible pin holes to make assembly easier.
 It measures 171.2 mm in length, 100 mm in width and 25.7 mm in height, without the steering assembly.
-It was 3D printed with Hyper PLA filament on Ender 3 V3. The chassis has a mostly flat top side to increase 3D printing quality.
+It was 3D printed with <a href=https://store.creality.com/products/hyper-series-pla-3d-printing-filament-1kg>gray Hyper PLA filament</a> on Ender 3 V3. The chassis has a mostly flat top side to increase 3D printing quality.
 The chassis was designed to fit all the components on one layer. It is also directly connected to the steering mechanism's main (stationary) part.
 The front and back tires used are LEGO® #39367pb02 wheels. They were chosen because they have smaller contact area with the ground thus increasing predictability and decreasing slippage.</td>
   </tr>
 </table>
 
 ### Locomotion
-<!-- ADD RUNNING BACK AXLE .gif --> 
 The robot moves forward-backward with a rear wheel drive (RWD) mechanism. The wheels are connected to the motor with a LEGO® differential (#65413, #65414, 5x #6589) to prevent slipping of wheels while cornering.
 The back axle is held in place by the chassis' supporting legs.
 <table border="0">
@@ -182,13 +181,14 @@ With the mechanism, the steering assembly can turn -25 to +25 degrees relative t
 
 ## Power and Sense Management
 This section discusses the powering, wiring and sensing of the vehicle.
+<img src="schemes/SchematicPic.jpg">
 
-<!-- ### Power and Wiring -->
-
+This schematic illustrates the core electromechanical connections for an autonomous vehicle's control system. The system is built around the **EVN Alpha board (US1)**, which interfaces with a **DC motor with encoder (US2)** for locomotion and a **servo motor (US3)** for steering. Power is supplied by two **18650 batteries** in series, regulated to 5V and 3.3V for different components. The EVN board receives encoder signals from the motor and provides motor and servo control outputs. Additionally, two **VL53L0X Time-of-Flight sensors (US6 and US7)** are used for distance measurement, connected via I2C. Each sensor includes an **XSHUT** pin to allow individual addressing, enabling them to coexist on the same bus. The circuit is designed to ensure coordinated motor control, steering, and real-time distance sensing, supporting autonomous navigation.
 
 ### Sensors
-Our vehicle uses the `Samsung Galaxy A53 5G`'s cameras for visual input. The code accesses the 12MP(F2.2) 0.5x zoom back camera for input to maximise the field of view.
-To determine direction and keep track of turns, we utilize the Samsung Galaxy A53 5G's `GAME_ROTATION_VECTOR` sensor to measure the azimuth(yaw) angle.
+Our vehicle uses the `Samsung Galaxy A53 5G`'s cameras for visual input during both the open and obstacle rounds. Specifically, we access the 12MP (F2.2) ultra-wide 0.5x zoom rear camera to capture images and video frames, as it provides a broader field of view compared to the main camera, allowing the vehicle to better detect lane markings and traffic signs. To determine its heading and keep track of turns during navigation, we utilize the phone's `GAME_ROTATION_VECTOR` sensor. This sensor provides smooth and drift-free measurements of the azimuth (yaw) angle, which is essential for accurately detecting and counting turns in real time, especially during sequences where the vehicle must follow complex paths or respond to directional cues.
+
+To enable accurate distance sensing across different competition scenarios, we integrated two types of sensors into our vehicle. During the open round, we employed a VL53L0X infrared Time-of-Flight (ToF) sensor, which provides precise distance measurements by calculating the time it takes for an emitted light pulse to reflect off an object and return to the sensor. This allows the vehicle to maintain proper alignment and stopping distance along the route. In contrast, for the obstacle round, we used an HC-SR04 ultrasonic sensor, which determines distance by measuring the echo time of ultrasonic sound waves. This sensor is particularly effective for detecting larger, irregularly shaped obstacles and is well-suited for dynamic environments where quick reaction to unexpected objects is critical. The combination of these sensors ensured our vehicle maintained spatial awareness and navigational precision in both rounds.
 
 ## Software and Control
 This section discusses the control software for both rounds. It contains codes for each round. Both the open and obstacle rounds contain the turn direction identification code that uses the blue/orange lines and logic to count turns using the smartphone's gyroscope. We only use the traffic sign identification on the obstacle round.
