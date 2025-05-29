@@ -152,6 +152,7 @@ TEAM BACK TO THE FUTURE
 
 Our robot uses the `Samsung Galaxy A53 5G`'s cameras for visual input. The code accesses the 64 MP ƒ/1.6 Main Camera with OIS for driving forward and 32 MP ƒ/2.2 Front Camera for going backwards.
 
+  <td><img src="other/tof_sensor/tof3.png" alt="time-of-flight" width="79"></td>
 <!-- add TOF -->
 
 ## Software and Control
@@ -159,5 +160,7 @@ Our robot uses the `Samsung Galaxy A53 5G`'s cameras for visual input. The code 
 ### Smarthphone
 
 ### EVN Alpha
+<img src="other/evn/evn2.png" alt="evn" width="150"></td>
+
 For controlling the DC Motor With Encoder and the Servo Motor, our robot utilizes an EVN Alpha, based on the [RP2040](https://www.raspberrypi.com/products/rp2040/) microcontroller designed by Raspberry Pi. It features 4 motor drivers with encoder inputs, 2 UART controllers, 16 I2C ports (achieved with multiplexing of the 2 I2C controllers on RP2040), 4 Servo controllers and a USB-C port for charging and data transfer. It can be programmed with the [Arduino IDE](https://www.arduino.cc/en/software/), after installing the [Arduino Pico Core](github.com/earlephilhower/arduino-pico/) and [EVN Library](https://github.com/EVNdevs/EVN-arduino).
 ## Vehicle Assembly  
