@@ -70,7 +70,9 @@ This section discusses all the parts used in the vehicle including the motors, s
         <tr>
             <td>Motor with Encoder</td>
             <td><a href="https://www.pololu.com/product/4755">Metal Gearmotor</a></td>
+
             <td><img src="other/motor/motor_trn.png" alt="motor trn" width="120"></td>
+
             <td>90$</td>
         </tr>
         <tr>
@@ -114,8 +116,14 @@ This section contains information about the vehicle's movement.
 
 ### Locomotion
 
+<img src="other/motor/motor_trn.png" alt="motor tr.png" width="150"></td>
+
+This gearmotor is a powerful 12V brushed DC motor with a 102.08:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 6533 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft.
+ <!-- update motor -->
+<img src="other/servo/servo2.png" alt="servo mg995" width="150"></td>
+
 ### Steering
- To control steering we use a 'Tower Pro MG995'. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo motor can rotate 270 degrees.
+ To control steering we use a `Tower Pro MG995`. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo motor can rotate 270 degrees.
 
 
 ## Power and Sense Management
@@ -125,7 +133,6 @@ This section contains information about the vehicle's movement.
 ### Sensors
 Our vehicle uses the `Samsung Galaxy A53 5G`'s cameras for visual input. The code accesses the 64 MP ƒ/1.6 Main Camera with OIS for driving forward and 32 MP ƒ/2.2 Front Camera for going backwards.
 
-<!-- add TOF, change camera info -->
 
 ## Software and Control
 This section discusses the control software for both rounds. It contains codes for each round. Both the open and obstacle rounds contain the turn direction identification code that uses the blue/orange lines and logic to count turns using the phones gyroscope. We only use the traffic sign identification on the obstacle round.
@@ -135,6 +142,5 @@ This section discusses the control software for both rounds. It contains codes f
 For controlling the DC Motor With Encoder and the Servo Motor, our vehicle utilizes an EVN Alpha, based on the [RP2040](https://www.raspberrypi.com/products/rp2040/) microcontroller designed by Raspberry Pi. It features 4 motor drivers with encoder inputs, 2 UART controllers, 16 I2C ports (achieved with multiplexing of the 2 I2C controllers on RP2040), 4 Servo controllers and a USB-C port for charging and data transfer. It can be programmed with the [Arduino IDE](https://www.arduino.cc/en/software/), after installing the [Arduino Pico Core](github.com/earlephilhower/arduino-pico/) and [EVN Library](https://github.com/EVNdevs/EVN-arduino).
 
 ### Smarthphone
-
 
 ## Vehicle Assembly  
