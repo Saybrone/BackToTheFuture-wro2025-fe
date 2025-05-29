@@ -131,8 +131,18 @@ To determine direction and keep track of turns, we utilize the Samsung Galaxy A5
 This section discusses the control software for both rounds. It contains codes for each round. Both the open and obstacle rounds contain the turn direction identification code that uses the blue/orange lines and logic to count turns using the phones gyroscope. We only use the traffic sign identification on the obstacle round.
 ### Image Processing
 We use many steps to filter and manipulate the camera input to achieve our goal. Here you can see a simplified visualisation of what happens behind scenes.
-<img src="src/Android/examples/flowchart.png" alt="Flowchart" width="100%">
-Here you can see the broad steps of our process to identify the traffic signs.
+
+<img src="src/Android/examples/flowchart.png" alt="Flowchart" width="80%">
+
+These are the broad steps of our process to identify the traffic signs.
+<table>
+  <tr>
+    <td width="60%"><img src="src/Android/examples/process.gif" alt="gif" align="center"></td>
+    <td>We use OpenCV for processing the images. First we take the frame from the camera at 15fps and 640x480px resolution. Then we perform a flood fill from the bottom middle pixel of the screen while thresholding black and blue pixels to isolate the game mat. Then we find all the contours of this mask and filter out the ones that are on the outside edge and thereby are left with the borders of the traffic light rectangles. After finding the rectangles, we calculate their centres and send the distance between them and the bottom middle pixel to the EVN.</td>
+  </tr>
+</table>
+
+
 
 ### EVN Alpha
 For controlling the DC Motor With Encoder and the Servo Motor, our vehicle utilizes an EVN Alpha, based on the [RP2040](https://www.raspberrypi.com/products/rp2040/) microcontroller designed by Raspberry Pi. It features 4 motor drivers with encoder inputs, 2 UART controllers, 16 I2C ports (achieved with multiplexing of the 2 I2C controllers on RP2040), 4 Servo controllers and a USB-C port for charging and data transfer. It can be programmed with the [Arduino IDE](https://www.arduino.cc/en/software/), after installing the [Arduino Pico Core](github.com/earlephilhower/arduino-pico/) and [EVN Library](https://github.com/EVNdevs/EVN-arduino).
