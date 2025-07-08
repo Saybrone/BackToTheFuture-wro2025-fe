@@ -1,7 +1,5 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/COPYING.gpl)
 
-this is the backup repository of:
-
 Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 ===
 <table border="0">
