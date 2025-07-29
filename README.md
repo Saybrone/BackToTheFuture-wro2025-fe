@@ -18,8 +18,8 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
       We are team <em> Back To The Future</em>, three students who are passionate about technology and robotics. For this competition we built an autonomous vehicle. We worked after school and on weekends. Through this competition, we learned how to work as a team and solve problems related to robotics.
        </p>
         Team Members:
-          Ayça Nisa Çerçi, 16,
-          Batuhan Pekcan, 15,
+          -  Ayça Nisa Çerçi 16,
+          -  Batuhan Pekcan 15,
       </p>
     </td>
   </tr>
