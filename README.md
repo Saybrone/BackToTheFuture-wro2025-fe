@@ -1,7 +1,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/COPYING.gpl)
 
 Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
-===
+---
 <table border="0">
   <tr border="0">
     <td  border="0" colspan="2">
@@ -26,6 +26,8 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
     </td>
   </tr>
 </table>
+
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:backtothefuturefeteamofficial@gmail.com)  [![Youtube](https://img.shields.io/badge/Youtube-%23FF0000.svg?style=for-the-badge&logo=Youtube&logoColor=white)](https://www.youtube.com/@BackToTheFutureFETeamOfficial)
 
 ## Contents
 * `models` is for the 3D files we used to print our parts
