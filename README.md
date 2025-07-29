@@ -19,8 +19,7 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
        </p>
         Team Members:
           Ayça Nisa Çerçi, 16,
-          Mert Ata Makinacı, 16,
-          Tibet Özkarslıoğlu, 17
+          Batuhan Pekcan, 15,
       </p>
     </td>
   </tr>
