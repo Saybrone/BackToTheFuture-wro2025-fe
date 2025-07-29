@@ -15,7 +15,7 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
     </td>
     <td valign="top" style="padding-left: 0px;" border="0">
         This repository details team <em>Back To The Future</em>'s building and programming process in the 2025 WRO Future Engineers Competition. 
-      We are team <em> Back To The Future</em>, three students who are passionate about technology and robotics. For this competition we built an autonomous vehicle. We worked after school and on weekends. Through this competition, we learned how to work as a team and solve problems related to robotics.
+      We are team <em> Back To The Future</em>, two students who are passionate about technology and robotics. For this competition we built an autonomous vehicle. We worked after school and on weekends. Through this competition, we learned how to work as a team and solve problems related to robotics.
        </p>
         <strong>Team Members:</strong>
       <ul>
