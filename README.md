@@ -63,7 +63,7 @@ Teams are judged on performance, innovation, reliability, and the clarity of the
 
 
 
-## Hardware      
+## Hardware <a class="anchor" id="hardware"></a>      
 This section discusses all the parts used in the vehicle including the motors, sensors, controllers, chassis, mechanisms and other elements.
 <table style="width: 100%">
   <tr>
