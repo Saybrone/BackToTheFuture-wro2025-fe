@@ -38,6 +38,7 @@ The competition highlights the full engineering process:
 - **Project Documentation**: Maintaining an engineering journal and sharing designs in a public GitHub repository.
 
 Teams are judged on performance, innovation, reliability, and the clarity of their engineering process, encouraging creativity, teamwork, and STEM skills.
+Learn more about the challenge [here](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf).
 ## Contents
 * `models` is for the 3D files we used to print our parts
 * `other` includes other files which can be used to understand how to prepare the vehicle for the competition. It includes documentations, datasets, hardware specifications, communication protocols,  descriptions etc.
