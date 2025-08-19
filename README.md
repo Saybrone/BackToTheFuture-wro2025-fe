@@ -34,7 +34,7 @@ In the **[WRO 2025 Future Engineers – Self-Driving Cars](https://wro-associati
 The competition highlights the full engineering process:
 
 - **Vehicle Design**: Building a functional robot with electromechanical components and advanced steering or motion systems.
-- **Intelligent Control**: Applying computer vision, sensor fusion, and motion planning to make real-time decisions.
+- **Obstacle Management**: Applying computer vision, sensor fusion, and motion planning to make real-time decisions.
 - **Project Documentation**: Maintaining an engineering journal and sharing designs in a public GitHub repository.
 
 Teams are judged on performance, innovation, reliability, and the clarity of their engineering process, encouraging creativity, teamwork, and STEM skills.
