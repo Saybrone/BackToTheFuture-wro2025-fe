@@ -28,7 +28,18 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 </table>
 
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:backtothefuturefeteamofficial@gmail.com)  [![Youtube](https://img.shields.io/badge/Youtube-%23FF0000.svg?style=for-the-badge&logo=Youtube&logoColor=white)](https://www.youtube.com/@BackToTheFuture-WRO)
+## The Challenge <a class="anchor" id="challenge"></a>
 
+In the **[WRO 2025 Future Engineers – Self-Driving Cars](https://wro-association.org/)** category, teams are tasked with creating a robotic vehicle that can autonomously navigate a changing racetrack. Each round introduces new track layouts, requiring vehicles to adapt in real time.
+The competition highlights the full engineering process:
+
+- **Vehicle Design**: Building a functional robot with electromechanical components and advanced steering or motion systems.
+- **Obstacle Management**: Applying computer vision, sensor fusion, and motion planning to make real-time decisions.
+- **Project Documentation**: Maintaining an engineering journal and sharing designs in a public GitHub repository.
+
+Teams are judged on performance, innovation, reliability, and the clarity of their engineering process, encouraging creativity, teamwork, and STEM skills.
+
+Learn more about the challenge [here](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf).
 ## Contents
 * `models` is for the 3D files we used to print our parts
 * `other` includes other files which can be used to understand how to prepare the vehicle for the competition. It includes documentations, datasets, hardware specifications, communication protocols,  descriptions etc.
@@ -52,7 +63,9 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 <!--  - [Vehicle Assembly](#vehicle-assembly)  -->
 ---
 
-## Hardware      
+
+
+## Hardware <a class="anchor" id="hardware"></a>      
 This section discusses all the parts used in the vehicle including the motors, sensors, controllers, chassis, mechanisms and other elements.
 <table style="width: 100%">
   <tr>
