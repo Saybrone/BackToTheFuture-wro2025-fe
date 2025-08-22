@@ -41,6 +41,16 @@ Teams are judged on performance, innovation, reliability, and the clarity of the
 
 Learn more about the challenge [here](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf).
 
+## Table of Contents
 
 
+## Folder Structure 
 
+
+## Vechile 
+
+## Hardware Components
+
+## Software
+
+## Robot Construction Guide
