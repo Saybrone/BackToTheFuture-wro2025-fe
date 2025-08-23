@@ -28,6 +28,27 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 </table>
 
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:backtothefuturefeteamofficial@gmail.com)  [![Youtube](https://img.shields.io/badge/Youtube-%23FF0000.svg?style=for-the-badge&logo=Youtube&logoColor=white)](https://www.youtube.com/@BackToTheFuture-WRO)
+
+
+## Content of README
+[Folder Contents](#FolderContents)
+[The Challenge](#challenge)
+[Vechile](#Vechile)
+[Hardware Components](#Hardware)
+[Software Components](#Software)
+[Robot Construction Guide](#Guide)
+[Resources](#Resources)
+[License](#License)
+
+## Folder Contents <a class="anchor" id="FolderContents"></a>
+* `models` is for the 3D files we used to print our parts
+* `other` includes other files which can be used to understand how to prepare the vehicle for the competition. It includes documentations, datasets, hardware specifications, communication protocols,  descriptions etc.
+* `schemes` contains schematic diagrams of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
+* `src` contains code of control software for all components which were programmed to participate in the competition
+* `t-photos` contains photos of the team and logos
+* `v-photos` contains 6 photos of the vehicle from various angles
+* `video` contains the video.md file with the link to our YouTube channel and the respective videos
+
 ## The Challenge <a class="anchor" id="challenge"></a>
 
 In the **[WRO 2025 Future Engineers – Self-Driving Cars](https://wro-association.org/)** category, teams are tasked with creating a robotic vehicle that can autonomously navigate a changing racetrack. Each round introduces new track layouts, requiring vehicles to adapt in real time.
@@ -41,26 +62,14 @@ Teams are judged on performance, innovation, reliability, and the clarity of the
 
 Learn more about the challenge [here](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf).
 
-## Content of README
+## Vechile <a class="anchor" id="Vechile"></a>
 
+## Hardware Components <a class="anchor" id="Hardware"></a>
 
-## Folder Contents
-* `models` is for the 3D files we used to print our parts
-* `other` includes other files which can be used to understand how to prepare the vehicle for the competition. It includes documentations, datasets, hardware specifications, communication protocols,  descriptions etc.
-* `schemes` contains schematic diagrams of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
-* `src` contains code of control software for all components which were programmed to participate in the competition
-* `t-photos` contains photos of the team and logos
-* `v-photos` contains 6 photos of the vehicle from various angles
-* `video` contains the video.md file with the link to our YouTube channel and the respective videos
+## Software Components <a class="anchor" id="Software"></a>
 
-## Vechile 
+## Robot Construction Guide <a class="anchor" id="Vechile"></a>
 
-## Hardware Components
+## Resources <a class="anchor" id="Resources"></a>
 
-## Software Components
-
-## Robot Construction Guide
-
-## Resources
-
-## License
+## License <a class="anchor" id="License"></a>
