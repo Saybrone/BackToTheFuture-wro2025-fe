@@ -63,7 +63,9 @@ Teams are judged on performance, innovation, reliability, and the clarity of the
 Learn more about the challenge [here](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf).
 
 ## Vechile <a class="anchor" id="Vechile"></a>
-### V-Photos
+
+
+### V-Photos <a class="anchor" id="Vphotos"></a>
 | <img src="v-photos/front.jpg" width="90%" /> | <img src="v-photos/back.jpg" width="85%" /> | 
 | :--: | :--: | 
 | *Front* | *Back* |
@@ -78,7 +80,7 @@ Learn more about the challenge [here](https://wro-association.org/wp-content/upl
 
 ## Software Components <a class="anchor" id="Software"></a>
 
-## Robot Construction Guide <a class="anchor" id="Vechile"></a>
+## Robot Construction Guide <a class="anchor" id="Guide"></a>
 
 ## Resources <a class="anchor" id="Resources"></a>
 
