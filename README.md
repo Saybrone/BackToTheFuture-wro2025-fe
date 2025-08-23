@@ -81,7 +81,7 @@ Learn more about the challenge [here](https://wro-association.org/wp-content/upl
 ## Software Components <a class="anchor" id="Software"></a>
 
 ## Robot Construction Guide <a class="anchor" id="robot-construction-guide-"></a>
--Helloworld
+
 ## Resources <a class="anchor" id="Resources"></a>
 
 ## License <a class="anchor" id="License"></a>
