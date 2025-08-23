@@ -45,7 +45,13 @@ Learn more about the challenge [here](https://wro-association.org/wp-content/upl
 
 
 ## Folder Structure 
-
+* `models` is for the 3D files we used to print our parts
+* `other` includes other files which can be used to understand how to prepare the vehicle for the competition. It includes documentations, datasets, hardware specifications, communication protocols,  descriptions etc.
+* `schemes` contains schematic diagrams of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
+* `src` contains code of control software for all components which were programmed to participate in the competition
+* `t-photos` contains photos of the team and logos
+* `v-photos` contains 6 photos of the vehicle from various angles
+* `video` contains the video.md file with the link to our YouTube channel and the respective videos
 
 ## Vechile 
 
