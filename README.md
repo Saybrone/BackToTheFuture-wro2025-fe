@@ -31,14 +31,14 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 
 
 ## Content of README
-[Folder Contents](#FolderContents)
-[The Challenge](#challenge)
-[Vechile](#Vechile)
-[Hardware Components](#Hardware)
-[Software Components](#Software)
-[Robot Construction Guide](#Guide)
-[Resources](#Resources)
-[License](#License)
+- [Folder Contents](#FolderContents)
+- [The Challenge](#challenge)
+- [Vechile](#Vechile)
+- [Hardware Components](#Hardware)
+- [Software Components](#Software)
+- [Robot Construction Guide](#Guide)
+- [Resources](#Resources)
+- [License](#License)
 
 ## Folder Contents <a class="anchor" id="FolderContents"></a>
 * `models` is for the 3D files we used to print our parts
