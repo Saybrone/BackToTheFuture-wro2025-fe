@@ -31,7 +31,7 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 
 
 ## Content of README
-- [Folder Contents](#FolderContents)
+- [Folder Contents](#Folder)
 - [The Challenge](#challenge)
 - [Vechile](#Vechile)
 - [Hardware Components](#Hardware)
@@ -40,7 +40,7 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 - [Resources](#Resources)
 - [License](#License)
 
-## Folder Contents <a class="anchor" id="FolderContents"></a>
+## Folder Contents <a class="anchor" id="Folder"></a>
 * `models` is for the 3D files we used to print our parts
 * `other` includes other files which can be used to understand how to prepare the vehicle for the competition. It includes documentations, datasets, hardware specifications, communication protocols,  descriptions etc.
 * `schemes` contains schematic diagrams of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
