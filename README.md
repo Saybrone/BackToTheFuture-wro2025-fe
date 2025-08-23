@@ -64,6 +64,8 @@ Learn more about the challenge [here](https://wro-association.org/wp-content/upl
 
 ## Vechile <a class="anchor" id="Vechile"></a>
 <img src="t-photos/TeamOfficial.jpg" alt="Robot Photo" width="48%">
+
+
 ## Hardware Components <a class="anchor" id="Hardware"></a>
 
 ## Software Components <a class="anchor" id="Software"></a>
