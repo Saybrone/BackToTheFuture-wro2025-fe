@@ -64,8 +64,6 @@ Learn more about the challenge [here](https://wro-association.org/wp-content/upl
 
 ## Vechile <a class="anchor" id="Vechile"></a>
 ### V-Photos
-<img src="v-photos/top.jpg" alt="Robot Photo" width="48%">
-
 | <img src="v-photos/front.jpg" width="90%" /> | <img src="v-photos/back.jpg" width="85%" /> | 
 | :--: | :--: | 
 | *Front* | *Back* |
