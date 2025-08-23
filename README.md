@@ -30,7 +30,7 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:backtothefuturefeteamofficial@gmail.com)  [![Youtube](https://img.shields.io/badge/Youtube-%23FF0000.svg?style=for-the-badge&logo=Youtube&logoColor=white)](https://www.youtube.com/@BackToTheFuture-WRO)
 
 
-## Content of README
+## Table of Contents
 - [Folder Contents](#folder-contents-)
 - [The Challenge](#challenge)
 - [Vechile](#Vechile)
