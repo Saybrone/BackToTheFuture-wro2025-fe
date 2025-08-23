@@ -44,7 +44,7 @@ Learn more about the challenge [here](https://wro-association.org/wp-content/upl
 ## Table of Contents
 
 
-## Folder Structure 
+## Folder Contents
 * `models` is for the 3D files we used to print our parts
 * `other` includes other files which can be used to understand how to prepare the vehicle for the competition. It includes documentations, datasets, hardware specifications, communication protocols,  descriptions etc.
 * `schemes` contains schematic diagrams of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
