@@ -68,7 +68,6 @@ Our robot integrates LEGO components with custom 3D-printed hardware, designed t
 
 
 ### V-Photos <a class="anchor" id="Vphotos"></a>
-Our robot integrates LEGO components with custom 3D-printed hardware, designed to maximize stability and durability.
 | <img src="v-photos/front.jpg" width="90%" /> | <img src="v-photos/back.jpg" width="85%" /> | 
 | :--: | :--: | 
 | *Front* | *Back* |
