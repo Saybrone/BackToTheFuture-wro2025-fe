@@ -1,7 +1,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/COPYING.gpl)
 
-Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
----
+# Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
+
 <table border="0">
   <tr border="0">
     <td  border="0" colspan="2">
@@ -30,7 +30,7 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:backtothefuturefeteamofficial@gmail.com)  [![Youtube](https://img.shields.io/badge/Youtube-%23FF0000.svg?style=for-the-badge&logo=Youtube&logoColor=white)](https://www.youtube.com/@BackToTheFuture-WRO)
 
 
-## Table of Contents
+# Table of Contents
 - [Folder Contents](#folder-contents-)
 - [The Challenge](#challenge)
 - [Vechile](#Vechile)
@@ -40,7 +40,7 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 - [Resources](#Resources)
 - [License](#License)
 
-## Folder Contents <a class="anchor" id="folder-contents-"></a>
+# Folder Contents <a class="anchor" id="folder-contents-"></a>
 * `models` is for the 3D files we used to print our parts
 * `other` includes other files which can be used to understand how to prepare the vehicle for the competition. It includes documentations, datasets, hardware specifications, communication protocols,  descriptions etc.
 * `schemes` contains schematic diagrams of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
@@ -49,7 +49,7 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 * `v-photos` contains 6 photos of the vehicle from various angles
 * `video` contains the video.md file with the link to our YouTube channel and the respective videos
 
-## The Challenge <a class="anchor" id="challenge"></a>
+# The Challenge <a class="anchor" id="challenge"></a>
 
 In the **[WRO 2025 Future Engineers – Self-Driving Cars](https://wro-association.org/)** category, teams are tasked with creating a robotic vehicle that can autonomously navigate a changing racetrack. Each round introduces new track layouts, requiring vehicles to adapt in real time.
 The competition highlights the full engineering process:
@@ -62,12 +62,12 @@ Teams are judged on performance, innovation, reliability, and the clarity of the
 
 Learn more about the challenge [here](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf).
 
-## Vechile <a class="anchor" id="Vechile"></a>
+# Vechile <a class="anchor" id="Vechile"></a>
 Our robot integrates LEGO components with custom 3D-printed hardware, designed to maximize stability and durability. It features a 3D-printed motor mount and camera holder, integrated with a LEGO-based chassis. For steering, we implemented a simplified Ackermann setup without linkage geometry (reckless steering), allowing the robot to turn easily while keeping the design compact. Our robot is powerized by a [GA12-N20 200RPM](https://www.handsontec.com/dataspecs/GA12-N20.pdf) dc motor and controlled by an [EVNAlpha](https://evn.readthedocs.io/). It uses [OpenMV RT1062](https://openmv.io/products/openmv-cam-rt?srsltid=AfmBOorMjCmNBP1AZA_3V53JQMS-8N7Mg5ljP10ljHe4SLFoCauGWzZN) to locate obstacles, lines and walls. Steering was managed by [GeekServo 2KG Motor](https://kittenbothk-eng.readthedocs.io/en/latest/motors/2kgMotor.html).
 
 
 
-### V-Photos <a class="anchor" id="Vphotos"></a>
+## V-Photos <a class="anchor" id="Vphotos"></a>
 | <img src="v-photos/front.jpg" width="90%" /> | <img src="v-photos/back.jpg" width="85%" /> | 
 | :--: | :--: | 
 | *Front* | *Back* |
@@ -78,7 +78,13 @@ Our robot integrates LEGO components with custom 3D-printed hardware, designed t
 
 <br>
 
-## Hardware Components <a class="anchor" id="Hardware"></a>
+# Hardware Components <a class="anchor" id="Hardware"></a>
+This section discusses ...
+## Mobility Management
+Our robot’s mobility depends on the coordinnation of its powertrain, steering system, and chassis. Together, these components provide stability, control, and efficiency, enabling smooth and reliable movement.
+### Powertrain
+
+
 
 ## Software Components <a class="anchor" id="Software"></a>
 
