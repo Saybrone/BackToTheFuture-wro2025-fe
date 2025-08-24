@@ -81,7 +81,7 @@ Our robot integrates LEGO components with custom 3D-printed hardware, designed t
 # Hardware Components <a class="anchor" id="Hardware"></a>
 This section discusses ...
 ## Mobility Management
-Our robot’s mobility depends on the coordinnation of its powertrain, steering system, and chassis. Together, these components provide stability, control, and efficiency, enabling smooth and reliable movement.
+Our robot’s mobility depends on the coordination of its powertrain, steering system, and chassis. Together, these components provide stability, control, and efficiency, enabling smooth and reliable movement.
 ### Powertrain
 
 
