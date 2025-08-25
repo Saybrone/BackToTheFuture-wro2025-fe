@@ -159,6 +159,10 @@ Our robot’s mobility depends on the coordination of its powertrain, steering s
 ### Li-ion Battery
 <table> <tr><td> <img width="137" height="212" alt="lityum" src="https://github.com/user-attachments/assets/43538118-c556-4b7b-9187-0674eff2969d" /></td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Voltage: 3.7V <br>Capacity:2800mAh<br> Diameter: 18mm <br> Length: 65mm <br></td> </tr> </table> 
 
+### IMU
+<table> <tr><td> <img width="192" height="160" alt="IMU" src="https://github.com/user-attachments/assets/a125a066-8e47-4f12-9359-d34754822fd6" />
+td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Voltage: 3.7V <br>Capacity:2800mAh<br> Diameter: 18mm <br> Length: 65mm <br></td> </tr> </table> 
+
 ### OpenMV Cam RT1062
 <table> <tr> <td><img src="https://github.com/user-attachments/assets/c30ce89a-f4fb-4d09-a3ca-ed0fd695b2d4" 
      alt="cam" 
