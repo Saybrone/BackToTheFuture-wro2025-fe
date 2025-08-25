@@ -83,6 +83,13 @@ This section discusses ...
 ## Mobility Management
 Our robot’s mobility depends on the coordination of its powertrain, steering system, and chassis. Together, these components provide stability, control, and efficiency, enabling smooth and reliable movement.
 ### Powertrain
+#### Motor
+ <img width="413" height="322" alt="motor" src="https://github.com/user-attachments/assets/412ae5d4-dc0c-49b6-8a6a-21480d697cd4" /> Specifications: <br> Rated Voltage : 6~12V <br> Weight : 10g <br> Revolving Speed : 100RPM @ 6V <br>Load Speed: 80RPM<br>Rated Torque: 2 kg.cm <br>Stall Torque: 16 kg.cm
+
+
+### Steering
+
+### Chassis
 
 
 
