@@ -113,7 +113,7 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
     </tr>
       <td>IMU</td>
       <td><a href="https://tr.aliexpress.com/item/1005006996048940.html?spm=a2g0o.productlist.main.5.6ef53353cKZzxy&algo_pvid=fd17a8c4-be06-4443-bb16-ca5842e753da&algo_exp_id=fd17a8c4-be06-4443-bb16-ca5842e753da-4&pdp_ext_f=%7B%22order%22%3A%223%22%2C%22eval%22%3A%221%22%7D&pdp_npi=6%40dis%21TRY%2161.03%2150.05%21%21%2110.06%218.25%21%40211b80f717561234906297648ea906%2112000038988133079%21sea%21TR%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A9b91ce8e%3Bm03_new_user%3A-29895&curPageLogUid=WZMpWQdAhpsJ&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006996048940%7C_p_origin_prod%3A">MPU 6500 Gyro Sensor</td>
-      <td><img width="492" height="460" alt="IMU" src="https://github.com/user-attachments/assets/f1ea41de-69c4-468b-88c5-4eef894ee28e" /></td>
+      <td><img width="180" height="160" alt="IMU" src="https://github.com/user-attachments/assets/f1ea41de-69c4-468b-88c5-4eef894ee28e" /></td>
       <td>$1.88</td> 
     <tr>
       <td>Battery</td>
