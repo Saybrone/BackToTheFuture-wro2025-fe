@@ -80,7 +80,7 @@ Our robot integrates LEGO components with custom 3D-printed hardware, designed t
 <br>
 
 # Hardware Components <a class="anchor" id="Hardware"></a>
-This section discusses ...
+This section discusses electronic components, mobility management, 
 ## Electronic Components
 <table border="1" cellpadding="12" cellspacing="0">
   <thead>
