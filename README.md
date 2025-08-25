@@ -80,7 +80,7 @@ Our robot integrates LEGO components with custom 3D-printed hardware, designed t
 <br>
 
 # Hardware Components <a class="anchor" id="Hardware"></a>
-This section discusses electronic components, mobility management, 
+This section discusses ...
 ## Electronic Components
 <table border="1" cellpadding="12" cellspacing="0">
   <thead>
@@ -135,10 +135,13 @@ This section discusses electronic components, mobility management,
 Our robot’s mobility depends on the coordination of its powertrain, steering system, and chassis. Together, these components provide stability, control, and efficiency, enabling smooth and reliable movement.
 ### Powertrain
 #### Motor
-<table> <tr> <td> <img width="813" height="722" alt="motor" src="https://github.com/user-attachments/assets/cbc7350e-6660-4c34-99db-c2983fde7c3f" /> </td>  <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Rated Voltage: 6~12V <br> Weight: 10g <br> Revolving Speed: 100RPM @ 6V <br> Load Speed: 80RPM <br> Rated Torque: 2 kg.cm <br> Stall Torque: 16 kg.cm <br><br> This <b>DC Mini Metal Gear Motor</b> is the one we used in our robot. Its <b>light weight</b> and <b>compact size</b> make it suitable for small robotic platforms, while the <b>high torque</b> and <b>low RPM</b> ensure powerful and controlled movement. <br><br> Thanks to its <b>excellent stall characteristics</b>, the motor provides enough force to climb slopes or overcome obstacles, which is highly beneficial for mobile robots. Additionally, the <b>durable metal gears</b> extend the lifetime of the motor, making it reliable for long-term use. <br><br> Another important advantage is that a wheel can be easily mounted on the motor’s output shaft, allowing for simple integration with the robot’s chassis. </td> </tr> </table>
+<table> <tr> <!-- Görsel Kısmı --> <td> <img width="813" height="722" alt="motor" src="https://github.com/user-attachments/assets/cbc7350e-6660-4c34-99db-c2983fde7c3f" /> </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Rated Voltage: 6~12V <br> Weight: 10g <br> Revolving Speed: 100RPM @ 6V <br> Load Speed: 80RPM <br> Rated Torque: 2 kg.cm <br> Stall Torque: 16 kg.cm <br><br> This <b>DC Mini Metal Gear Motor</b> is the one we used in our robot. Its <b>light weight</b> and <b>compact size</b> make it suitable for small robotic platforms, while the <b>high torque</b> and <b>low RPM</b> ensure powerful and controlled movement. <br><br> Thanks to its <b>excellent stall characteristics</b>, the motor provides enough force to climb slopes or overcome obstacles, which is highly beneficial for mobile robots. Additionally, the <b>durable metal gears</b> extend the lifetime of the motor, making it reliable for long-term use. <br><br> Another important advantage is that a wheel can be easily mounted on the motor’s output shaft, allowing for simple integration with the robot’s chassis. </td> </tr> </table>
 <p style="margin:0;"> Below, we have included the diagram of our motor for clarity. </p> <img width="571" height="207" alt="Ekran Alıntısı" src="https://github.com/user-attachments/assets/c8769703-f8e3-4611-8122-a4f2439efcb6" style="display:block; margin:0 auto;" />
 
+#### Motor Controller
+<img width="500" height="200" alt="evn2" src="https://github.com/user-attachments/assets/ef874511-c218-4551-b034-16ca4a23c7ba" />
 
+The EVN ALPHA is a compact robot controller based on the RP2040, housed in a LEGO Technic-compatible shell. It provides 26 I/O channels for controlling brushed DC motors, servos, and connecting UART or I2C peripherals. The board also integrates a 2-cell Lithium-Ion power management system, offering charging, cell balancing, and voltage regulation, making it ideal for safely powering and controlling our robot’s motors and sensors.
      
 
 ### Steering
@@ -147,7 +150,6 @@ Our robot’s mobility depends on the coordination of its powertrain, steering s
  </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Operating Voltage: 3.3V~6V<br> Rated Voltage: 4.8V<br> Rotational range: 360°<br> Maximum Torque: 1.6kg±0.2kg/cm (4.8V)<br> Maximum Speed: 45rpm (3V)<br> Weight: 20g<br><br> For steering we selected the <b>GeekServo</b>. This motor is compatible with Lego Technic parts and offers a higher speed compared to 9g motors. The output shaft features a Lego Technic axle connector, making it ideal for applications that require a high-power drive. </td> </tr> </table> 
 <p style="margin:0;"> <p>Below, we have included the diagram of our servo motor.</p> <img src="https://github.com/user-attachments/assets/35552517-c78a-430e-9b82-2b450fe1c402" alt="Servo Motor Diagram" style="display:block; margin:0 auto; width:400px;" />
 
-#### Rackless
 
 ### Chassis
 
@@ -184,5 +186,3 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
-
-```
