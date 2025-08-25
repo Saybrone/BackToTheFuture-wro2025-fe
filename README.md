@@ -35,6 +35,7 @@
 - [The Challenge](#challenge)
 - [Vehicle](#Vehicle)
 - [Hardware Components](#Hardware)
+- [Power and Sense Management](#power-and-sense-management)
 - [Software Components](#Software)
 - [Robot Construction Guide](#robot-construction-guide-)
 - [Resources](#Resources)
@@ -93,11 +94,16 @@ Our robot’s mobility depends on the coordination of its powertrain, steering s
 ### Steering
 #### Servo Motor
 <table> <tr> <!-- Görsel Kısmı --> <td> <img width="735" height="616" alt="output-onlinetools" src="https://github.com/user-attachments/assets/ae1580ef-0944-4630-b2ee-5670c99bc04d" />
- </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Operating Voltage: 3.3V~6V<br> Rated Voltage: 4.8V<br> Rotational range: 360°<br> Maximum Torque: 1.6kg±0.2kg/cm (4.8V)<br> Maximum Speed: 45rpm (3V)<br> Weight: 20g<br><br> For steering we selected the <b>GeekServo</b>. This motor is compatible with Lego Technic parts and offers a higher speed compared to 9g motors. The output shaft features a Lego Technic axle connector, making it ideal for applications that require a high-power drive. </td> </tr> </table>
+ </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Operating Voltage: 3.3V~6V<br> Rated Voltage: 4.8V<br> Rotational range: 360°<br> Maximum Torque: 1.6kg±0.2kg/cm (4.8V)<br> Maximum Speed: 45rpm (3V)<br> Weight: 20g<br><br> For steering we selected the <b>GeekServo</b>. This motor is compatible with Lego Technic parts and offers a higher speed compared to 9g motors. The output shaft features a Lego Technic axle connector, making it ideal for applications that require a high-power drive. </td> </tr> </table> 
+<p style="margin:0;">html <p>Below, we have included the diagram of our servo motor.</p> <img src="https://github.com/user-attachments/assets/35552517-c78a-430e-9b82-2b450fe1c402" alt="Servo Motor Diagram" style="display:block; margin:0 auto; width:400px;" />
+
 
 ### Chassis
 
 
+# Power and Sense Management
+## OpenMV Cam RT1062
+<table> <tr> <!-- Görsel Kısmı --> <td> <img width="243" height="313" alt="cam" src="https://github.com/user-attachments/assets/c30ce89a-f4fb-4d09-a3ca-ed0fd695b2d4" /> </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Microcontroller: ARM Cortex M7 (RT1062)<br>Frequency: 600 MHz<br> RAM: 32 MB SDRAM + 1 MB SRAM <br> Flash Memory: 16 MB program/storage flash<br>Camera Resolution: 2592 × 1944 (5 MP) <br> Frame Rate:~40 FPS on QVGA (320 × 240) </td> </tr> </table> <br><br> This <b>OpenMV Cam -RT1062</b> is the one we used in our robot. The OpenMV Cam is a small, low-power microcontroller board that we used in our robot to implement machine vision applications. We program the OpenMV Cam in high-level Python scripts (via the MicroPython Operating System) instead of C/C++, which makes it much easier to handle the complex outputs of machine vision algorithms and work with high-level data structures. At the same time, we retain full control over the OpenMV Cam and its I/O pins in Python. This allows our robot to locate obstacles, lines and walls, enabling intelligent, autonomous behaviors.
 
 ## Software Components <a class="anchor" id="Software"></a>
 
