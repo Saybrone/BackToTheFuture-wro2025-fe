@@ -84,10 +84,24 @@ This section discusses ...
 Our robot’s mobility depends on the coordination of its powertrain, steering system, and chassis. Together, these components provide stability, control, and efficiency, enabling smooth and reliable movement.
 ### Powertrain
 #### Motor
- <img width="413" height="322" alt="motor" src="https://github.com/user-attachments/assets/412ae5d4-dc0c-49b6-8a6a-21480d697cd4" /> Specifications: <br> Rated Voltage : 6~12V <br> Weight : 10g <br> Revolving Speed : 100RPM @ 6V <br>Load Speed: 80RPM<br>Rated Torque: 2 kg.cm <br>Stall Torque: 16 kg.cm
+ <img width="413" height="322" alt="motor" src="https://github.com/user-attachments/assets/412ae5d4-dc0c-49b6-8a6a-21480d697cd4" />| Specifications: <br> Rated Voltage : 6~12V <br> Weight : 10g <br> Revolving Speed : 100RPM @ 6V <br>Load Speed: 80RPM<br>Rated Torque: 2 kg.cm <br>Stall Torque: 16 kg.cm |
 
+     
 
 ### Steering
+#### Servo Motor
+<img width="250" height="289" alt="servo" src="https://github.com/user-attachments/assets/817b5304-5896-4d20-8d13-dacc3677b0b0" />  
+   </td>
+    <td valign="top" style="padding-left: 0px;" border="0">
+      Specifications:
+      Operating Voltage: 3.3V~6V
+      Rated Voltage: 4.8V
+      Rotational range: 360°
+      Maximum Torque: 1.6kg±0.2kg/cm(4.8V)
+      Maximum Speed: 45rpm(3V)
+      Weight: 20g
+For steering we selected the GeekServo.This motor is compatible with Lego Technic parts and offers a higher speed compared to 9g motors. The output shaft features a Lego Technic axle connector, making it ideal for applications that require a high-power drive.
+
 
 ### Chassis
 
