@@ -139,7 +139,10 @@ Our robot’s mobility depends on the coordination of its powertrain, steering s
 <p style="margin:0;"> Below, we have included the diagram of our motor for clarity. </p> <img width="571" height="207" alt="Ekran Alıntısı" src="https://github.com/user-attachments/assets/c8769703-f8e3-4611-8122-a4f2439efcb6" style="display:block; margin:0 auto;" />
 
 #### Motor Controller
-![PHOTO-2025-08-25-13-54-37](https://github.com/user-attachments/assets/2651886b-e03a-48b4-bcb7-a15d6b182283)
+<img src="https://github.com/user-attachments/assets/2651886b-e03a-48b4-bcb7-a15d6b182283" 
+     alt="EVN ALPHA" 
+     style="width:400px; height:auto; display:block; margin:0 auto;" />
+
 
 
 The EVN ALPHA is a compact robot controller based on the RP2040, housed in a LEGO Technic-compatible shell. It provides 26 I/O channels for controlling brushed DC motors, servos, and connecting UART or I2C peripherals. The board also integrates a 2-cell Lithium-Ion power management system, offering charging, cell balancing, and voltage regulation, making it ideal for safely powering and controlling our robot’s motors and sensors.
