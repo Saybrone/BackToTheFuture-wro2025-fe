@@ -152,6 +152,9 @@ Our robot’s mobility depends on the coordination of its powertrain, steering s
 
 
 # Power and Sense Management
+## Li-ion Battery
+<table> <tr> <!-- Görsel Kısmı --> <td> <img width="137" height="212" alt="lityum" src="https://github.com/user-attachments/assets/43538118-c556-4b7b-9187-0674eff2969d" /></td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Voltage: 3.7V <br>Capacity:2800mAh<br> Diameter: 18mm <br> Length: 65mm <br></td> </tr> </table> <br><br> This <b>OpenMV Cam -RT1062</b> is the one we used in our robot. 
+
 ## OpenMV Cam RT1062
 <table> <tr> <!-- Görsel Kısmı --> <td> <img width="243" height="313" alt="cam" src="https://github.com/user-attachments/assets/c30ce89a-f4fb-4d09-a3ca-ed0fd695b2d4" /> </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Microcontroller: ARM Cortex M7 (RT1062)<br>Frequency: 600 MHz<br> RAM: 32 MB SDRAM + 1 MB SRAM <br> Flash Memory: 16 MB program/storage flash<br>Camera Resolution: 2592 × 1944 (5 MP) <br> Frame Rate:~40 FPS on QVGA (320 × 240) </td> </tr> </table> <br><br> This <b>OpenMV Cam -RT1062</b> is the one we used in our robot. The OpenMV Cam is a small, low-power microcontroller board that we used in our robot to implement machine vision applications. We program the OpenMV Cam in high-level Python scripts (via the MicroPython Operating System) instead of C/C++, which makes it much easier to handle the complex outputs of machine vision algorithms and work with high-level data structures. At the same time, we retain full control over the OpenMV Cam and its I/O pins in Python. This allows our robot to locate obstacles, lines and walls, enabling intelligent, autonomous behaviors.
 
