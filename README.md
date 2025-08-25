@@ -80,7 +80,7 @@ Our robot integrates LEGO components with custom 3D-printed hardware, designed t
 <br>
 
 # Hardware Components <a class="anchor" id="Hardware"></a>
-This section discusses ...
+This section covers all the parts utilized in the vehicle, such as motors, sensors, controllers, chassis, mechanical systems, and other components.
 ## Electronic Components
 <table border="1" cellpadding="12" cellspacing="0">
   <thead>
