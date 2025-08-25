@@ -33,7 +33,7 @@
 # Table of Contents
 - [Folder Contents](#folder-contents-)
 - [The Challenge](#challenge)
-- [Vehicle](#Vehicle)
+  [Vehicle](#Vehicle)
 - [Hardware Components](#Hardware)
 - [Power and Sense Management](#power-and-sense-management)
 - [Software Components](#Software)
@@ -68,7 +68,7 @@ Our robot integrates LEGO components with custom 3D-printed hardware, designed t
 
 
 
-## V-Photos <a class="anchor" id="Vphotos"></a>
+## V-Photos <b class="anchor" id="Vphotos"></a>
 | <img src="v-photos/front.jpg" width="40%" /> | <img src="v-photos/back.jpg" width="40%" /> | 
 | :--: | :--: | 
 | *Front* | *Back* |
@@ -136,7 +136,9 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
 </table>
 
 ## Mobility Management
+
 Our robot’s mobility depends on the coordination of its powertrain, steering system, and chassis. Together, these components provide stability, control, and efficiency, enabling smooth and reliable movement.
+
 ### Powertrain
 
 #### Motor
@@ -145,6 +147,7 @@ Our robot’s mobility depends on the coordination of its powertrain, steering s
   
 
 ### Steering
+Our robot uses a **reckless steering** mechanism, a simplified form of Ackermann steering where the wheels are directly turned without complex linkage geometry. This method makes the robot easier to turn and keeps the overall design compact. It is highly effective for lightweight and fast-moving prototypes where simplicity and space efficiency are key.
 
 #### Servo Motor
 <table> <tr> <!-- Görsel Kısmı --> <td> <img width="735" height="616" alt="output-onlinetools" src="https://github.com/user-attachments/assets/ae1580ef-0944-4630-b2ee-5670c99bc04d" />
@@ -152,7 +155,7 @@ Our robot’s mobility depends on the coordination of its powertrain, steering s
 <p style="margin:0;"> <p>Below, we have included the diagram of our servo motor.</p> <img src="https://github.com/user-attachments/assets/35552517-c78a-430e-9b82-2b450fe1c402" alt="Servo Motor Diagram" style="display:block; margin:0 auto; width:400px;" />
 
 ### Chassis
-
+Our chassis connect lego and 3D printed parts to 
 ## Power and Sense Management
 ### Li-ion Battery
 <table> <tr><td> <img width="137" height="212" alt="lityum" src="https://github.com/user-attachments/assets/43538118-c556-4b7b-9187-0674eff2969d" /></td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Voltage: 3.7V <br>Capacity:2800mAh<br> Diameter: 18mm <br> Length: 65mm <br></td> </tr> </table> 
