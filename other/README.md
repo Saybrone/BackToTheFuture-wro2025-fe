@@ -1,6 +1,6 @@
 This file contains our robot's parts.
 
-When you click to  ` servo `  you can find our servo motor.
+When you click to  ` servo motor `  you can find our servo motor.
 
 When you click to  ` evn `  you can find our motor controller.
 
