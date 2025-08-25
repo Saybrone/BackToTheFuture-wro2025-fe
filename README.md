@@ -106,7 +106,7 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
     </tr>
   <tr>
     <tr>
-      <td>Motor Controller</td>
+      <td>Motor Controller and Processor</td>
       <td><a href="https://coresg.tech/product/evn-alpha/">EVN Alpha</a></td>
       <td><img src="other/evn/evn2.png" alt="evn" width="150"></td>
       <td>$168</td>
@@ -119,7 +119,7 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
     </tr>
     </tr>
     <tr>
-      <td>Camera and Processor</td>
+      <td>Camerar</td>
       <td><a href="https://openmv.io/products/openmv-cam-rt?srsltid=AfmBOorMjCmNBP1AZA_3V53JQMS-8N7Mg5ljP10ljHe4SLFoCauGWzZN">OpenMV Cam RT1062</a></td>
       <td><img width="143" height="213" alt="cam" src="https://github.com/user-attachments/assets/4644d19b-08c5-4fb4-8b32-eb683c3da5b5" /></td>
       <td>$120</td>
