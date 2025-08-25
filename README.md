@@ -155,7 +155,8 @@ Our robot uses a **reckless steering** mechanism, a simplified form of Ackermann
 <p style="margin:0;"> <p>Below, we have included the diagram of our servo motor.</p> <img src="https://github.com/user-attachments/assets/35552517-c78a-430e-9b82-2b450fe1c402" alt="Servo Motor Diagram" style="display:block; margin:0 auto; width:400px;" />
 
 ### Chassis
-Our chassis connect lego and 3D printed parts to 
+Our chassis combines LEGO components with custom 3D-printed parts, creating a reliable and durable structure.
+
 ## Power and Sense Management
 ### Li-ion Battery
 <table> <tr><td> <img width="137" height="212" alt="lityum" src="https://github.com/user-attachments/assets/43538118-c556-4b7b-9187-0674eff2969d" /></td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Voltage: 3.7V <br>Capacity:2800mAh<br> Diameter: 18mm <br> Length: 65mm <br></td> </tr> </table> 
