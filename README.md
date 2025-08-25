@@ -179,7 +179,6 @@ The EVN ALPHA is a compact robot controller based on the RP2040, housed in a LEG
 ## Software Components <a class="anchor" id="Software"></a>
 
 ## Robot Construction Guide <a class="anchor" id="robot-construction-guide-"></a>
-## Robot Construction Guide <a class="anchor" id="robot-construction-guide-"></a>
 **Step 1: Assemble the steering system**  
 - Mount the GeekServo motor securely onto the chassis using screws or brackets.  
 - Connect the steering axle to the servo using a suitable coupling or connector.  
