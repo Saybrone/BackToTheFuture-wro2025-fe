@@ -1,7 +1,7 @@
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/COPYING.gpl)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](/LICENSE)
 
-Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
----
+# Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
+
 <table border="0">
   <tr border="0">
     <td  border="0" colspan="2">
@@ -28,7 +28,29 @@ Team BACK TO THE FUTURE - WRO® 2025 Future Engineers
 </table>
 
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:backtothefuturefeteamofficial@gmail.com)  [![Youtube](https://img.shields.io/badge/Youtube-%23FF0000.svg?style=for-the-badge&logo=Youtube&logoColor=white)](https://www.youtube.com/@BackToTheFuture-WRO)
-## The Challenge <a class="anchor" id="challenge"></a>
+
+
+# Table of Contents
+- [Folder Contents](#folder-contents-)
+- [The Challenge](#challenge)
+- [Vehicle](#Vehicle)
+- [Hardware Components](#Hardware)
+- [Power and Sense Management](#power-and-sense-management)
+- [Software Components](#Software)
+- [Robot Construction Guide](#robot-construction-guide-)
+- [Resources](#Resources)
+- [License](#License)
+
+# Folder Contents <a class="anchor" id="folder-contents-"></a>
+* `models` is for the 3D files we used to print our parts
+* `other` includes other files which can be used to understand how to prepare the vehicle for the competition. It includes documentations, datasets, hardware specifications, communication protocols,  descriptions etc.
+* `schemes` contains schematic diagrams of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
+* `src` contains code of control software for all components which were programmed to participate in the competition
+* `t-photos` contains photos of the team and logos
+* `v-photos` contains 6 photos of the vehicle from various angles
+* `video` contains the video.md file with the link to our YouTube channel and the respective videos
+
+# The Challenge <a class="anchor" id="challenge"></a>
 
 In the **[WRO 2025 Future Engineers – Self-Driving Cars](https://wro-association.org/)** category, teams are tasked with creating a robotic vehicle that can autonomously navigate a changing racetrack. Each round introduces new track layouts, requiring vehicles to adapt in real time.
 The competition highlights the full engineering process:
@@ -40,50 +62,26 @@ The competition highlights the full engineering process:
 Teams are judged on performance, innovation, reliability, and the clarity of their engineering process, encouraging creativity, teamwork, and STEM skills.
 
 Learn more about the challenge [here](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf).
-## Contents
-* `models` is for the 3D files we used to print our parts
-* `other` includes other files which can be used to understand how to prepare the vehicle for the competition. It includes documentations, datasets, hardware specifications, communication protocols,  descriptions etc.
-* `schemes` contains schematic diagrams of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
-* `src` contains code of control software for all components which were programmed to participate in the competition
-* `t-photos` contains photos of the team and logos
-* `v-photos` contains 6 photos of the vehicle from various angles
-* `video` contains the video.md file with the link to our YouTube channel and the respective videos
----
-## Content of README
-- [Hardware](#hardware)
-  - [Electronic Components](#electronic-components)
-  - [Mobility Management](#mobility-management)
-    - [Chassis and Design](#chassis-and-design)
-    - [Locomotion](#locomotion)
-    - [Steering](#steering)
-  - [Power and Sense Management](#power-and-sense-management)
-    - [Power and Wiring](#power-and-wiring)
-    - [Sensors](#sensors)
-- [Software and Control](#software-and-control)
-<!--  - [Vehicle Assembly](#vehicle-assembly)  -->
----
+
+# Vehicle <a class="anchor" id="Vehicle"></a>
+Our robot integrates LEGO components with custom 3D-printed hardware, designed to maximize stability and durability. It features a 3D-printed motor mount and camera holder, integrated with a LEGO-based chassis. For steering, we implemented a simplified Ackermann setup without linkage geometry (reckless steering), allowing the robot to turn easily while keeping the design compact. Our robot is powerized by a [GA12-N20 200RPM](https://www.handsontec.com/dataspecs/GA12-N20.pdf) dc motor and controlled by an [EVNAlpha](https://evn.readthedocs.io/). It uses [OpenMV RT1062](https://openmv.io/products/openmv-cam-rt?srsltid=AfmBOorMjCmNBP1AZA_3V53JQMS-8N7Mg5ljP10ljHe4SLFoCauGWzZN) to locate obstacles, lines and walls. Steering was managed by [GeekServo 2KG Motor](https://kittenbothk-eng.readthedocs.io/en/latest/motors/2kgMotor.html). Also it uses [MPU6500 IC 6 DoF IMU Sensor](https://datasheet.octopart.com/MPU-6500-InvenSense-datasheet-138896167.pdf) to manage certain turns and hold position during movement.
 
 
 
-## Hardware <a class="anchor" id="hardware"></a>      
-This section discusses all the parts used in the vehicle including the motors, sensors, controllers, chassis, mechanisms and other elements.
-<table style="width: 100%">
-  <tr>
-    <td rowspan="2" style="width: 50%; vertical-align: top;">
-      <img src="v-photos/left.jpg" width="100%"><br>
-    </td>
-    <td width="45%"; vertical-align: top;">
-      <img src="models/Visuals/Differential.gif"><br>
-    </td>
-  </tr>
-  <tr>
-    <td style="vertical-align: top;">
-      <img src="models/Visuals/SensorSteer.gif"><br>
-    </td>
-  </tr>
-</table>
+## V-Photos <a class="anchor" id="Vphotos"></a>
+| <img src="v-photos/front.jpg" width="40%" /> | <img src="v-photos/back.jpg" width="40%" /> | 
+| :--: | :--: | 
+| *Front* | *Back* |
+| <img src="v-photos/left.jpg" width="40%" /> | <img src="v-photos/right.jpg" width="40%" /> | 
+| *Left* | *Right* |
+| <img src="v-photos/top.jpg" width="40%" /> | <img src="v-photos/bottom.jpg" width="40%" /> | 
+| *Top* | *Bottom* |
 
-### Electronic Components
+<br>
+
+# Hardware Components <a class="anchor" id="Hardware"></a>
+This section covers all the parts utilized in the vehicle, such as motors, sensors, controllers, chassis, mechanical systems, and other components.
+## Electronic Components
 <table border="1" cellpadding="12" cellspacing="0">
   <thead>
     <tr>
@@ -96,27 +94,27 @@ This section discusses all the parts used in the vehicle including the motors, s
   <tbody>
     <tr>
       <td>Motor</td>
-      <td><a href="https://www.pololu.com/product/4755">Pololu PL-4755</a></td>
-      <td><img src="other/motor/motor_trn.png" alt="motor trn" width="120"></td>
-      <td>$90</td>
+      <td><a href="https://www.aliexpress.us/item/3256805071786531.html?gatewayAdapt=glo2usa4itemAdapt">GA12 N20 Encoder DC Mini Micro Metal Gear DC Motor</td>
+      <td><img width="150" height="150" alt="pixelcut-export" src="https://github.com/user-attachments/assets/b2b94337-b4a7-4c82-ba1a-dd0e810ae303" /></td>
+      <td>$7</td>
     </tr>
     <tr>
       <td>Servo Motor</td>
-      <td><a href="https://www.ebay.com/itm/192002483556">Tower Pro MG995 (270 degrees)</a></td>
-      <td><img src="other/servo/servo2.png" alt="servo mg995" width="120"></td>
-      <td>$12</td>
+      <td><a href="https://www.robotshop.com/products/geekservo-motor-2kg-compatible-w-lego">GeekServo (360 degrees)</a></td>
+      <td><img width="135" height="116" alt="geek" src="https://github.com/user-attachments/assets/412f57cd-627f-412b-beab-5ad54d2b1134" /></td>
+      <td>$10</td>
     </tr>
   <tr>
-    <td>Arduino Nano</td>
-      <td><a href="https://www.amazon.com/Arduino-Nano-Every-headers-Mounted/dp/B07WWK29XF/ref=sr_1_6?dib=eyJ2IjoiMSJ9.6QPRL9EGieCqVheJYNSvYLiNSaIKqAuyrl-iTXMnEEFxjRF91-4yBiNZ6nyKh5ycpBOX44QOmPRK7fL3HVLo2QC2_QmAm-7GL2P5Z-mCouxmwDNTEQJyOoxRi9AEIPjNBUgLOiy90Prhtw6UN2BxDhMu7ViOaG3R5O15E3tL0jTF4MEzSOtHVFYsoVMhNjp9DDzrsWomxCVR0Mx8RJisD0e4Xk5l8poPY9SfpBqtgK8.0iYflxus7jVqie86k-tM8DtWQV5-URD3P1OsP7q5PeI&dib_tag=se&keywords=arduino+nano&qid=1748520860&sr=8-6">ABX00033</a></td>
-      <td><img src="other/arduino_nano/nano1.png" alt="nano" width="120"></td>
-      <td>$18</td>
     <tr>
-      <td>Motor Controller</td>
+      <td>Motor Controller and Processor</td>
       <td><a href="https://coresg.tech/product/evn-alpha/">EVN Alpha</a></td>
       <td><img src="other/evn/evn2.png" alt="evn" width="150"></td>
       <td>$168</td>
     </tr>
+      <td>IMU</td>
+      <td><a href="https://tr.aliexpress.com/item/1005006996048940.html?spm=a2g0o.productlist.main.5.6ef53353cKZzxy&algo_pvid=fd17a8c4-be06-4443-bb16-ca5842e753da&algo_exp_id=fd17a8c4-be06-4443-bb16-ca5842e753da-4&pdp_ext_f=%7B%22order%22%3A%223%22%2C%22eval%22%3A%221%22%7D&pdp_npi=6%40dis%21TRY%2161.03%2150.05%21%21%2110.06%218.25%21%40211b80f717561234906297648ea906%2112000038988133079%21sea%21TR%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A9b91ce8e%3Bm03_new_user%3A-29895&curPageLogUid=WZMpWQdAhpsJ&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006996048940%7C_p_origin_prod%3A">MPU 6500 Gyro Sensor</td>
+      <td><img width="180" height="160" alt="IMU" src="https://github.com/user-attachments/assets/f1ea41de-69c4-468b-88c5-4eef894ee28e" /></td>
+      <td>$1.88</td> 
     <tr>
       <td>Battery</td>
       <td><a href="https://www.pilpaketi.com/molicel-inr18650-p28a-2800-mah-35a-li-ion-pil?srsltid=AfmBOoq0NI6NCh02JlGpFI8KTAQyYEYrH5VP3xPdYOHkjVYT9HXYP0vB">Molicel 35A Li-ion battery</td>
@@ -124,119 +122,85 @@ This section discusses all the parts used in the vehicle including the motors, s
       <td>$10x2</td>
     </tr>
     </tr>
-      <td>Ultrasonic Sensor</td>
-      <td><a href = "https://www.amazon.com/WWZMDiB-HC-SR04-Ultrasonic-Distance-Measuring/dp/B0B1MJJLJP/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.E2SIkElJhtFWCJCHL5Q6YwwtxyRhETnroFHfs4vAAJOjcW1L9dEwbj7bGniy3Pzy6L27ZFLNRdwTI4FVcgYKtnYKHKahio9ZyZa72jk1DZa4pvnNpjMaBYwEafzMDsrU1DWy1_HOlRrWNFoFsfeGA-Seq8DXEae_iaU754X9KoDaoDFvAMEwwrnDM6CdTvT420uo2v9w7A_ooCAaUVxTJlxzYv8n0E07VG6Ycfd5lS8.OEUDh4z78lpkOdU7BLjVaoVRoDB7bjIllFkaE5OLfrQ&dib_tag=se&keywords=Ultrasonic+Sensors&qid=1748517699&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"</td>HC-SR04</a></td>
-      <td><img src = "other/ultrasonic_sensor/ultra2.png" alt = "ultrasonic" width = "120"></td>
-      <td>$7x2</td>
     <tr>
-      <td>Time of Flight Sensor</td>
-      <td><a href="https://www.amazon.com/dp/B099N2JW89">VL53L0X</a></td>
-      <td><img src="other/tof_sensor/tof3.png" alt="time-of-flight" width="79"></td>
-      <td>$9x2</td>
-    </tr>
-    <tr>
-      <td>Camera and Processor</td>
-      <td><a href="https://www.amazon.com/dp/B09XP9FX25?th=1">Samsung Galaxy A53 5G</a></td>
-      <td><img src="other/phone/samsung.png" alt="samsung-galaxy-a53-5g" width="120"></td>
-      <td>$142</td>
+      <td>Camera</td>
+      <td><a href="https://openmv.io/products/openmv-cam-rt?srsltid=AfmBOorMjCmNBP1AZA_3V53JQMS-8N7Mg5ljP10ljHe4SLFoCauGWzZN">OpenMV Cam RT1062</a></td>
+      <td><img width="143" height="213" alt="cam" src="https://github.com/user-attachments/assets/4644d19b-08c5-4fb4-8b32-eb683c3da5b5" /></td>
+      <td>$120</td>
     </tr>
     <tr>
       <td colspan="3"><strong>Total Cost</strong></td>
-      <td><strong>$928</strong></td>
+      <td><strong>$326.88</strong></td>
     </tr>
   </tbody>
 </table>
 
-
 ## Mobility Management
-This section contains information about the vehicle's movement.
+Our robot’s mobility depends on the coordination of its powertrain, steering system, and chassis. Together, these components provide stability, control, and efficiency, enabling smooth and reliable movement.
+### Powertrain
 
-### Chassis and Design
-<table border="0">
-  <tr>
-    <td width=%20><div class="wrap"><img src="models/Visuals/Robot Chassis 2.1 v5.png" alt="motor tr.png" width=%50></div></td><td width=%80>The vehicle's chassis was designed completely by our team using Autodesk Fusion® program. It was designed to have a rectangular shape with a tapered front to increase steering range. It has cutouts for the motor, servo, sensors, cables and screw holes for mounting parts with M3 screws and LEGO® TECHNIC compatible pin holes to make assembly easier.
-It measures 171.2 mm in length, 100 mm in width and 25.7 mm in height, without the steering assembly.
-It was 3D printed with <a href=https://store.creality.com/products/hyper-series-pla-3d-printing-filament-1kg>gray Hyper PLA filament</a> on Ender 3 V3. The chassis has a mostly flat top side to increase 3D printing quality.
-The chassis was designed to fit all the components on one layer. It is also directly connected to the steering mechanism's main (stationary) part.
-The front and back tires used are LEGO® #39367pb02 wheels. They were chosen because they have smaller contact area with the ground thus increasing predictability and decreasing slippage.</td>
-  </tr>
-</table>
-
-### Locomotion
-The robot moves forward-backward with a rear wheel drive (RWD) mechanism. The wheels are connected to the motor with a LEGO® differential (#65413, #65414, 5x #6589) to prevent slipping of wheels while cornering.
-The back axle is held in place by the chassis' supporting legs.
-<table border="0">
-  <tr>
-    <td width=%20><img src="other/motor/motor_trn.png" alt="motor tr.png"></td><td>The motor driving the differential is a powerful 12V brushed DC gearmotor with a 102.08:1 metal gearbox and an integrated quadrature encoder with a resolution of 64 counts per revolution (CPR) of the motor shaft and 6533 CPR of the gearbox’s output shaft. The gearbox is composed mainly of spur gears, but it features helical gears for the first stage for reduced noise and improved efficiency. These units have a 16 mm-long, 6 mm-diameter D-shaped output shaft. 
-A gear compatible with the motor and the differential's gears was 3D printed.
-</td>
-  </tr>
-</table>
-
-| Motor Specs | Values |
-| --- | --- |
-| Stall Current | 3.5 A |
-| No Load Current | 100 mA |
-| No Load Speed | 65 rpm |
-| Stall Torque | 22 kg cm |
-
-*Values were measured and/or calculated at ~8V*
-
+#### Motor
+<table> <tr> <!-- Görsel Kısmı --> <td> <img width="813" height="722" alt="motor" src="https://github.com/user-attachments/assets/cbc7350e-6660-4c34-99db-c2983fde7c3f" /> </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Rated Voltage: 6~12V <br> Weight: 10g <br> Revolving Speed: 100RPM @ 6V <br> Load Speed: 80RPM <br> Rated Torque: 2 kg.cm <br> Stall Torque: 16 kg.cm <br><br> This <b>DC Mini Metal Gear Motor</b> is the one we used in our robot. Its <b>light weight</b> and <b>compact size</b> make it suitable for small robotic platforms, while the <b>high torque</b> and <b>low RPM</b> ensure powerful and controlled movement. <br><br> Thanks to its <b>excellent stall characteristics</b>, the motor provides enough force to climb slopes or overcome obstacles, which is highly beneficial for mobile robots. Additionally, the <b>durable metal gears</b> extend the lifetime of the motor, making it reliable for long-term use. <br><br> Another important advantage is that a wheel can be easily mounted on the motor’s output shaft, allowing for simple integration with the robot’s chassis. </td> </tr> </table>
+<p style="margin:0;"> Below, we have included the diagram of our motor for clarity. </p> <img width="571" height="207" alt="Ekran Alıntısı" src="https://github.com/user-attachments/assets/c8769703-f8e3-4611-8122-a4f2439efcb6" style="display:block; margin:0 auto;" />
+  
 
 ### Steering
-<table>
-  <tr>
-    <td><img src="models/Visuals/Steering.gif">
-    </td><td>The steering mechanism was designed by our team using Autodesk Fusion® to make adjustments easier. It was designed with respect to <a href=https://en.wikipedia.org/wiki/Ackermann_steering_geometry>Ackermann Steering Geometry</a> to increase turning predictability and accuracy. The design has been optimised in regards to wheel base and vehicle length to minimise slipping. It is mounted to the main steering part on the chassis using M3 screws and lock nuts.
-    </td>
-  </tr>
-</table>
 
-<table>
-  <tr>
-    <td>To control steering we use a `Tower Pro MG995`. The MG995 servo motor offers an increase in speed, tension and precision over the SG90 and MG90S micro servo motors. This high-speed standard servo   motor can rotate 270 degrees.
-The linear extension part was screwed on the servo's output shaft. Steering control rod was screwed on the hole furthest from the shaft.
-With the mechanism, the steering assembly can turn -25 to +25 degrees relative to the servo. This was enough to maneuver around the obstacles, considering the small turning radius of the vehicle (~42 cm).
-</td><td width="%30"><img src="other/servo/servo2.png" alt="servo mg995" ></td>
-  </tr>
-</table>
+#### Servo Motor
+<table> <tr> <!-- Görsel Kısmı --> <td> <img width="735" height="616" alt="output-onlinetools" src="https://github.com/user-attachments/assets/ae1580ef-0944-4630-b2ee-5670c99bc04d" />
+ </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Operating Voltage: 3.3V~6V<br> Rated Voltage: 4.8V<br> Rotational range: 360°<br> Maximum Torque: 1.6kg±0.2kg/cm (4.8V)<br> Maximum Speed: 45rpm (3V)<br> Weight: 20g<br><br> For steering we selected the <b>GeekServo</b>. This motor is compatible with Lego Technic parts and offers a higher speed compared to 9g motors. The output shaft features a Lego Technic axle connector, making it ideal for applications that require a high-power drive. </td> </tr> </table> 
+<p style="margin:0;"> <p>Below, we have included the diagram of our servo motor.</p> <img src="https://github.com/user-attachments/assets/35552517-c78a-430e-9b82-2b450fe1c402" alt="Servo Motor Diagram" style="display:block; margin:0 auto; width:400px;" />
+
+
+### Chassis
 
 
 ## Power and Sense Management
-This section discusses the powering, wiring and sensing of the vehicle.
+### Li-ion Battery
+<table> <tr><td> <img width="137" height="212" alt="lityum" src="https://github.com/user-attachments/assets/43538118-c556-4b7b-9187-0674eff2969d" /></td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Voltage: 3.7V <br>Capacity:2800mAh<br> Diameter: 18mm <br> Length: 65mm <br></td> </tr> </table> 
 
-### Power and Wiring
-<img src="schemes/SchematicPic.jpg">
+### IMU
+<table> <tr><td> <img width="192" height="160" alt="IMU" src="https://github.com/user-attachments/assets/a125a066-8e47-4f12-9359-d34754822fd6" />
+td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Gyroscope Range: ±250, ±500, ±1000, ±2000 °/s<br>Accelerometer Range: ±2g, ±4g, ±8g, ±16g<br> Interface : I2C <br>  <br></td> </tr> </table> 
 
-This schematic illustrates the core electromechanical connections for an autonomous vehicle's control system. The system is built around the **EVN Alpha board (US1)**, which interfaces with a **DC motor with encoder (US2)** for locomotion and a **servo motor (US3)** for steering. Power is supplied by two **18650 batteries** in series, regulated to 5V and 3.3V for different components. The EVN board receives encoder signals from the motor and provides motor and servo control outputs. Additionally, two **VL53L0X Time-of-Flight sensors (US6 and US7)** are used for distance measurement, connected via I2C. Each sensor includes an **XSHUT** pin to allow individual addressing, enabling them to coexist on the same bus. The circuit is designed to ensure coordinated motor control, steering, and real-time distance sensing, supporting autonomous navigation.
-
-### Sensors
-Our vehicle uses the `OpenMV Cam RT1062` for visual input during both the open and obstacle rounds. The OpenMV Cam RT1062 provides a broad field of view and real-time image processing capabilities, making it ideal for detecting lane markings and traffic signs on the fly. Its onboard processing allows for fast edge detection, color filtering, and shape recognition, which are essential for autonomous navigation in dynamic environments. To determine its heading and keep track of turns during navigation, we use the `MPU6500 IC` IMU sensor. This sensor provides smooth and drift-free measurements of the azimuth (yaw) angle, which is essential for accurately detecting and counting turns in real time, especially during sequences where the vehicle must follow complex paths or respond to directional cues.
-
-To enable accurate distance sensing across different competition scenarios, we integrated two types of sensors into our vehicle. During the open round, we employed a VL53L0X infrared Time-of-Flight (ToF) sensor, which provides precise distance measurements by calculating the time it takes for an emitted light pulse to reflect off an object and return to the sensor. This allows the vehicle to maintain proper alignment and stopping distance along the route. In contrast, for the obstacle round, we used an HC-SR04 ultrasonic sensor, which determines distance by measuring the echo time of ultrasonic sound waves. This sensor is particularly effective for detecting larger, irregularly shaped obstacles and is well-suited for dynamic environments where quick reaction to unexpected objects is critical. The combination of these sensors ensured our vehicle maintained spatial awareness and navigational precision in both rounds.
-
-## Software and Control
-This section discusses the control software for both rounds. It contains codes for each round. Both the open and obstacle rounds contain the turn direction identification code that uses the blue/orange lines and logic to count turns using the smartphone's gyroscope. We only use the traffic sign identification on the obstacle round.
-
-### Image Processing
-We use many steps to filter and manipulate the camera input to achieve our goal. Here you can see a simplified visualisation of what happens behind scenes.
-
-<img src="src/Android/examples/flowchart.png" alt="Flowchart" width="80%">
-
-These are the broad steps of our process to identify the traffic signs.
-<table border="0">
-  <tr>
-    <td width="60%"><img src="src/Android/examples/process.gif" alt="gif" align="center"></td>
-    <td>We use OpenCV for processing the images. First we take the frame from the camera at 15fps and 640x480px resolution. Then we perform a flood fill from the bottom middle pixel of the screen while thresholding black and blue pixels to isolate the game mat. Then we find all the contours of this mask and filter out the ones that are on the outside edge and thereby are left with the borders of the traffic light rectangles. After finding the rectangles, we calculate their centres and send the distance between them and the bottom middle pixel to the EVN.</td>
-  </tr>
-</table>
-
+### OpenMV Cam RT1062
+<table> <tr> <td><img src="https://github.com/user-attachments/assets/c30ce89a-f4fb-4d09-a3ca-ed0fd695b2d4" 
+     alt="cam" 
+     style="width:800px; height:auto; display:block; margin:0 auto;" />
+ </td> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Microcontroller: ARM Cortex M7 (RT1062)<br>Frequency: 600 MHz<br> RAM: 32 MB SDRAM + 1 MB SRAM <br> Flash Memory: 16 MB program/storage flash<br>Camera Resolution: 2592 × 1944 (5 MP) <br> Frame Rate:~40 FPS on QVGA (320 × 240) <br><br> This <b>OpenMV Cam -RT1062</b> is the one we used in our robot. The OpenMV Cam is a small, low-power microcontroller board that we used in our robot to implement machine vision applications. We program the OpenMV Cam in high-level Python scripts (via the MicroPython Operating System) instead of C/C++, which makes it much easier to handle the complex outputs of machine vision algorithms and work with high-level data structures. At the same time, we retain full control over the OpenMV Cam and its I/O pins in Python. This allows our robot to locate obstacles, lines and walls, enabling intelligent, autonomous behaviors. </td> </tr> </table>
 
 
 ### EVN Alpha
-For controlling the DC Motor With Encoder and the Servo Motor, our vehicle utilizes an EVN Alpha, based on the [RP2040](https://www.raspberrypi.com/products/rp2040/) microcontroller designed by Raspberry Pi. It features 4 motor drivers with encoder inputs, 2 UART controllers, 16 I2C ports (achieved with multiplexing of the 2 I2C controllers on RP2040), 4 Servo controllers and a USB-C port for charging and data transfer. It can be programmed with the [Arduino IDE](https://www.arduino.cc/en/software/), after installing the [Arduino Pico Core](github.com/earlephilhower/arduino-pico/) and [EVN Library](https://github.com/EVNdevs/EVN-arduino).
 
-### Smartphone
-Our vehicle uses the Samsung Galaxy A53 5G as the main processing unit and vision system. It runs the custom-built Android app responsible for all high-level decision-making. The smartphone's 12MP ultra-wide rear camera provides a broad field of view for traffic sign recognition and lane detection. Additionally, we leverage its GAME_ROTATION_VECTOR sensor to track yaw orientation and count turns accurately, enabling navigation through the open and obstacle rounds. The phone connects to the EVN Alpha via USB and communicates using a custom serial protocol. This setup eliminates the need for additional processing hardware, reducing complexity and cost.
+<img src="https://github.com/user-attachments/assets/2651886b-e03a-48b4-bcb7-a15d6b182283" 
+     alt="EVN ALPHA" 
+     style="width:400px; height:auto; display:block; margin:0 auto;" />
 
-<!-- ## Vehicle Assembly -->  
+
+The EVN ALPHA is a compact robot controller based on the RP2040, housed in a LEGO Technic-compatible shell. It provides 26 I/O channels for controlling brushed DC motors, servos, and connecting UART or I2C peripherals. The board also integrates a 2-cell Lithium-Ion power management system, offering charging, cell balancing, and voltage regulation, making it ideal for safely powering and controlling our robot’s motors and sensors.
+   
+## Software Components <a class="anchor" id="Software"></a>
+
+## Robot Construction Guide <a class="anchor" id="robot-construction-guide-"></a>
+
+## Resources <a class="anchor" id="Resources"></a>
+
+## License <a class="anchor" id="License"></a>
+
+```
+GNU General Public License v3.0
+
+Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
