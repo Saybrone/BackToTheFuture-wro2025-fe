@@ -126,7 +126,7 @@ This section discusses ...
     </tr>
     <tr>
       <td colspan="3"><strong>Total Cost</strong></td>
-      <td><strong>-</strong></td>
+      <td><strong>$325</strong></td>
     </tr>
   </tbody>
 </table>
