@@ -84,24 +84,13 @@ This section discusses ...
 Our robot’s mobility depends on the coordination of its powertrain, steering system, and chassis. Together, these components provide stability, control, and efficiency, enabling smooth and reliable movement.
 ### Powertrain
 #### Motor
- <img width="413" height="322" alt="motor" src="https://github.com/user-attachments/assets/412ae5d4-dc0c-49b6-8a6a-21480d697cd4" />| Specifications: <br> Rated Voltage : 6~12V <br> Weight : 10g <br> Revolving Speed : 100RPM @ 6V <br>Load Speed: 80RPM<br>Rated Torque: 2 kg.cm <br>Stall Torque: 16 kg.cm |
+<table> <tr> <!-- Görsel Kısmı --> <td> <img width="413" height="322" alt="motor" src="https://github.com/user-attachments/assets/412ae5d4-dc0c-49b6-8a6a-21480d697cd4" /> </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Rated Voltage: 6~12V <br> Weight: 10g <br> Revolving Speed: 100RPM @ 6V <br> Load Speed: 80RPM <br> Rated Torque: 2 kg.cm <br> Stall Torque: 16 kg.cm <br><br> This <b>DC Mini Metal Gear Motor</b> is the one we used in our robot. Its <b>light weight</b> and <b>compact size</b> make it suitable for small robotic platforms, while the <b>high torque</b> and <b>low RPM</b> ensure powerful and controlled movement. <br><br> Thanks to its <b>excellent stall characteristics</b>, the motor provides enough force to climb slopes or overcome obstacles, which is highly beneficial for mobile robots. Additionally, the <b>durable metal gears</b> extend the lifetime of the motor, making it reliable for long-term use. <br><br> Another important advantage is that a wheel can be easily mounted on the motor’s output shaft, allowing for simple integration with the robot’s chassis. </td> </tr> </table>
 
      
 
 ### Steering
 #### Servo Motor
-<img width="250" height="289" alt="servo" src="https://github.com/user-attachments/assets/817b5304-5896-4d20-8d13-dacc3677b0b0" />  
-   </td>
-    <td valign="top" style="padding-left: 0px;" border="0">
-      Specifications:
-      Operating Voltage: 3.3V~6V
-      Rated Voltage: 4.8V
-      Rotational range: 360°
-      Maximum Torque: 1.6kg±0.2kg/cm(4.8V)
-      Maximum Speed: 45rpm(3V)
-      Weight: 20g
-For steering we selected the GeekServo.This motor is compatible with Lego Technic parts and offers a higher speed compared to 9g motors. The output shaft features a Lego Technic axle connector, making it ideal for applications that require a high-power drive.
-
+<table> <tr> <!-- Görsel Kısmı --> <td> <img width="250" height="289" alt="servo" src="https://github.com/user-attachments/assets/817b5304-5896-4d20-8d13-dacc3677b0b0" /> </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Operating Voltage: 3.3V~6V<br> Rated Voltage: 4.8V<br> Rotational range: 360°<br> Maximum Torque: 1.6kg±0.2kg/cm (4.8V)<br> Maximum Speed: 45rpm (3V)<br> Weight: 20g<br><br> For steering we selected the <b>GeekServo</b>. This motor is compatible with Lego Technic parts and offers a higher speed compared to 9g motors. The output shaft features a Lego Technic axle connector, making it ideal for applications that require a high-power drive. </td> </tr> </table>
 
 ### Chassis
 
