@@ -161,7 +161,7 @@ Our robot’s mobility depends on the coordination of its powertrain, steering s
 
 ### IMU
 <table> <tr><td> <img width="192" height="160" alt="IMU" src="https://github.com/user-attachments/assets/a125a066-8e47-4f12-9359-d34754822fd6" />
-td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Gyroscope Range: ±250, ±500, ±1000, ±2000 °/s<br>Accelerometer Range: ±2g, ±4g, ±8g, ±16g<br> Interface : I2C <br> Length: 65mm <br></td> </tr> </table> 
+td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Gyroscope Range: ±250, ±500, ±1000, ±2000 °/s<br>Accelerometer Range: ±2g, ±4g, ±8g, ±16g<br> Interface : I2C <br>  <br></td> </tr> </table> 
 
 ### OpenMV Cam RT1062
 <table> <tr> <td><img src="https://github.com/user-attachments/assets/c30ce89a-f4fb-4d09-a3ca-ed0fd695b2d4" 
