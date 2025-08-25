@@ -9,7 +9,7 @@
     </td>
   </tr>
   <tr border="0">
-    <td width="50%"  border="0">
+    <td width="70%"  border="0">
       <img src="t-photos/TeamOfficial.jpg" alt="Official Photo" width="45%">
       <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="45%">
     </td>
