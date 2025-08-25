@@ -158,7 +158,7 @@ Our robot’s mobility depends on the coordination of its powertrain, steering s
 
 ### IMU
 <table> <tr><td> <img width="192" height="160" alt="IMU" src="https://github.com/user-attachments/assets/a125a066-8e47-4f12-9359-d34754822fd6" />
-td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Gyroscope Range: ±250, ±500, ±1000, ±2000 °/s<br>Accelerometer Range: ±2g, ±4g, ±8g, ±16g<br> Interface : I2C <br>  <br></td> </tr> </table> 
+td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Gyroscope Range: ±250, ±500, ±1000, ±2000 °/s<br>Accelerometer Range: ±2g, ±4g, ±8g, ±16g<br> Interface : I2C <br>Power Supply: 3.5V  <br> </td> </tr> </table> The MPU-6500 is a 6-axis MotionTracking sensor that combines a 3-axis gyroscope and a 3-axis accelerometer in a compact 3x3x0.9 mm package. This integration allows reliable motion detection and orientation tracking with reduced size and complexity. We selected the MPU-6500 because it provides reliable motion tracking, low power consumption, and small form factor, making it well-suited for our vehicle’s navigation and stability control.
 
 ### OpenMV Cam RT1062
 <table> <tr> <td><img src="https://github.com/user-attachments/assets/c30ce89a-f4fb-4d09-a3ca-ed0fd695b2d4" 
@@ -179,6 +179,41 @@ The EVN ALPHA is a compact robot controller based on the RP2040, housed in a LEG
 ## Software Components <a class="anchor" id="Software"></a>
 
 ## Robot Construction Guide <a class="anchor" id="robot-construction-guide-"></a>
+## Robot Construction Guide <a class="anchor" id="robot-construction-guide-"></a>
+**Step 1: Assemble the steering system**  
+- Mount the GeekServo motor securely onto the chassis using screws or brackets.  
+- Connect the steering axle to the servo using a suitable coupling or connector.  
+- Ensure the servo mount is firmly fixed so it doesn’t wobble during operation.  
+- Install the front steering hubs using a metal rod or axle to secure them.  
+- Make sure the steering arm moves freely and does not collide with the chassis.  
+
+**Step 2: Assemble the powertrain**  
+- The motor was mounted securely onto the chassis to ensure stability during operation.
+- The GA12-N20 DC motor is placed into the mount and attached firmly (using appropriate fastening components).
+- The motor output shaft is connected to an axle and gear mechanism to transmit rotation.
+- The rear axle with wheels is installed, ensuring that the gear ratio provides smooth and efficient power transfer to the wheels.
+
+**Step 3: Mount the electronics**
+- Place the EVN Alpha controller onto the chassis and secure it in position using appropriate fastening components.
+- Attach the Li-ion battery underneath the electronics section to maintain balance.
+- Mount the MPU-6500 IMU on the motor support so that it is stable during operation.
+- Install the OpenMV Cam RT1062 onto its holder and slightly tilt the camera upwards for improved line and obstacle detection.
+
+**Step 4: Attach the Wheels**
+- Attach the front wheels securely to the steering hubs using appropriate axles.
+- Install the rear wheels onto the driven axle that is connected to the motor.
+- Add spacers or equivalent components to keep the wheels properly fixed and aligned.
+
+**Step 5: Preparation for operation**
+- Ensure the chassis is stable and properly balanced.
+- Arrange cables so that they do not interfere with moving parts.
+
+**Step 6: Software setup**
+- Connect the controllers and sensors to a computer for programming.
+- Upload the control and vision codes required for system operation.
+- Verify that each component (motors, servos, camera, IMU) responds correctly.
+
+
 
 ## Resources <a class="anchor" id="Resources"></a>
 
