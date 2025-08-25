@@ -81,6 +81,56 @@ Our robot integrates LEGO components with custom 3D-printed hardware, designed t
 
 # Hardware Components <a class="anchor" id="Hardware"></a>
 This section discusses ...
+## Electronic Components
+<table border="1" cellpadding="12" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description / Link</th>
+      <th>Image</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Motor</td>
+      <td><a href="https://www.aliexpress.us/item/3256805071786531.html?gatewayAdapt=glo2usa4itemAdapt">GA12 N20 Encoder DC Mini Micro Metal Gear DC Motor</td>
+      <td><img width="150" height="150" alt="pixelcut-export" src="https://github.com/user-attachments/assets/b2b94337-b4a7-4c82-ba1a-dd0e810ae303" /></td>
+      <td>$7</td>
+    </tr>
+    <tr>
+      <td>Servo Motor</td>
+      <td><a href="https://www.robotshop.com/products/geekservo-motor-2kg-compatible-w-lego">GeekServo (360 degrees)</a></td>
+      <td><img width="135" height="116" alt="geek" src="https://github.com/user-attachments/assets/412f57cd-627f-412b-beab-5ad54d2b1134" /></td>
+      <td>$10</td>
+    </tr>
+  <tr>
+    <tr>
+      <td>Motor Controller</td>
+      <td><a href="https://coresg.tech/product/evn-alpha/">EVN Alpha</a></td>
+      <td><img src="other/evn/evn2.png" alt="evn" width="150"></td>
+      <td>$168</td>
+    </tr>
+    <tr>
+      <td>Battery</td>
+      <td><a href="https://www.pilpaketi.com/molicel-inr18650-p28a-2800-mah-35a-li-ion-pil?srsltid=AfmBOoq0NI6NCh02JlGpFI8KTAQyYEYrH5VP3xPdYOHkjVYT9HXYP0vB">Molicel 35A Li-ion battery</td>
+      <td><img src="other/battery/Battery.png" alt="battery" width="150"</td>
+      <td>$10x2</td>
+    </tr>
+    </tr>
+    <tr>
+      <td>Camera and Processor</td>
+      <td><a href="https://openmv.io/products/openmv-cam-rt?srsltid=AfmBOorMjCmNBP1AZA_3V53JQMS-8N7Mg5ljP10ljHe4SLFoCauGWzZN">OpenMV Cam RT1062</a></td>
+      <td><img width="143" height="213" alt="cam" src="https://github.com/user-attachments/assets/4644d19b-08c5-4fb4-8b32-eb683c3da5b5" /></td>
+      <td>$120</td>
+    </tr>
+    <tr>
+      <td colspan="3"><strong>Total Cost</strong></td>
+      <td><strong>-</strong></td>
+    </tr>
+  </tbody>
+</table>
+
 ## Mobility Management
 Our robot’s mobility depends on the coordination of its powertrain, steering system, and chassis. Together, these components provide stability, control, and efficiency, enabling smooth and reliable movement.
 ### Powertrain
