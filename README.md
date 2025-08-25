@@ -9,9 +9,9 @@
     </td>
   </tr>
   <tr border="0">
-    <td width="65%"  border="0">
-      <img src="t-photos/TeamOfficial.jpg" alt="Official Photo" width="48%">
-      <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="48%">
+    <td width="50%"  border="0">
+      <img src="t-photos/TeamOfficial.jpg" alt="Official Photo" width="45%">
+      <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="45%">
     </td>
     <td valign="top" style="padding-left: 0px;" border="0">
         This repository details team <em>Back To The Future</em>'s building and programming process in the 2025 WRO Future Engineers Competition. 
