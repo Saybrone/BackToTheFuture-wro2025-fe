@@ -9,9 +9,9 @@
     </td>
   </tr>
   <tr border="0">
-    <td width="65%"  border="0">
-      <img src="t-photos/TeamOfficial.jpg" alt="Official Photo" width="48%">
-      <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="48%">
+    <td width="70%"  border="0">
+      <img src="t-photos/TeamOfficial.jpg" alt="Official Photo" width="45%">
+      <img src="t-photos/TeamFunny.jpg" alt="Funny Photo" width="45%">
     </td>
     <td valign="top" style="padding-left: 0px;" border="0">
         This repository details team <em>Back To The Future</em>'s building and programming process in the 2025 WRO Future Engineers Competition. 
@@ -33,7 +33,7 @@
 # Table of Contents
 - [Folder Contents](#folder-contents-)
 - [The Challenge](#challenge)
-- [Vehicle](#Vehicle)
+  [Vehicle](#Vehicle)
 - [Hardware Components](#Hardware)
 - [Power and Sense Management](#power-and-sense-management)
 - [Software Components](#Software)
@@ -68,7 +68,7 @@ Our robot integrates LEGO components with custom 3D-printed hardware, designed t
 
 
 
-## V-Photos <a class="anchor" id="Vphotos"></a>
+## V-Photos <b class="anchor" id="Vphotos"></a>
 | <img src="v-photos/front.jpg" width="40%" /> | <img src="v-photos/back.jpg" width="40%" /> | 
 | :--: | :--: | 
 | *Front* | *Back* |
@@ -136,7 +136,9 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
 </table>
 
 ## Mobility Management
+
 Our robot’s mobility depends on the coordination of its powertrain, steering system, and chassis. Together, these components provide stability, control, and efficiency, enabling smooth and reliable movement.
+
 ### Powertrain
 
 #### Motor
@@ -145,12 +147,15 @@ Our robot’s mobility depends on the coordination of its powertrain, steering s
   
 
 ### Steering
+Our robot uses a **reckless steering** mechanism, a simplified form of Ackermann steering where the wheels are directly turned without complex linkage geometry. This method makes the robot easier to turn and keeps the overall design compact. It is highly effective for lightweight and fast-moving prototypes where simplicity and space efficiency are key.
 
 #### Servo Motor
 <table> <tr> <!-- Görsel Kısmı --> <td> <img width="735" height="616" alt="output-onlinetools" src="https://github.com/user-attachments/assets/ae1580ef-0944-4630-b2ee-5670c99bc04d" />
  </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Operating Voltage: 3.3V~6V<br> Rated Voltage: 4.8V<br> Rotational range: 360°<br> Maximum Torque: 1.6kg±0.2kg/cm (4.8V)<br> Maximum Speed: 45rpm (3V)<br> Weight: 20g<br><br> For steering we selected the <b>GeekServo</b>. This motor is compatible with Lego Technic parts and offers a higher speed compared to 9g motors. The output shaft features a Lego Technic axle connector, making it ideal for applications that require a high-power drive. </td> </tr> </table> 
 <p style="margin:0;"> <p>Below, we have included the diagram of our servo motor.</p> <img src="https://github.com/user-attachments/assets/35552517-c78a-430e-9b82-2b450fe1c402" alt="Servo Motor Diagram" style="display:block; margin:0 auto; width:400px;" />
 
+### Chassis
+Our chassis combines LEGO components with custom 3D-printed parts, creating a reliable and durable structure.
 
 ## Power and Sense Management
 ### Li-ion Battery
