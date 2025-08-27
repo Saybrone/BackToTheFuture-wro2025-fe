@@ -44,23 +44,11 @@
 - [Power and Sense Management](#power-and-sense-management)
   - [Li-ion Battery](#li-ion-battery)
   - [IMU Sensor](#imu-sensor)
-  - [Camera](#camera)
-  - [EVN Alpha Controller](#evn-alpha-controller)
+  - [OpenMV Cam RT1062](#camera)
+  - [EVN Alpha](#evn-alpha)
 - [Software Components](#software-components)
-  - [Setup](#setup)
-  - [Gyroscope Handling](#gyroscope-handling)
-  - [Turning Functions](#turning-functions)
-  - [Forward Movement Functions](#forward-movement-functions)
-  - [Sensor Decision Functions](#sensor-decision-functions)
-  - [Open Challenge Routine](#open-challenge-routine)
-  - [Turn in Black Function](#turn-in-black-function)
-  - [Obstacle Handling Functions](#obstacle-handling-functions)
-    - [Parse Sensor Data](#parse-sensor-data)
-    - [Find First Obstacle](#find-first-obstacle)
-    - [Pass Obstacles](#pass-obstacles)
-    - [Obstacle Challenge Routine](#obstacle-challenge-routine)
-- [Loop](#loop)
-- [Serial Communication](#serial-communication)
+  -[EVN Alpha Side](evnalpha-side)
+  -[OpenMV Camera Side](openmv-side)
 - [Resources](#resources)
 - [License](#license)
 
@@ -86,12 +74,12 @@ Teams are judged on performance, innovation, reliability, and the clarity of the
 
 Learn more about the challenge [here](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf).
 
-# Vehicle <a class="anchor" id="Vehicle"></a>
+# Vehicle <a class="anchor" id="vehicle-overview"></a>
 Our robot integrates LEGO components with custom 3D-printed hardware, designed to maximize stability and durability. It features a 3D-printed motor mount and camera holder, integrated with a LEGO-based chassis. For steering, we implemented a simplified Ackermann setup without linkage geometry (reckless steering), allowing the robot to turn easily while keeping the design compact. Our robot is powerized by a [GA12-N20 200RPM](https://www.handsontec.com/dataspecs/GA12-N20.pdf) dc motor and controlled by an [EVNAlpha](https://evn.readthedocs.io/). It uses [OpenMV RT1062](https://openmv.io/products/openmv-cam-rt?srsltid=AfmBOorMjCmNBP1AZA_3V53JQMS-8N7Mg5ljP10ljHe4SLFoCauGWzZN) to locate obstacles, lines and walls. Steering was managed by [GeekServo 2KG Motor](https://kittenbothk-eng.readthedocs.io/en/latest/motors/2kgMotor.html). Also it uses [MPU6500 IC 6 DoF IMU Sensor](https://datasheet.octopart.com/MPU-6500-InvenSense-datasheet-138896167.pdf) to manage certain turns and hold position during movement.
 
 
 
-## V-Photos <b class="anchor" id="Vphotos"></a>
+## V-Photos <b class="anchor" id="v-photos"></a>
 | <img src="v-photos/front.jpg" width="40%" /> | <img src="v-photos/back.jpg" width="40%" /> | 
 | :--: | :--: | 
 | *Front* | *Back* |
@@ -102,9 +90,9 @@ Our robot integrates LEGO components with custom 3D-printed hardware, designed t
 
 <br>
 
-# Hardware Components <a class="anchor" id="Hardware"></a>
+# Hardware Components <a class="anchor" id="hardware-components"></a>
 This section covers all the parts utilized in the vehicle, such as motors, sensors, controllers, chassis, mechanical systems, and other components.
-## Electronic Components
+## Electronic Components <a class="anchor" id="electronic-components"></a>
 <table border="1" cellpadding="12" cellspacing="0">
   <thead>
     <tr>
@@ -158,45 +146,47 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
   </tbody>
 </table>
 
-## Mobility Management
+## Mobility Management <a class="anchor" id="mobility-management"></a>
 
 Our robot’s mobility depends on the coordination of its powertrain, steering system, and chassis. Together, these components provide stability, control, and efficiency, enabling smooth and reliable movement.
 
-### Powertrain
+### Powertrain <a class="anchor" id="powertrain"></a>
+The powertrain converts electrical energy into mechanical motion, driving the robot’s wheels for movement and obstacle navigation.
 
 #### Motor
 <table> <tr><td> <img src = "other/motor/pixelcut-export.png" alt="Motor" width = "900" </td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Rated Voltage: 6~12V <br> Weight: 10g <br> Revolving Speed: 100RPM @ 6V <br> Load Speed: 80RPM <br> Rated Torque: 2 kg.cm <br> Stall Torque: 16 kg.cm <br><br> This <b>DC Mini Metal Gear Motor</b> is the one we used in our robot. Its <b>light weight</b> and <b>compact size</b> make it suitable for small robotic platforms, while the <b>high torque</b> and <b>low RPM</b> ensure powerful and controlled movement. <br><br> Thanks to its <b>excellent stall characteristics</b>, the motor provides enough force to climb slopes or overcome obstacles, which is highly beneficial for mobile robots. Additionally, the <b>durable metal gears</b> extend the lifetime of the motor, making it reliable for long-term use. <br><br> Another important advantage is that a wheel can be easily mounted on the motor’s output shaft, allowing for simple integration with the robot’s chassis. </td> </tr> </table>
 <p style="margin:0;"> Below, we have included the diagram of our motor for clarity. </p> <img src ="schemes/Motor diagram.jpg" alt= "Diagram" width = "700" style="display:block; margin:0 auto;" />
   
 
-### Steering
+### Steering <a class="anchor" id="steering"></a>
 Our robot uses a **reckless steering** mechanism, a simplified form of Ackermann steering where the wheels are directly turned without complex linkage geometry. This method makes the robot easier to turn and keeps the overall design compact. It is highly effective for lightweight and fast-moving prototypes where simplicity and space efficiency are key.
 
 #### Servo Motor
 <table> <tr><td><img src = "other/servo motor/geek.PNG" alt="Servo motor" width = "800" </td> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Operating Voltage: 3.3V~6V<br> Rated Voltage: 4.8V<br> Rotational range: 360°<br> Maximum Torque: 1.6kg±0.2kg/cm (4.8V)<br> Maximum Speed: 45rpm (3V)<br> Weight: 20g<br><br> For steering we selected the <b>GeekServo</b>. This motor is compatible with Lego Technic parts and offers a higher speed compared to 9g motors. The output shaft features a Lego Technic axle connector, making it ideal for applications that require a high-power drive. </td> </tr> </table> 
 <p style="margin:0;"> <p>Below, we have included the diagram of our servo motor.</p> <img src="other/servo motor/servo.diagram.jpg" alt = "servo diagram" width = "500" display:block; margin:0 auto; width:400px;" />
 
-### Chassis
+### Chassis <a class="anchor" id="chassis"></a>
 Our chassis combines LEGO components with custom 3D-printed parts, creating a reliable and durable structure. The chassis provides mounting points for all motors, controllers, and sensors, ensuring stable alignment and easy integration. Below, a schematic of the connections is included for clarity.
 
-## Power and Sense Management
-### Li-ion Battery
+## Power and Sense Management <a class="anchor" id="power-and-sense-management"></a>
+
+### Li-ion Battery <a class="anchor" id="li-ion-battery"></a>
 <table> <tr><td> <img src = "other/battery/Battery.png" alt = "Battery" width = 100 </td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Voltage: 3.7V <br>Capacity:2800mAh<br> Diameter: 18mm <br> Length: 65mm <br></td> </tr> </table> 
 
-### IMU
+### IMU <a class="anchor" id="imu-sensor"></a>
 <table> <tr><td> <img src ="other/IMU/IMU.PNG" alt="IMU" width="150" alt = "IMU" width = "300" <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Gyroscope Range: ±250, ±500, ±1000, ±2000 °/s<br>Accelerometer Range: ±2g, ±4g, ±8g, ±16g<br> Interface : I2C <br>Power Supply: 3.5V  <br> </td> </tr> </table> The MPU-6500 is a 6-axis MotionTracking sensor that combines a 3-axis gyroscope and a 3-axis accelerometer in a compact 3x3x0.9 mm package. This integration allows reliable motion detection and orientation tracking with reduced size and complexity. We selected the MPU-6500 because it provides reliable motion tracking, low power consumption, and small form factor, making it well-suited for our vehicle’s navigation and stability control.
 
-### OpenMV Cam RT1062
+### OpenMV Cam RT1062 <a class="anchor" id="camera"></a>
 <table> <tr> <td><img src="other/camera/cam.PNG" alt = "Camera " width = "800" width:800px; height:auto; display:block; margin:0 auto;" />
  </td> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Microcontroller: ARM Cortex M7 (RT1062)<br>Frequency: 600 MHz<br> RAM: 32 MB SDRAM + 1 MB SRAM <br> Flash Memory: 16 MB program/storage flash<br>Camera Resolution: 2592 × 1944 (5 MP) <br> Frame Rate:~40 FPS on QVGA (320 × 240) <br><br> This <b>OpenMV Cam -RT1062</b> is the one we used in our robot. The OpenMV Cam is a small, low-power microcontroller board that we used in our robot to implement machine vision applications. We program the OpenMV Cam in high-level Python scripts (via the MicroPython Operating System) instead of C/C++, which makes it much easier to handle the complex outputs of machine vision algorithms and work with high-level data structures. At the same time, we retain full control over the OpenMV Cam and its I/O pins in Python. This allows our robot to locate obstacles, lines and walls, enabling intelligent, autonomous behaviors. </td> </tr> </table>
 
 
-### EVN Alpha
+### EVN Alpha <a class="anchor" id="evn-alpha"></a>
 <table> <tr> <td><img src="other/evn/evn alpha2.jpg" alt = "evn alpha" width = "1100"  width:800px; height:auto; display:block; margin:0 auto;" />
  </td> <td valign="top" style="padding-left: 15px;"> <b>The EVN ALPHA is a compact robot controller based on the RP2040, housed in a LEGO Technic-compatible shell. It provides 26 I/O channels for controlling brushed DC motors, servos, and connecting UART or I2C peripherals. The board also integrates a 2-cell Lithium-Ion power management system, offering charging, cell balancing, and voltage regulation, making it ideal for safely powering and controlling our robot’s motors and sensors.</td> </tr> </table>
    
-## Software Components <a class="anchor" id="Software"></a>
-### EVN Alpha Side
+## Software Components <a class="anchor" id="software-components"></a>
+### EVN Alpha Side <a class="anchor" id="evnalpha-side"></a>
 #### 1. Setup
 - Configures **servo** and **DC motor**.  
 - Defines constants (angles, speeds, gyro calibration values).  
@@ -944,7 +934,7 @@ String requestBlueLine() {
   return msg;
 }
 ```
-### OpenMV Camera Side
+### OpenMV Camera Side <a class="anchor" id="openmv-side"></a>
 
 #### 1. Color Detection
 - **Orange / Blue line**:  
@@ -968,7 +958,9 @@ String requestBlueLine() {
 Example:  
 - EVN Alpha sends `1`.  
 - Camera detects green box.  
-- Camera replies: `<500,20*>` (area=500, error=20px right).  
+- Camera replies: `<500,20*>` (area=500, error=20px right).
+```py
+```
 ---
 ## Robot Construction Guide <a class="anchor" id="robot-construction-guide-"></a>
 **Step 1: Assemble the steering system**  
