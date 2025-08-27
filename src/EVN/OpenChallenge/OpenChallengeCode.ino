@@ -146,7 +146,7 @@ void setup1() {
   steeringServo.begin();
 }
 
-//---Main Arduino setup---
+//---Main setup---
 void setup() {
   board.begin();
   Serial.begin(9600);
@@ -256,7 +256,7 @@ void open_challenge() {
   motor.stop();
 }
 
-//---Arduino main loop---
+//---main loop---
 void loop() {
   open_challenge();
   delay(9999999)
