@@ -31,8 +31,6 @@
 
 
 # Table of Contents
-- [Introduction](#introduction)
-- [Team Members](#team-members)
 - [Folder Contents](#folder-contents)
 - [The Challenge](#the-challenge)
 - [Vehicle Overview](#vehicle-overview)
@@ -66,7 +64,7 @@
 - [Resources](#resources)
 - [License](#license)
 
-# Folder Contents <a class="anchor" id="folder-contents-"></a>
+# Folder Contents <a class="anchor" id="folder-contents"></a>
 * `models` is for the 3D files we used to print our parts
 * `other` includes other files which can be used to understand how to prepare the vehicle for the competition. It includes documentations, datasets, hardware specifications, communication protocols,  descriptions etc.
 * `schemes` contains schematic diagrams of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
@@ -75,7 +73,7 @@
 * `v-photos` contains 6 photos of the vehicle from various angles
 * `video` contains the video.md file with the link to our YouTube channel and the respective videos
 
-# The Challenge <a class="anchor" id="challenge"></a>
+# The Challenge <a class="anchor" id="the-challenge"></a>
 
 In the **[WRO 2025 Future Engineers – Self-Driving Cars](https://wro-association.org/)** category, teams are tasked with creating a robotic vehicle that can autonomously navigate a changing racetrack. Each round introduces new track layouts, requiring vehicles to adapt in real time.
 The competition highlights the full engineering process:
