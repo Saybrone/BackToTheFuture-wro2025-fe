@@ -47,7 +47,8 @@
   - [OpenMV Cam RT1062](#camera)
   - [EVN Alpha](#evn-alpha)
 - [Software Components](#software-components)
-
+  - [EVN Alpha Side](#evnalpha-side)
+  - [OpenMV Camera Side](#openmv-side)
 - [License](#license)
 
 # Folder Contents <a class="anchor" id="folder-contents"></a>
