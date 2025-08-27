@@ -167,6 +167,13 @@ Our robot uses a **reckless steering** mechanism, a simplified form of Ackermann
 ### Chassis <a class="anchor" id="chassis"></a>
 Our chassis combines LEGO components with custom 3D-printed parts, creating a reliable and durable structure. The chassis provides mounting points for all motors, controllers, and sensors, ensuring stable alignment and easy integration. Below, a schematic of the connections is included for clarity.
 
+#### Motor Holder
+</p> <img src="models/MotorHolder.png" alt = "motor holder" width = "500" display:block; margin:0 auto; width:400px;" />
+
+#### Base Chassis
+</p> <img src="/models/BaseChassis.jpeg" alt = "motor holder" width = "500" display:block; margin:0 auto; width:400px;" />
+    
+
 ## Power and Sense Management <a class="anchor" id="power-and-sense-management"></a>
 
 ### Li-ion Battery <a class="anchor" id="li-ion-battery"></a>
