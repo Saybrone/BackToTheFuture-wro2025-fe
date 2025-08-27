@@ -95,13 +95,13 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
     <tr>
       <td>Motor</td>
       <td><a href="https://www.aliexpress.us/item/3256805071786531.html?gatewayAdapt=glo2usa4itemAdapt">GA12 N20 Encoder DC Mini Micro Metal Gear DC Motor</td>
-      <td><img width="150" height="150" alt="pixelcut-export" src="https://github.com/user-attachments/assets/b2b94337-b4a7-4c82-ba1a-dd0e810ae303" /></td>
+      <td><img src = "other/motor/pixelcut-export.png" alt= "Motor" width="200"</td>
       <td>$7</td>
     </tr>
     <tr>
       <td>Servo Motor</td>
       <td><a href="https://www.robotshop.com/products/geekservo-motor-2kg-compatible-w-lego">GeekServo (360 degrees)</a></td>
-      <td><img width="135" height="116" alt="geek" src="https://github.com/user-attachments/assets/412f57cd-627f-412b-beab-5ad54d2b1134" /></td>
+      <td><img src = "other/servo motor/geek.PNG"  alt = "Servo motor" width ="135"</td>
       <td>$10</td>
     </tr>
   <tr>
@@ -113,7 +113,7 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
     </tr>
       <td>IMU</td>
       <td><a href="https://tr.aliexpress.com/item/1005006996048940.html?spm=a2g0o.productlist.main.5.6ef53353cKZzxy&algo_pvid=fd17a8c4-be06-4443-bb16-ca5842e753da&algo_exp_id=fd17a8c4-be06-4443-bb16-ca5842e753da-4&pdp_ext_f=%7B%22order%22%3A%223%22%2C%22eval%22%3A%221%22%7D&pdp_npi=6%40dis%21TRY%2161.03%2150.05%21%21%2110.06%218.25%21%40211b80f717561234906297648ea906%2112000038988133079%21sea%21TR%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A9b91ce8e%3Bm03_new_user%3A-29895&curPageLogUid=WZMpWQdAhpsJ&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006996048940%7C_p_origin_prod%3A">MPU 6500 Gyro Sensor</td>
-      <td><img width="180" height="160" alt="IMU" src="https://github.com/user-attachments/assets/f1ea41de-69c4-468b-88c5-4eef894ee28e" /></td>
+      <td><img src ="other/IMU/IMU.PNG" alt="IMU" width="150"</td>
       <td>$1.88</td> 
     <tr>
       <td>Battery</td>
@@ -125,7 +125,7 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
     <tr>
       <td>Camera</td>
       <td><a href="https://openmv.io/products/openmv-cam-rt?srsltid=AfmBOorMjCmNBP1AZA_3V53JQMS-8N7Mg5ljP10ljHe4SLFoCauGWzZN">OpenMV Cam RT1062</a></td>
-      <td><img width="143" height="213" alt="cam" src="https://github.com/user-attachments/assets/4644d19b-08c5-4fb4-8b32-eb683c3da5b5" /></td>
+      <td><img src= "other/camera/cam.PNG" alt= "Camera" width="143"</td>
       <td>$120</td>
     </tr>
     <tr>
@@ -142,44 +142,35 @@ Our robot’s mobility depends on the coordination of its powertrain, steering s
 ### Powertrain
 
 #### Motor
-<table> <tr> <!-- Görsel Kısmı --> <td> <img width="813" height="722" alt="motor" src="https://github.com/user-attachments/assets/cbc7350e-6660-4c34-99db-c2983fde7c3f" /> </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Rated Voltage: 6~12V <br> Weight: 10g <br> Revolving Speed: 100RPM @ 6V <br> Load Speed: 80RPM <br> Rated Torque: 2 kg.cm <br> Stall Torque: 16 kg.cm <br><br> This <b>DC Mini Metal Gear Motor</b> is the one we used in our robot. Its <b>light weight</b> and <b>compact size</b> make it suitable for small robotic platforms, while the <b>high torque</b> and <b>low RPM</b> ensure powerful and controlled movement. <br><br> Thanks to its <b>excellent stall characteristics</b>, the motor provides enough force to climb slopes or overcome obstacles, which is highly beneficial for mobile robots. Additionally, the <b>durable metal gears</b> extend the lifetime of the motor, making it reliable for long-term use. <br><br> Another important advantage is that a wheel can be easily mounted on the motor’s output shaft, allowing for simple integration with the robot’s chassis. </td> </tr> </table>
-<p style="margin:0;"> Below, we have included the diagram of our motor for clarity. </p> <img width="571" height="207" alt="Ekran Alıntısı" src="https://github.com/user-attachments/assets/c8769703-f8e3-4611-8122-a4f2439efcb6" style="display:block; margin:0 auto;" />
+<table> <tr><td> <img src = "other/motor/pixelcut-export.png" alt="Motor" width = "900" </td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Rated Voltage: 6~12V <br> Weight: 10g <br> Revolving Speed: 100RPM @ 6V <br> Load Speed: 80RPM <br> Rated Torque: 2 kg.cm <br> Stall Torque: 16 kg.cm <br><br> This <b>DC Mini Metal Gear Motor</b> is the one we used in our robot. Its <b>light weight</b> and <b>compact size</b> make it suitable for small robotic platforms, while the <b>high torque</b> and <b>low RPM</b> ensure powerful and controlled movement. <br><br> Thanks to its <b>excellent stall characteristics</b>, the motor provides enough force to climb slopes or overcome obstacles, which is highly beneficial for mobile robots. Additionally, the <b>durable metal gears</b> extend the lifetime of the motor, making it reliable for long-term use. <br><br> Another important advantage is that a wheel can be easily mounted on the motor’s output shaft, allowing for simple integration with the robot’s chassis. </td> </tr> </table>
+<p style="margin:0;"> Below, we have included the diagram of our motor for clarity. </p> <img src ="schemes/Motor diagram.jpg" alt= "Diagram" width = "700" style="display:block; margin:0 auto;" />
   
 
 ### Steering
 Our robot uses a **reckless steering** mechanism, a simplified form of Ackermann steering where the wheels are directly turned without complex linkage geometry. This method makes the robot easier to turn and keeps the overall design compact. It is highly effective for lightweight and fast-moving prototypes where simplicity and space efficiency are key.
 
 #### Servo Motor
-<table> <tr> <!-- Görsel Kısmı --> <td> <img width="735" height="616" alt="output-onlinetools" src="https://github.com/user-attachments/assets/ae1580ef-0944-4630-b2ee-5670c99bc04d" />
- </td> <!-- Metin Kısmı --> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Operating Voltage: 3.3V~6V<br> Rated Voltage: 4.8V<br> Rotational range: 360°<br> Maximum Torque: 1.6kg±0.2kg/cm (4.8V)<br> Maximum Speed: 45rpm (3V)<br> Weight: 20g<br><br> For steering we selected the <b>GeekServo</b>. This motor is compatible with Lego Technic parts and offers a higher speed compared to 9g motors. The output shaft features a Lego Technic axle connector, making it ideal for applications that require a high-power drive. </td> </tr> </table> 
-<p style="margin:0;"> <p>Below, we have included the diagram of our servo motor.</p> <img src="https://github.com/user-attachments/assets/35552517-c78a-430e-9b82-2b450fe1c402" alt="Servo Motor Diagram" style="display:block; margin:0 auto; width:400px;" />
+<table> <tr><td><img src = "other/servo motor/geek.PNG" alt="Servo motor" width = "800" </td> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Operating Voltage: 3.3V~6V<br> Rated Voltage: 4.8V<br> Rotational range: 360°<br> Maximum Torque: 1.6kg±0.2kg/cm (4.8V)<br> Maximum Speed: 45rpm (3V)<br> Weight: 20g<br><br> For steering we selected the <b>GeekServo</b>. This motor is compatible with Lego Technic parts and offers a higher speed compared to 9g motors. The output shaft features a Lego Technic axle connector, making it ideal for applications that require a high-power drive. </td> </tr> </table> 
+<p style="margin:0;"> <p>Below, we have included the diagram of our servo motor.</p> <img src="other/servo motor/servo.diagram.jpg" alt = "servo diagram" width = "500" display:block; margin:0 auto; width:400px;" />
 
 ### Chassis
-Our chassis combines LEGO components with custom 3D-printed parts, creating a reliable and durable structure.
+Our chassis combines LEGO components with custom 3D-printed parts, creating a reliable and durable structure. The chassis provides mounting points for all motors, controllers, and sensors, ensuring stable alignment and easy integration. Below, a schematic of the connections is included for clarity.
 
 ## Power and Sense Management
 ### Li-ion Battery
-<table> <tr><td> <img width="137" height="212" alt="lityum" src="https://github.com/user-attachments/assets/43538118-c556-4b7b-9187-0674eff2969d" /></td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Voltage: 3.7V <br>Capacity:2800mAh<br> Diameter: 18mm <br> Length: 65mm <br></td> </tr> </table> 
+<table> <tr><td> <img src = "other/battery/Battery.png" alt = "Battery" width = 100 </td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Voltage: 3.7V <br>Capacity:2800mAh<br> Diameter: 18mm <br> Length: 65mm <br></td> </tr> </table> 
 
 ### IMU
-<table> <tr><td> <img width="192" height="160" alt="IMU" src="https://github.com/user-attachments/assets/a125a066-8e47-4f12-9359-d34754822fd6" />
-td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Gyroscope Range: ±250, ±500, ±1000, ±2000 °/s<br>Accelerometer Range: ±2g, ±4g, ±8g, ±16g<br> Interface : I2C <br>Power Supply: 3.5V  <br> </td> </tr> </table> The MPU-6500 is a 6-axis MotionTracking sensor that combines a 3-axis gyroscope and a 3-axis accelerometer in a compact 3x3x0.9 mm package. This integration allows reliable motion detection and orientation tracking with reduced size and complexity. We selected the MPU-6500 because it provides reliable motion tracking, low power consumption, and small form factor, making it well-suited for our vehicle’s navigation and stability control.
+<table> <tr><td> <img src ="other/IMU/IMU.PNG" alt="IMU" width="150" alt = "IMU" width = "300" <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Gyroscope Range: ±250, ±500, ±1000, ±2000 °/s<br>Accelerometer Range: ±2g, ±4g, ±8g, ±16g<br> Interface : I2C <br>Power Supply: 3.5V  <br> </td> </tr> </table> The MPU-6500 is a 6-axis MotionTracking sensor that combines a 3-axis gyroscope and a 3-axis accelerometer in a compact 3x3x0.9 mm package. This integration allows reliable motion detection and orientation tracking with reduced size and complexity. We selected the MPU-6500 because it provides reliable motion tracking, low power consumption, and small form factor, making it well-suited for our vehicle’s navigation and stability control.
 
 ### OpenMV Cam RT1062
-<table> <tr> <td><img src="https://github.com/user-attachments/assets/c30ce89a-f4fb-4d09-a3ca-ed0fd695b2d4" 
-     alt="cam" 
-     style="width:800px; height:auto; display:block; margin:0 auto;" />
+<table> <tr> <td><img src="other/camera/cam.PNG" alt = "Camera " width = "800" width:800px; height:auto; display:block; margin:0 auto;" />
  </td> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Microcontroller: ARM Cortex M7 (RT1062)<br>Frequency: 600 MHz<br> RAM: 32 MB SDRAM + 1 MB SRAM <br> Flash Memory: 16 MB program/storage flash<br>Camera Resolution: 2592 × 1944 (5 MP) <br> Frame Rate:~40 FPS on QVGA (320 × 240) <br><br> This <b>OpenMV Cam -RT1062</b> is the one we used in our robot. The OpenMV Cam is a small, low-power microcontroller board that we used in our robot to implement machine vision applications. We program the OpenMV Cam in high-level Python scripts (via the MicroPython Operating System) instead of C/C++, which makes it much easier to handle the complex outputs of machine vision algorithms and work with high-level data structures. At the same time, we retain full control over the OpenMV Cam and its I/O pins in Python. This allows our robot to locate obstacles, lines and walls, enabling intelligent, autonomous behaviors. </td> </tr> </table>
 
 
 ### EVN Alpha
-
-<img src="https://github.com/user-attachments/assets/2651886b-e03a-48b4-bcb7-a15d6b182283" 
-     alt="EVN ALPHA" 
-     style="width:400px; height:auto; display:block; margin:0 auto;" />
-
-
-The EVN ALPHA is a compact robot controller based on the RP2040, housed in a LEGO Technic-compatible shell. It provides 26 I/O channels for controlling brushed DC motors, servos, and connecting UART or I2C peripherals. The board also integrates a 2-cell Lithium-Ion power management system, offering charging, cell balancing, and voltage regulation, making it ideal for safely powering and controlling our robot’s motors and sensors.
+<table> <tr> <td><img src="other/evn/evn alpha2.jpg" alt = "evn alpha" width = "1100"  width:800px; height:auto; display:block; margin:0 auto;" />
+ </td> <td valign="top" style="padding-left: 15px;"> <b>The EVN ALPHA is a compact robot controller based on the RP2040, housed in a LEGO Technic-compatible shell. It provides 26 I/O channels for controlling brushed DC motors, servos, and connecting UART or I2C peripherals. The board also integrates a 2-cell Lithium-Ion power management system, offering charging, cell balancing, and voltage regulation, making it ideal for safely powering and controlling our robot’s motors and sensors.</td> </tr> </table>
    
 ## Software Components <a class="anchor" id="Software"></a>
 
