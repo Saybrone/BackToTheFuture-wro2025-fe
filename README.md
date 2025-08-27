@@ -95,13 +95,13 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
     <tr>
       <td>Motor</td>
       <td><a href="https://www.aliexpress.us/item/3256805071786531.html?gatewayAdapt=glo2usa4itemAdapt">GA12 N20 Encoder DC Mini Micro Metal Gear DC Motor</td>
-      <td><img width="150" height="150" alt="pixelcut-export" src="https://github.com/user-attachments/assets/b2b94337-b4a7-4c82-ba1a-dd0e810ae303" /></td>
+      <td><img src = "other/motor/pixelcut-export.png" alt= "Motor" width="200"</td>
       <td>$7</td>
     </tr>
     <tr>
       <td>Servo Motor</td>
       <td><a href="https://www.robotshop.com/products/geekservo-motor-2kg-compatible-w-lego">GeekServo (360 degrees)</a></td>
-      <td><img width="135" height="116" alt="geek" src="https://github.com/user-attachments/assets/412f57cd-627f-412b-beab-5ad54d2b1134" /></td>
+      <td><img src = "other/servo motor/geek.PNG"  alt = "Servo motor" width ="135"</td>
       <td>$10</td>
     </tr>
   <tr>
@@ -113,7 +113,7 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
     </tr>
       <td>IMU</td>
       <td><a href="https://tr.aliexpress.com/item/1005006996048940.html?spm=a2g0o.productlist.main.5.6ef53353cKZzxy&algo_pvid=fd17a8c4-be06-4443-bb16-ca5842e753da&algo_exp_id=fd17a8c4-be06-4443-bb16-ca5842e753da-4&pdp_ext_f=%7B%22order%22%3A%223%22%2C%22eval%22%3A%221%22%7D&pdp_npi=6%40dis%21TRY%2161.03%2150.05%21%21%2110.06%218.25%21%40211b80f717561234906297648ea906%2112000038988133079%21sea%21TR%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A9b91ce8e%3Bm03_new_user%3A-29895&curPageLogUid=WZMpWQdAhpsJ&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006996048940%7C_p_origin_prod%3A">MPU 6500 Gyro Sensor</td>
-      <td><img width="180" height="160" alt="IMU" src="https://github.com/user-attachments/assets/f1ea41de-69c4-468b-88c5-4eef894ee28e" /></td>
+      <td><img src = "other/IMU/IMU.PNG" alt = "IMU" width="180"</td>
       <td>$1.88</td> 
     <tr>
       <td>Battery</td>
@@ -125,7 +125,7 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
     <tr>
       <td>Camera</td>
       <td><a href="https://openmv.io/products/openmv-cam-rt?srsltid=AfmBOorMjCmNBP1AZA_3V53JQMS-8N7Mg5ljP10ljHe4SLFoCauGWzZN">OpenMV Cam RT1062</a></td>
-      <td><img width="143" height="213" alt="cam" src="https://github.com/user-attachments/assets/4644d19b-08c5-4fb4-8b32-eb683c3da5b5" /></td>
+      <td><img src= "other/camera/cam.PNG" alt= "Camera" width="143"</td>
       <td>$120</td>
     </tr>
     <tr>
