@@ -143,7 +143,7 @@ Our robot’s mobility depends on the coordination of its powertrain, steering s
 
 #### Motor
 <table> <tr><td> <img src = "other/motor/pixelcut-export.png" alt="Motor" width = "900" </td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Rated Voltage: 6~12V <br> Weight: 10g <br> Revolving Speed: 100RPM @ 6V <br> Load Speed: 80RPM <br> Rated Torque: 2 kg.cm <br> Stall Torque: 16 kg.cm <br><br> This <b>DC Mini Metal Gear Motor</b> is the one we used in our robot. Its <b>light weight</b> and <b>compact size</b> make it suitable for small robotic platforms, while the <b>high torque</b> and <b>low RPM</b> ensure powerful and controlled movement. <br><br> Thanks to its <b>excellent stall characteristics</b>, the motor provides enough force to climb slopes or overcome obstacles, which is highly beneficial for mobile robots. Additionally, the <b>durable metal gears</b> extend the lifetime of the motor, making it reliable for long-term use. <br><br> Another important advantage is that a wheel can be easily mounted on the motor’s output shaft, allowing for simple integration with the robot’s chassis. </td> </tr> </table>
-<p style="margin:0;"> Below, we have included the diagram of our motor for clarity. </p> <img src ="other/motor/motor.diagram.png" alt= "Diagram" width = "400" style="display:block; margin:0 auto;" />
+<p style="margin:0;"> Below, we have included the diagram of our motor for clarity. </p> <img src ="schemes/Motor diagram.jpg" alt= "Diagram" width = "700" style="display:block; margin:0 auto;" />
   
 
 ### Steering
