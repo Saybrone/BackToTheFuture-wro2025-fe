@@ -2,122 +2,155 @@
 #include <EVN.h>
 #include <SoftwareSerial.h>
 #include <math.h>
-#define SERVO_DIR_PORT   1
-#define IMU_I2C_PORT     1
-#define MOTOR_PORT       2
-#define PPR_VALUE        2200
-#define MAX_RPM          77
-#define ACCEL            7700
-#define DECEL            7700
-#define MOTOR_KP         0.4
-#define MOTOR_KD         0.0048
-const float SERVO_CENTER = 133;
-const int SERVO_RIGHT  = 160;
-const int SERVO_LEFT   = 106;
-float gyroBias = 0.0f;         
-unsigned long lastTime = 0;
-const byte rxPin = 1;
-const byte txPin = 0;
-int timeout = 500;
 
+// --- Pin and Port Definitions ---
+#define SERVO_DIR_PORT   1     // Steering servo control port
+#define IMU_I2C_PORT     1     // IMU sensor I2C port
+#define MOTOR_PORT       2     // Motor control port
 
-EVNAlpha board;
-EVNServo steeringServo(SERVO_DIR_PORT);
-EVNIMUSensor imu(IMU_I2C_PORT);
-EVNMotor motor(MOTOR_PORT, CUSTOM_MOTOR, DIRECT, REVERSE);
-SoftwareSerial mySerial (rxPin, txPin);
+// --- Motor Configuration Constants ---
+#define PPR_VALUE        2200  // Motor pulses per revolution
+#define MAX_RPM          77    // Maximum RPM
+#define ACCEL            7700  // Acceleration
+#define DECEL            7700  // Deceleration
+#define MOTOR_KP         0.4   // Motor proportional gain
+#define MOTOR_KD         0.0048 // Motor derivative gain
 
+// --- Steering Servo Limits ---
+const float SERVO_CENTER = 133; // Neutral steering position
+const int SERVO_RIGHT  = 160;   // Maximum right turn
+const int SERVO_LEFT   = 106;   // Maximum left turn
 
+// --- Gyroscope Variables ---
+float gyroBias = 0.0f;          // Bias offset for gyro
+unsigned long lastTime = 0;      // Last time yaw was updated
 
+// --- Software Serial Pins for Communication ---
+const byte rxPin = 1;  // RX pin
+const byte txPin = 0;  // TX pin
+int timeout = 500;     // Serial communication timeout (ms)
 
+// --- EVN Objects ---
+EVNAlpha board;                     // Main EVN Alpha board
+EVNServo steeringServo(SERVO_DIR_PORT);  // Steering servo object
+EVNIMUSensor imu(IMU_I2C_PORT);    // IMU sensor object
+EVNMotor motor(MOTOR_PORT, CUSTOM_MOTOR, DIRECT, REVERSE); // Motor object
+SoftwareSerial mySerial (rxPin, txPin); // Software serial for communication
 
+// --- Gyroscope Calibration ---
+// Measure the gyro bias while vehicle is stationary
 void calibrateGyroBias(uint16_t duration_ms = 200) {
   unsigned long t0 = millis();
   uint16_t n = 0;
   double sum = 0.0;
-  // araç duruyor ve servo yerleşmiş olmalı
+
   while (millis() - t0 < duration_ms) {
-    float gz = imu.readGyroZ(); // deg/s
+    float gz = imu.readGyroZ(); // Read angular velocity (deg/s)
     sum += gz;
     n++;
-    delay(4); // ~250 Hz örnek
+    delay(4); // Sample at ~250 Hz
   }
-  if (n > 0) gyroBias = (float)(sum / n);
+
+  if (n > 0) gyroBias = (float)(sum / n); // Average bias
 }
 
-float yaw = 0.00f;
+// --- Yaw Angle Update ---
+// Integrates gyro data to calculate yaw (rotation around Z-axis)
+float yaw = 0.0f;
 float updateYaw() {
   unsigned long now = millis();
-  float dt = (now - lastTime) / 1000.0f;
+  float dt = (now - lastTime) / 1000.0f; // Time delta in seconds
   lastTime = now;
-  float gz = imu.readGyroZ();         // deg/s
-  gz -= gyroBias;                      // bias düzeltmesi
-  yaw += gz * dt;                      // derece
+  
+  float gz = imu.readGyroZ(); // Read Z-axis gyro
+  gz -= gyroBias;             // Apply bias correction
+  yaw += gz * dt;             // Integrate angular velocity
   return yaw;
 }
 
+// ======================= TURNING FUNCTIONS =======================
 
+// --- Turn the robot a specific angle with gyro calibration ---
+// Turn_Degree: Target turn in degrees (+right, -left)
+// kp: Proportional gain for speed control
+// turn_start_yaw: Reference yaw angle before starting
+// min_speed, max_speed: Speed limits during turn
+// servo_right/servo_left: Max servo angles for turning
+// servo_min/servo_max: Servo range limits
+void Turn(float Turn_Degree, float kp = 6.66, float turn_start_yaw = 0.0,
+          float min_speed = 40, float max_speed = 400, float Near_Degree = 20.0f,
+          int servo_right = 160, int servo_left = 115, int servo_min = 50, int servo_max = 210) {
 
-void Turn(float Turn_Degree,float kp = 6.66,float turn_start_yaw = 0.0, float min_speed = 40,float max_speed = 400,float Near_Degree = 20.0f,int servo_right = 160, int servo_left = 115,int servo_min = 50,int servo_max = 210){
-  delay(1000);
-  calibrateGyroBias(200);
-  float Turn_Degree_first = Turn_Degree - updateYaw();
+  delay(1000);                 // Short delay before turn
+  calibrateGyroBias(200);      // Calibrate gyro for accurate turn
+  float Turn_Degree_first = Turn_Degree - updateYaw(); // Remaining turn angle
+  int turnAngle = (Turn_Degree_first >= 0.0f) ? servo_right : servo_left; // Decide turn direction
+  float error = 0;
+
+  // Set steering servo to initial turn angle
+  steeringServo.write(constrain(turnAngle, servo_min, servo_max));
+  
+  float diff = updateYaw() - turn_start_yaw; // Current yaw relative to start
+  // Continue turning until target angle reached
+  while((Turn_Degree_first >= 0.0f) ? (Turn_Degree - diff > 0.1) : (Turn_Degree - diff < 0.1)){
+    diff = updateYaw() - turn_start_yaw;
+    error = Turn_Degree - diff;       // Remaining angle error
+    float remaining = fabsf(Turn_Degree) - fabsf(diff); // Not used here
+    int spd = fabsf(error * kp);       // Speed proportional to error
+    Serial.println(updateYaw());       // Print current yaw for debugging
+
+    // Limit speed to min/max
+    if (spd > max_speed) spd = max_speed;
+    if (spd < min_speed) spd = min_speed;
+
+    motor.runSpeed(spd);               // Move motor during turn
+  }
+
+  motor.stop(); // Stop after reaching target
+  steeringServo.write(constrain(SERVO_CENTER, servo_min, servo_max)); // Reset steering
+}
+
+// --- Turn the robot without gyro calibration ---
+// Useful when calibration was already done
+void TurnWithoutCalib(float Turn_Degree, float kp = 6.66, float turn_start_yaw = 0.0,
+                      float min_speed = 40, float max_speed = 400, float Near_Degree = 20.0f,
+                      int servo_right = 160, int servo_left = 115, int servo_min = 50, int servo_max = 210) {
+
+  float Turn_Degree_first = Turn_Degree - updateYaw(); // Remaining turn
+  Serial.println("-----");
+  Serial.println(Turn_Degree_first);
+
   int turnAngle = (Turn_Degree_first >= 0.0f) ? servo_right : servo_left;
   float error = 0;
 
-  steeringServo.write(constrain(turnAngle, servo_min, servo_max));
-  
-  float diff = updateYaw() - turn_start_yaw;
-  while((Turn_Degree_first >= 0.0f) ? (Turn_Degree-diff > 0.1) : (Turn_Degree-diff < 0.1)){
-    diff = updateYaw() - turn_start_yaw;
-    error = Turn_Degree-diff ;
-    float remaining = fabsf(Turn_Degree) - fabsf(diff);
-    int spd = fabsf(error*kp);
-    Serial.println(updateYaw());
-    if (spd > max_speed){
-      spd = max_speed;
-    }
-    if (spd < min_speed){
-      spd = min_speed;
-    }
-    
-    motor.runSpeed(spd);
-  }
-  motor.stop();
-  steeringServo.write(constrain(SERVO_CENTER, servo_min, servo_max));
-  
-}
-void TurnWithoutCalib(float Turn_Degree,float kp = 6.66,float turn_start_yaw = 0.0, float min_speed = 40,float max_speed = 400,float Near_Degree = 20.0f,int servo_right = 160, int servo_left = 115,int servo_min = 50,int servo_max = 210){
-  float Turn_Degree_first = Turn_Degree - updateYaw();
-  Serial.println("-----");
-  Serial.println(Turn_Degree_first);
-  int turnAngle = ((Turn_Degree_first >= 0.0f)) ? servo_right : servo_left;
-  float error = 0;
+  steeringServo.write(constrain(turnAngle, servo_min, servo_max)); // Initial turn
 
-  steeringServo.write(constrain(turnAngle, servo_min, servo_max));
-  
   float diff = updateYaw() - turn_start_yaw;
-  while((Turn_Degree_first >= 0.0f) ? (Turn_Degree-diff > 0.1) : (Turn_Degree-diff < 0.1)){
+  // Loop until target turn reached
+  while((Turn_Degree_first >= 0.0f) ? (Turn_Degree - diff > 0.1) : (Turn_Degree - diff < 0.1)){
     diff = updateYaw() - turn_start_yaw;
-    error = Turn_Degree-diff ;
+    error = Turn_Degree - diff;
     float remaining = fabsf(Turn_Degree) - fabsf(diff);
-    int spd = fabsf(error*kp);
-    
-    if (spd > max_speed){
-      spd = max_speed;
-    }
-    if (spd < min_speed){
-      spd = min_speed;
-    }
-    
+    int spd = fabsf(error * kp);
+
+    if (spd > max_speed) spd = max_speed;
+    if (spd < min_speed) spd = min_speed;
+
     motor.runSpeed(spd);
-    Serial.println(error);
+    Serial.println(error); // Debug: current error
   }
+
   motor.stop();
   steeringServo.write(constrain(SERVO_CENTER, servo_min, servo_max));
-  Serial.println(updateYaw());
+  Serial.println(updateYaw()); // Debug: final yaw
 }
-void Turn_Back(float Turn_Degree,float kp = 6.66,float turn_start_yaw = 0.0, float min_speed = 40,float max_speed = 400,float Near_Degree = 20.0f,int servo_right = 160, int servo_left = 115,int servo_min = 50,int servo_max = 210){
+
+// --- Turn backward with gyro calibration ---
+// Same logic as Turn(), but motor moves in reverse (-spd)
+void Turn_Back(float Turn_Degree, float kp = 6.66, float turn_start_yaw = 0.0,
+               float min_speed = 40, float max_speed = 400, float Near_Degree = 20.0f,
+               int servo_right = 160, int servo_left = 115, int servo_min = 50, int servo_max = 210) {
+
   delay(1000);
   calibrateGyroBias(200);
   float Turn_Degree_first = Turn_Degree - updateYaw();
@@ -125,90 +158,102 @@ void Turn_Back(float Turn_Degree,float kp = 6.66,float turn_start_yaw = 0.0, flo
   float error = 0;
 
   steeringServo.write(constrain(turnAngle, servo_min, servo_max));
-  
+
   float diff = updateYaw() - turn_start_yaw;
-  while((Turn_Degree_first >= 0.0f) ? (Turn_Degree-diff > 0.1) : (Turn_Degree-diff < 0.1)){
+  while((Turn_Degree_first >= 0.0f) ? (Turn_Degree - diff > 0.1) : (Turn_Degree - diff < 0.1)){
     diff = updateYaw() - turn_start_yaw;
-    error = Turn_Degree-diff ;
-    float remaining = fabsf(Turn_Degree) - fabsf(diff);
-    int spd = fabsf(error*kp);
-    if (spd > max_speed){
-      spd = max_speed;
-    }
-    if (spd < min_speed){
-      spd = min_speed;
-    }
-    motor.runSpeed(-spd);
+    error = Turn_Degree - diff;
+    int spd = fabsf(error * kp);
+
+    if (spd > max_speed) spd = max_speed;
+    if (spd < min_speed) spd = min_speed;
+
+    motor.runSpeed(-spd); // Reverse motor
   }
+
   motor.stop();
   steeringServo.write(constrain(SERVO_CENTER, servo_min, servo_max));
   Serial.println(updateYaw());
 }
-void Turn_Back_WithoutCalib(float Turn_Degree,float kp = 6.66,float turn_start_yaw = 0.0, float min_speed = 40,float max_speed = 400,float Near_Degree = 20.0f,int servo_right = 160, int servo_left = 115,int servo_min = 50,int servo_max = 210){
-  
+
+// --- Turn backward without calibration ---
+// Similar to Turn_Back but skips gyro calibration
+void Turn_Back_WithoutCalib(float Turn_Degree, float kp = 6.66, float turn_start_yaw = 0.0,
+                            float min_speed = 40, float max_speed = 400, float Near_Degree = 20.0f,
+                            int servo_right = 160, int servo_left = 115, int servo_min = 50, int servo_max = 210) {
+
   float error = 0;
   float Turn_Degree_first = Turn_Degree - updateYaw();
   int turnAngle = (Turn_Degree_first < 0.0f) ? servo_right : servo_left;
   steeringServo.write(constrain(turnAngle, servo_min, servo_max));
 
   float diff = updateYaw() - turn_start_yaw;
-  while((Turn_Degree_first >= 0.0f) ? (Turn_Degree-diff > 0.1) : (Turn_Degree-diff < 0.1)){
+  while((Turn_Degree_first >= 0.0f) ? (Turn_Degree - diff > 0.1) : (Turn_Degree - diff < 0.1)){
     diff = updateYaw() - turn_start_yaw;
-    error = Turn_Degree-diff ;
-    float remaining = fabsf(Turn_Degree) - fabsf(diff);
-    int spd = fabsf(error*kp);
-    if (spd > max_speed){
-      spd = max_speed;
-    }
-    if (spd < min_speed){
-      spd = min_speed;
-    }
+    error = Turn_Degree - diff;
+    int spd = fabsf(error * kp);
+
+    if (spd > max_speed) spd = max_speed;
+    if (spd < min_speed) spd = min_speed;
+
     motor.runSpeed(-spd);
   }
+
   motor.stop();
   steeringServo.write(constrain(SERVO_CENTER, servo_min, servo_max));
   Serial.println(updateYaw());
 }
-void Move(float distance_mm,float speed = 600){
-  steeringServo.write(constrain((SERVO_CENTER), 50, 210));
+
+// ======================= MOVEMENT FUNCTIONS =======================
+
+// --- Move robot forward a specific distance ---
+// distance_mm: Target distance in millimeters
+// speed: Motor speed
+void Move(float distance_mm, float speed = 600) {
+  steeringServo.write(constrain(SERVO_CENTER, 50, 210)); // Keep straight
   delay(1000);
   calibrateGyroBias(200);
-  long start_pos = motor.getPosition();
-  float kp = 1;
-  float diameter = 43.2;
-  float distance_degree = 360*distance_mm/(3.1415*diameter);
-  long pos = motor.getPosition()- start_pos;
-  float error = 0;
+
+  long start_pos = motor.getPosition(); // Get initial motor position
+  float diameter = 43.2; // Wheel diameter
+  float distance_degree = 360 * distance_mm / (3.1415 * diameter); // Convert mm to degrees
+  long pos = motor.getPosition() - start_pos;
   float start_yaw = updateYaw();
-  while (llabs(pos) < distance_degree) {
-    Serial.println(motor.getPosition());
-    error = updateYaw() - start_yaw;
-    steeringServo.write(constrain((SERVO_CENTER-error), 50, 210));
-    pos = motor.getPosition() -  start_pos;
-    Serial.println(llabs(pos));
+
+  while (llabs(pos) < distance_degree) { // Loop until distance reached
+    float error = updateYaw() - start_yaw; // Yaw deviation
+    steeringServo.write(constrain(SERVO_CENTER - error, 50, 210)); // Correct steering
+    pos = motor.getPosition() - start_pos;
     motor.runSpeed(speed);
+    Serial.println(motor.getPosition()); // Debug: current motor position
+    Serial.println(llabs(pos));
   }
+
   motor.stop();
 }
-void Move_w_c(float distance_mm,float speed = 600){
-  steeringServo.write(constrain((SERVO_CENTER), 50, 210));
+
+// --- Move forward without gyro recalibration ---
+// Useful when moving after already calibrated
+void Move_w_c(float distance_mm, float speed = 600) {
+  steeringServo.write(constrain(SERVO_CENTER, 50, 210));
   long start_pos = motor.getPosition();
-  float kp = 1;
   float diameter = 43.2;
-  float distance_degree = 360*distance_mm/(3.1415*diameter);
-  long pos = motor.getPosition()- start_pos;
-  float error = 0;
+  float distance_degree = 360 * distance_mm / (3.1415 * diameter);
+  long pos = motor.getPosition() - start_pos;
   float start_yaw = updateYaw();
+
   while (llabs(pos) < distance_degree) {
-    Serial.println(motor.getPosition());
-    error = updateYaw() - start_yaw;
-    steeringServo.write(constrain((SERVO_CENTER-error), 50, 210));
-    pos = motor.getPosition() -  start_pos;
-    Serial.println(llabs(pos));
+    float error = updateYaw() - start_yaw;
+    steeringServo.write(constrain(SERVO_CENTER - error, 50, 210));
+    pos = motor.getPosition() - start_pos;
     motor.runSpeed(speed);
+    Serial.println(motor.getPosition());
+    Serial.println(llabs(pos));
   }
+
   motor.stop();
 }
+
 void setup1() {
   motor.begin();
   steeringServo.begin();
