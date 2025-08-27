@@ -169,13 +169,8 @@ Our chassis combines LEGO components with custom 3D-printed parts, creating a re
 
 
 ### EVN Alpha
-
-<img src="https://github.com/user-attachments/assets/2651886b-e03a-48b4-bcb7-a15d6b182283" 
-     alt="EVN ALPHA" 
-     style="width:400px; height:auto; display:block; margin:0 auto;" />
-
-
-The EVN ALPHA is a compact robot controller based on the RP2040, housed in a LEGO Technic-compatible shell. It provides 26 I/O channels for controlling brushed DC motors, servos, and connecting UART or I2C peripherals. The board also integrates a 2-cell Lithium-Ion power management system, offering charging, cell balancing, and voltage regulation, making it ideal for safely powering and controlling our robot’s motors and sensors.
+<table> <tr> <td><img src="other/evn/evn alpha2.jpg" alt = "evn alpha" width = "800"  width:800px; height:auto; display:block; margin:0 auto;" />
+ </td> <td valign="top" style="padding-left: 15px;"> <b>The EVN ALPHA is a compact robot controller based on the RP2040, housed in a LEGO Technic-compatible shell. It provides 26 I/O channels for controlling brushed DC motors, servos, and connecting UART or I2C peripherals. The board also integrates a 2-cell Lithium-Ion power management system, offering charging, cell balancing, and voltage regulation, making it ideal for safely powering and controlling our robot’s motors and sensors.</td> </tr> </table>
    
 ## Software Components <a class="anchor" id="Software"></a>
 
