@@ -47,9 +47,7 @@
   - [OpenMV Cam RT1062](#camera)
   - [EVN Alpha](#evn-alpha)
 - [Software Components](#software-components)
-  -[EVN Alpha Side](evnalpha-side)
-  -[OpenMV Camera Side](openmv-side)
-- [Resources](#resources)
+
 - [License](#license)
 
 # Folder Contents <a class="anchor" id="folder-contents"></a>
@@ -1168,7 +1166,7 @@ while True:
 - Verify that each component (motors, servos, camera, IMU) responds correctly.
 
 
-## License <a class="anchor" id="License"></a>
+## License <a class="anchor" id="license"></a>
 
 ```
 GNU General Public License v3.0
