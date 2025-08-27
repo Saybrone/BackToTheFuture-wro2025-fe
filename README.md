@@ -151,7 +151,7 @@ Our robot uses a **reckless steering** mechanism, a simplified form of Ackermann
 
 #### Servo Motor
 <table> <tr><td><img src = "other/servo motor/geek.PNG" alt="Servo motor" width = "800" </td> <td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Operating Voltage: 3.3V~6V<br> Rated Voltage: 4.8V<br> Rotational range: 360°<br> Maximum Torque: 1.6kg±0.2kg/cm (4.8V)<br> Maximum Speed: 45rpm (3V)<br> Weight: 20g<br><br> For steering we selected the <b>GeekServo</b>. This motor is compatible with Lego Technic parts and offers a higher speed compared to 9g motors. The output shaft features a Lego Technic axle connector, making it ideal for applications that require a high-power drive. </td> </tr> </table> 
-<p style="margin:0;"> <p>Below, we have included the diagram of our servo motor.</p> <img src="other/servo motor/servo.diagram.jpg" alt = "servo diagram" width = "250" display:block; margin:0 auto; width:400px;" />
+<p style="margin:0;"> <p>Below, we have included the diagram of our servo motor.</p> <img src="other/servo motor/servo.diagram.jpg" alt = "servo diagram" width = "500" display:block; margin:0 auto; width:400px;" />
 
 ### Chassis
 Our chassis combines LEGO components with custom 3D-printed parts, creating a reliable and durable structure.
