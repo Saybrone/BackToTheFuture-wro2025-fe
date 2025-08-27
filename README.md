@@ -228,41 +228,6 @@ Camera replies with formatted data: `<area,error*>` or `<1*>`.
   - Slow down when close.  
   - Perform bypass maneuver if very close.  
 
----
-## Robot Construction Guide <a class="anchor" id="robot-construction-guide-"></a>
-**Step 1: Assemble the steering system**  
-- Print 3D models located in /models
-- Mount the GeekServo motor securely onto the chassis using screws or brackets.  
-- Connect the steering axle to the servo using a suitable coupling or connector.  
-- Ensure the servo mount is firmly fixed so it doesn’t wobble during operation.  
-- Install the front steering hubs using a axle to secure them.  
-- Make sure the steering arm moves freely and does not collide with the chassis.  
-
-**Step 2: Assemble the powertrain**  
-- The motor was mounted securely onto the chassis to ensure stability during operation.
-- The GA12-N20 DC motor is placed into the mount and attached firmly (using appropriate fastening components).
-- The motor output shaft is connected to an axle and gear mechanism to transmit rotation.
-- 
-**Step 3: Mount the electronics**
-- Attach the Li-ion battery underneath the EVN Alpha.
-- Place the EVN Alpha controller onto the chassis and secure it in position using appropriate fastening components.
-- Mount the MPU-6500 IMU on the back of EVN Alpha to make it stable during the challenges.
-- Install the OpenMV Cam RT1062 onto its holder and slightly tilt the camera downwards for improved line and obstacle detection.
-
-**Step 4: Attach the Wheels**
-- Attach the front wheels securely to the steering hubs using appropriate axles.
-- Install the rear wheels onto the driven axle that is connected to the motor.
-- Add spacers or equivalent components to keep the wheels properly fixed and aligned.
-
-**Step 5: Preparation for operation**
-- Ensure the chassis is stable and properly balanced.
-- Arrange cables so that they do not interfere with moving parts.
-
-**Step 6: Software setup**
-- Connect the controllers and sensors to a computer for programming.
-- Upload the control and vision codes located in /src
-- Verify that each component (motors, servos, camera, IMU) responds correctly.
-
 Here is the EVN Alpha control code, responsible for motor control, gyroscope-based stabilization, and coordination with the OpenMV camera
 ```ino
 #include <EVN.h>
@@ -956,6 +921,42 @@ String requestBlueLine() {
   return msg;
 }
 ```
+---
+## Robot Construction Guide <a class="anchor" id="robot-construction-guide-"></a>
+**Step 1: Assemble the steering system**  
+- Print 3D models located in /models
+- Mount the GeekServo motor securely onto the chassis using screws or brackets.  
+- Connect the steering axle to the servo using a suitable coupling or connector.  
+- Ensure the servo mount is firmly fixed so it doesn’t wobble during operation.  
+- Install the front steering hubs using a axle to secure them.  
+- Make sure the steering arm moves freely and does not collide with the chassis.  
+
+**Step 2: Assemble the powertrain**  
+- The motor was mounted securely onto the chassis to ensure stability during operation.
+- The GA12-N20 DC motor is placed into the mount and attached firmly (using appropriate fastening components).
+- The motor output shaft is connected to an axle and gear mechanism to transmit rotation.
+- 
+**Step 3: Mount the electronics**
+- Attach the Li-ion battery underneath the EVN Alpha.
+- Place the EVN Alpha controller onto the chassis and secure it in position using appropriate fastening components.
+- Mount the MPU-6500 IMU on the back of EVN Alpha to make it stable during the challenges.
+- Install the OpenMV Cam RT1062 onto its holder and slightly tilt the camera downwards for improved line and obstacle detection.
+
+**Step 4: Attach the Wheels**
+- Attach the front wheels securely to the steering hubs using appropriate axles.
+- Install the rear wheels onto the driven axle that is connected to the motor.
+- Add spacers or equivalent components to keep the wheels properly fixed and aligned.
+
+**Step 5: Preparation for operation**
+- Ensure the chassis is stable and properly balanced.
+- Arrange cables so that they do not interfere with moving parts.
+
+**Step 6: Software setup**
+- Connect the controllers and sensors to a computer for programming.
+- Upload the control and vision codes located in /src
+- Verify that each component (motors, servos, camera, IMU) responds correctly.
+
+
 ## License <a class="anchor" id="License"></a>
 
 ```
