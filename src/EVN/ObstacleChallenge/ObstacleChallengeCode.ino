@@ -254,400 +254,438 @@ void Move_w_c(float distance_mm, float speed = 600) {
   motor.stop();
 }
 
+// ======================= SETUP FUNCTIONS =======================
+
+// Initialize motor and servo (simple setup)
 void setup1() {
-  motor.begin();
-  steeringServo.begin();
+  motor.begin();           // Start motor controller
+  steeringServo.begin();   // Start servo controller
 }
 
-void setup()
-{
-  board.begin(); 
-  Serial.begin(9600);
-  imu.begin();
-  imu.setGyroRange(IMU_GYRO_DPS_1000);
-  motor.setPPR(PPR_VALUE);
-  motor.setMaxRPM(MAX_RPM);
-  motor.setAccel(ACCEL);
-  motor.setDecel(DECEL);
-  motor.setKp(MOTOR_KP);
-  motor.setKd(MOTOR_KD);
-  motor.resetPosition();
+// Standard Arduino setup function
+void setup() {
+  board.begin();            // Initialize EVNAlpha board
+  Serial.begin(9600);       // Start serial communication for debugging
+  imu.begin();              // Initialize IMU (gyro + accelerometer)
+  imu.setGyroRange(IMU_GYRO_DPS_1000); // Set gyro range to ±1000 deg/sec
+
+  // Motor configuration
+  motor.setPPR(PPR_VALUE); // Encoder pulses per revolution
+  motor.setMaxRPM(MAX_RPM); // Max motor speed
+  motor.setAccel(ACCEL);    // Acceleration
+  motor.setDecel(DECEL);    // Deceleration
+  motor.setKp(MOTOR_KP);    // Proportional gain for speed control
+  motor.setKd(MOTOR_KD);    // Derivative gain for speed control
+  motor.resetPosition();     // Reset encoder position
+
+  // Center the steering servo
   steeringServo.write(SERVO_CENTER, 50, 210);
+
+  // Initialize SoftwareSerial pins
   pinMode(rxPin, INPUT);
   pinMode(txPin, OUTPUT);
   mySerial.begin(9600);
-  lastTime = millis();
+
+  lastTime = millis();       // Store initial time for yaw calculations
 }
 
-int find_direction(){
-  Serial.println("<");
+// ======================= SENSOR DECISION FUNCTION =======================
+
+// Determines robot direction based on line or brightness sensors
+// Returns:
+// 1 = Orange line detected
+// 2 = Blue line detected
+// 0 = No line, brightness determines direction
+int find_direction() {
+  Serial.println("<");            // Debug: start reading
   String orange = requestOrangeLine(); 
   String blue = requestBlueLine();
   String bright = requestMiddleBrightness();
-  float bright1 = bright.toFloat();
-  Serial.println(">");
-  if (orange == "True"){
+  float bright1 = bright.toFloat(); // Convert brightness to float
+  Serial.println(">");            // Debug: end reading
+
+  if (orange == "True") {         // Orange line detected
     return 1;
-  }else{
-    if (blue == "True"){
-      return 2;
-    }else{
-      if (bright1 < 12){
-        return 1;
-      }else{
-        return 0;
-      }
+  } else if (blue == "True") {    // Blue line detected
+    return 2;
+  } else {                        // No line detected
+    if (bright1 < 12) {           // Dark area, assume orange direction
+      return 1;
+    } else {                       // Bright area, go straight/no line
+      return 0;
     }
   }
 }
 
-void open_challenge(){
-  calibrateGyroBias(200);
-  timeout = 2000;
-  find_direction();
-  timeout = 500;
-  long start_pos = motor.getPosition();
+// ======================= OPEN CHALLENGE FUNCTION =======================
+
+// Navigate open space using sensors
+void open_challenge() {
+  calibrateGyroBias(200);       // Calibrate gyro for accurate movement
+  timeout = 2000;               // Increase serial timeout for sensor reading
+  find_direction();              // Initial check for direction
+  timeout = 500;                // Reset timeout
+
+  long start_pos = motor.getPosition(); // Save initial motor position
   float kp = 1;
-  long pos = motor.getPosition()- start_pos;
+  long pos = motor.getPosition() - start_pos;
   float error = 0;
-  float start_yaw = updateYaw();
+  float start_yaw = updateYaw();       // Reference yaw angle
   bool found_line_or_brightness = false;
   int a;
-  Serial.println("S");
-  while(true){
-
-    board.ledWrite(true);
-    board.ledWrite(true); 
+  Serial.println("S");                 // Debug: start signal
+  // Move forward until line or brightness is detected
+  while(true) {
+    board.ledWrite(true);               // Turn on board LED
     Serial.println(motor.getPosition());
-    error = updateYaw() - start_yaw;
-    steeringServo.write(constrain((SERVO_CENTER-error), 50, 210));
-    pos = motor.getPosition() -  start_pos;
-    Serial.println(llabs(pos));
-    motor.runSpeed(300);
-    a = find_direction();
-    if (a != 0){
-      found_line_or_brightness = true;
+    
+    error = updateYaw() - start_yaw;   // Compute yaw deviation
+    steeringServo.write(constrain(SERVO_CENTER - error, 50, 210)); // Correct steering
+    
+    pos = motor.getPosition() - start_pos;
+    Serial.println(llabs(pos));         // Debug: distance traveled
+    motor.runSpeed(300);               // Move forward slowly
+    a = find_direction();               // Check sensors
+    if (a != 0) {
+      found_line_or_brightness = true; // Line or brightness detected
     }
-    if (found_line_or_brightness){
-      break;
-    }
+    if (found_line_or_brightness) break;
   }
-  Serial.println(a);
-  steeringServo.write(SERVO_CENTER, 50, 210);
-  if (a == 1){
+
+  Serial.println(a);                     // Debug: which line detected
+  steeringServo.write(SERVO_CENTER, 50, 210); // Center steering
+
+  // If orange line detected, follow path logic
+  if (a == 1) {
     int lap = 1;
-    while(true){
+    while(true) {
       Serial.println(motor.getPosition());
       error = updateYaw() - start_yaw;
-      steeringServo.write(constrain((SERVO_CENTER-error), 50, 210));
-      pos = motor.getPosition() -  start_pos;
+      steeringServo.write(constrain(SERVO_CENTER - error, 50, 210));
+      pos = motor.getPosition() - start_pos;
       Serial.println(llabs(pos));
-      motor.runSpeed(700);
+      motor.runSpeed(700);              // Move faster
+
       String bright = requestMiddleBrightness();
       float bright1 = bright.toFloat();
-      if (bright1 < 12){
+      if (bright1 < 12) {               // Dark patch detected
         motor.stop();
-        Turn(90*lap);
-        start_yaw = updateYaw();
-        lap +=1;
+        Turn(90 * lap);                 // Turn 90 degrees per lap
+        start_yaw = updateYaw();        
+        lap += 1;
       }
-      if (lap == 13){
-        break;
-      }
-      }
-      Move(400);
-      motor.stop();
+      if (lap == 13) break;             // Stop after 12 laps
+    }
+    Move(400);                           // Move forward 400 mm
+    motor.stop();
   }
-  if (a == 2){
+  // If blue line detected, similar logic but turn left (-90 deg)
+  if (a == 2) {
     motor.stop();
     int lap = 1;
-    while(true){
+    while(true) {
       int x = millis();
       Serial.println(motor.getPosition());
       error = updateYaw() - start_yaw;
-      steeringServo.write(constrain((SERVO_CENTER-error), 50, 210));
-      pos = motor.getPosition() -  start_pos;
+      steeringServo.write(constrain(SERVO_CENTER - error, 50, 210));
+      pos = motor.getPosition() - start_pos;
       Serial.println(llabs(pos));
       motor.runSpeed(700);
       String bright = requestMiddleBrightness();
       float bright1 = bright.toInt();
       Serial.println(bright1);
-      if (bright1 < 12){
+      if (bright1 < 12) {                // Dark patch detected
         motor.stop();
-        Turn(-90*lap);
+        Turn(-90 * lap);                 // Turn left
         start_yaw = updateYaw();
-        lap +=1;
-            }
+        lap += 1;
+      }
       int y = millis();
-      Serial.println((x-y));
-
-    if (lap == 13){
-      break;
+      Serial.println((x - y));          // Debug: loop timing
+      if (lap == 13) break;             // Stop after 12 laps
     }
-    }
-    Move(400);
+    Move(400);                           // Move forward 400 mm
     motor.stop();
   }
-  motor.stop();
+  motor.stop();                           // Stop at end of challenge
 }
 
-void Turn_In_Black(int direction) {
-  calibrateGyroBias(200);
-  timeout = 500;
 
-  float kp = 0.5;
+// ======================= TURN IN BLACK =======================
+
+// This function moves the robot forward until it detects a black line (very low brightness).
+// Once detected, it stops and performs a backward turn based on 'direction'.
+void Turn_In_Black(int direction) {
+  calibrateGyroBias(200); // Calibrate gyro for accurate steering
+  timeout = 500;           // Set timeout for sensor readings
+
+  float kp = 0.5;          // Steering correction factor
   float error = 0;
-  float startYaw = updateYaw();   
+  float startYaw = updateYaw(); // Save initial yaw angle
 
   while (true) {
-    error = updateYaw() - startYaw;
+    error = updateYaw() - startYaw;                      // Calculate yaw deviation
+    steeringServo.write(constrain(SERVO_CENTER - error, 50, 210)); // Correct steering
 
-    steeringServo.write(constrain(SERVO_CENTER - error, 50, 210));
-    Serial.print("Yaw error: ");
-    Serial.println(error);
+    Serial.print("Yaw error: "); Serial.println(error);
 
-    motor.runSpeed(700);
+    motor.runSpeed(700);                                  // Move forward
 
-    String brightnessStr = requestMiddleBrightness();
+    String brightnessStr = requestMiddleBrightness();     // Read middle brightness sensor
     float brightness = brightnessStr.toInt();
-    Serial.print("Brightness: ");
-    Serial.println(brightness);
+    Serial.print("Brightness: "); Serial.println(brightness);
 
-    if (brightness < 5) {
+    if (brightness < 5) { // Black line detected
       motor.stop();
-      Turn_Back(90 * direction);          
-      startYaw = updateYaw();      
+      Turn_Back(90 * direction); // Turn backward in the specified direction
+      startYaw = updateYaw();
       break;
     }
   }
 }
 
+// ======================= PARSE SENSOR DATA =======================
 
+// Parses area and error values from a string like "[area,error]"
+// Returns the number of items parsed
 int parseAreaErrorList(String data, int areas[], int errors[], int maxSize) {
   int count = 0;
   int startIndex = 0;
 
   while (count < maxSize) {
-    int open = data.indexOf('[', startIndex);
-    if (open == -1) break;
+    int open = data.indexOf('[', startIndex); if (open == -1) break;
+    int comma = data.indexOf(',', open);     if (comma == -1) break;
+    int close = data.indexOf(']', comma);    if (close == -1) break;
 
-    int comma = data.indexOf(',', open);
-    if (comma == -1) break;
-
-    int close = data.indexOf(']', comma);
-    if (close == -1) break;
-
-    String areaStr = data.substring(open + 1, comma);
-    String errorStr = data.substring(comma + 1, close);
-
-    areas[count] = areaStr.toInt();
-    errors[count] = errorStr.toInt();
+    // Extract area and error as integers
+    areas[count] = data.substring(open + 1, comma).toInt();
+    errors[count] = data.substring(comma + 1, close).toInt();
     count++;
 
     startIndex = close + 1;
   }
-
   return count;
 }
 
+// ======================= FIND FIRST OBSTACLE =======================
 
+// Checks if any red or green box is detected; if none, uses Turn_In_Black
 void find_first_obstacle(bool goLeft) {
   String redBox = requestRedBox();
   String greenBox = requestGreenBox();
   if (redBox == "" && greenBox == "") {
     if (goLeft) {
       Turn_In_Black(-1);
-    }
-    else{
+    } else {
       Turn_In_Black(1);
     }
   }
 }
 
+// ======================= PASS OBSTACLES =======================
+
+// Handles passing obstacles based on sensor input (red/green boxes)
 void pass_obs(int directon_degree){
   int startTime = millis();
+  
+  // Get sensor data
   String redBox = requestRedBox();
   String greenBox = requestGreenBox();
-  int areas_red[10];
-  int errors_red[10];
-  int areas_green[10];
-  int errors_green[10];
-  int areas_box[10];
-  int errors_box[10];
+  
+  // Arrays for storing parsed area/error values
+  int areas_red[10], errors_red[10];
+  int areas_green[10], errors_green[10];
+  int areas_box[10], errors_box[10];
+  
   int count = parseAreaErrorList(redBox, areas_red, errors_red, 10);
   int count_green = parseAreaErrorList(greenBox, areas_green, errors_green, 10); 
   int count_box;
   bool redtrue_greenfalse; 
-  int k= 0;
-  if ((count > 0) && (count_green == 0)){
-    redtrue_greenfalse = true;
-  }
-  if ( count == 0 &&(count_green > 0)){
-    redtrue_greenfalse = false;
-  }
-  if ( count > 0 &&(count_green > 0)){
-    redtrue_greenfalse = (areas_red[0]>areas_green[0]) ? true : false;
-  }
+  int k = 0;
+
+  // Decide which box type to follow based on detected areas
+  if ((count > 0) && (count_green == 0)) redtrue_greenfalse = true;
+  else if ((count == 0) && (count_green > 0)) redtrue_greenfalse = false;
+  else if ((count > 0) && (count_green > 0)) redtrue_greenfalse = (areas_red[0] > areas_green[0]);
+
   while(true){
-    updateYaw();
-    if (redtrue_greenfalse){
-      Box = requestRedBox();
-    }else{
-      Box  = requestGreenBox();   
-    }
+    updateYaw(); // Update yaw for steering
+
+    // Choose which box data to follow
+    String Box = redtrue_greenfalse ? requestRedBox() : requestGreenBox();
     count_box = parseAreaErrorList(Box, areas_box, errors_box, 10);
-    if (count_box > 1){
-      int t = areas_box[0];
-      int e = errors_box[0];
-      if(t < areas_box[1]){
-        areas_box[0] = areas_box[1];
-        areas_box[1] = t;
-        errors_box[0] = errors_box[1];
-        errors_box[1] = e;
+
+    // Swap largest area to front if more than 1 box
+    if (count_box > 1) {
+      if (areas_box[0] < areas_box[1]) {
+        swap(areas_box[0], areas_box[1]);
+        swap(errors_box[0], errors_box[1]);
       }
     }
+
     int error_now = errors_box[0];
-    if (areas_box[0] > 5000){
-      motor.runSpeed(100);
-    } else {
-      motor.runSpeed(200);
-    }
-    int move1 = (SERVO_CENTER + (error_now * 0.2));
-    if (move1 > SERVO_RIGHT) move1 = SERVO_RIGHT;
-    if (move1 < SERVO_LEFT)  move1 = SERVO_LEFT;
+
+    // Adjust motor speed based on obstacle size
+    if (areas_box[0] > 5000) motor.runSpeed(100);
+    else motor.runSpeed(200);
+
+    // Adjust steering based on box error
+    int move1 = SERVO_CENTER + (error_now * 0.2);
+    move1 = constrain(move1, SERVO_LEFT, SERVO_RIGHT);
     steeringServo.write(constrain(move1, 50, 210));
-    if (areas_box[0] > 7000 && count > 0){
+
+    // If obstacle is large enough, execute avoidance maneuver
+    if (areas_box[0] > 7000 && count > 0) {
       motor.stop();
-      k = k +1;
-      if (redtrue_greenfalse){
+      k++;
+
+      if (redtrue_greenfalse) {
         Turn_Back_WithoutCalib(directon_degree + 50);
         TurnWithoutCalib(directon_degree + 70);
         Move_w_c(50);
-        TurnWithoutCalib(directon_degree-10);
-      }else{
+        TurnWithoutCalib(directon_degree - 10);
+      } else {
         Turn_Back_WithoutCalib(directon_degree - 50);
         TurnWithoutCalib(directon_degree - 70);
         Move_w_c(50);
-        TurnWithoutCalib(directon_degree+10);  
+        TurnWithoutCalib(directon_degree + 10);  
       }
+
+      // Update box data after maneuver
       redBox = requestRedBox();
       greenBox = requestGreenBox();
       count = parseAreaErrorList(redBox, areas_red, errors_red, 10);
       count_green = parseAreaErrorList(greenBox, areas_green, errors_green, 10);  
-      if (count > 0 && count_green == 0){
-        redtrue_greenfalse = true;
-      }else if(count == 0 && count_green > 0){
-        redtrue_greenfalse = false;
-      }else if(count > 0 && count_green > 0){
-        redtrue_greenfalse = (areas_red[0]>areas_green[0]) ? true : false;
-      }
-      else{
-        break;
-      }
-      if (k==2){
-        break;
-      }
-      }
-    }
-    Turn(directon_degree);
-    if (directon_degree <= 0){
-      Turn_In_Black((directon_degree / 90) - 1);
-    } else {
-      Turn_In_Black((directon_degree / 90) + 1);
-    }
 
+      // Decide which box to follow next
+      if (count > 0 && count_green == 0) redtrue_greenfalse = true;
+      else if (count == 0 && count_green > 0) redtrue_greenfalse = false;
+      else if (count > 0 && count_green > 0) redtrue_greenfalse = (areas_red[0] > areas_green[0]);
+      else break;
+
+      if (k == 2) break; // Stop after 2 maneuvers
+    }
   }
 
+  // Final turn to align after passing obstacle
+  Turn(directon_degree);
+  if (directon_degree <= 0) Turn_In_Black((directon_degree / 90) - 1);
+  else Turn_In_Black((directon_degree / 90) + 1);
+}
 
+
+
+// ======================= OBSTACLE CHALLENGE =======================
+
+// Main routine to navigate the obstacle course
 void obstacle_challenge() {
-  calibrateGyroBias(200);
-  Turn(-10,15);
-  Turn_Back_WithoutCalib(-20,15,0.0,80);
-  TurnWithoutCalib(-30,15,0.0,80);
-  Turn_Back_WithoutCalib(-50,15,0.0,80);
-  TurnWithoutCalib(-70,15,0.0,80);
-  Turn_Back_WithoutCalib(-90,15,0.0,80);
-  Move(40);
-  Turn(0);
-  find_first_obstacle(true);
-  for (int i = 1;i<12;i++){
-    pass_obs(-90*i);
+  calibrateGyroBias(200);      // Calibrate gyro for accurate steering
+
+  // Series of corrective turns to align robot at the start
+  Turn(-10, 15);
+  Turn_Back_WithoutCalib(-20, 15, 0.0, 80);
+  TurnWithoutCalib(-30, 15, 0.0, 80);
+  Turn_Back_WithoutCalib(-50, 15, 0.0, 80);
+  TurnWithoutCalib(-70, 15, 0.0, 80);
+  Turn_Back_WithoutCalib(-90, 15, 0.0, 80);
+
+  Move(40);                    // Move forward 40 mm
+  Turn(0);                      // Align straight
+  find_first_obstacle(true);    // Search for first obstacle, default go left
+
+  // Navigate multiple obstacles
+  for (int i = 1; i < 12; i++) {
+    pass_obs(-90 * i);          // Pass obstacles using calculated turn angles
   }
+
+  // Print final yaw angle for debugging
   Serial.print("Final Yaw: ");
   Serial.println(updateYaw());
-
 }
 
+// ======================= LOOP =======================
 
+// Arduino loop; executes the challenge once and halts
 void loop() { 
   obstacle_challenge();
-    delay(999999);
+  delay(999999);                // Prevent repeating (simulate "end of challenge")
 }
 
+// ======================= SERIAL COMMUNICATION =======================
 
+// Global buffer for storing serial messages
 char m[100];
 char c;
 int i;
 
+// Reads messages from serial port, delimited by '<' (start) and '*' (end)
 String readMessage() {
   bool started = false;
   int i = 0;
   unsigned long startTime = millis();
+
   while (true) {
-    updateYaw();
+    updateYaw();                 // Update yaw for real-time steering correction
+
     if (mySerial.available() > 0) {
       char c = mySerial.read();
-      if (c == '<') {          
+
+      if (c == '<') {            // Start of message
         started = true;
         i = 0;
       } 
-      else if (c == '*' && started) { 
+      else if (c == '*' && started) { // End of message
         m[i] = '\0';
         String result = String(m);
         Serial.println(result); 
         Serial.println(millis() - startTime);
         return result;
       } 
-      else if (started && i < sizeof(m) - 1) {
+      else if (started && i < sizeof(m) - 1) { // Store characters
         m[i++] = c;
       }
     }
 
-    if (millis() - startTime > timeout) {
+    if (millis() - startTime > timeout) { // Timeout
       return "";
     }
   }
 }
+
+// Request functions for specific sensor data
+
+// Request green box detection data
 String requestGreenBox() {
-  mySerial.write('1');
-  return readMessage();
+  mySerial.write('1');          // Send request code
+  return readMessage();          // Read response
 }
+
+// Request red box detection data
 String requestRedBox() {
   mySerial.write('2');
   return readMessage();
 }
+
+// Request middle brightness sensor value
 String requestMiddleBrightness() {
   mySerial.write('3');
-  int z = millis();
   String msg = readMessage();
-  if  (msg == ""){
-    msg = "100";
-  }
+  if (msg == "") msg = "100";   // Default if no message
   return msg;
 }
+
+// Request detection of orange line
 String requestOrangeLine() {
   mySerial.write('4');
   String msg = readMessage();
-  if  (msg == ""){
-    msg = "False";
-  }
+  if (msg == "") msg = "False"; // Default if no message
   return msg;
 }
+
+// Request detection of blue line
 String requestBlueLine() {
   mySerial.write('5');
   String msg = readMessage();
-  if  (msg == ""){
-    msg = "False";
-  }
+  if (msg == "") msg = "False"; // Default if no message
   return msg;
 }
