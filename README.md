@@ -173,7 +173,62 @@ Our chassis combines LEGO components with custom 3D-printed parts, creating a re
  </td> <td valign="top" style="padding-left: 15px;"> <b>The EVN ALPHA is a compact robot controller based on the RP2040, housed in a LEGO Technic-compatible shell. It provides 26 I/O channels for controlling brushed DC motors, servos, and connecting UART or I2C peripherals. The board also integrates a 2-cell Lithium-Ion power management system, offering charging, cell balancing, and voltage regulation, making it ideal for safely powering and controlling our robot’s motors and sensors.</td> </tr> </table>
    
 ## Software Components <a class="anchor" id="Software"></a>
+### EVN Alpha Side
+#### 1. Setup
+- Configures **servo** and **DC motor**.  
+- Defines constants (angles, speeds, gyro calibration values).  
+- Initializes **UART** (`Serial2`) to communicate with OpenMV.  
+- Sets up **IMU (BMI088)** and calibrates **gyro bias**.  
 
+#### 2. Gyroscope Handling
+- Reads gyro Z-axis to measure angular velocity.  
+- Subtracts bias → integrates over time → produces **yaw angle**.  
+- Used to know robot’s heading (rotation in degrees).  
+- Every movement command relies on yaw correction to stay accurate.  
+
+#### 3. Turning Functions
+- Calculate a **target yaw angle**.  
+- Drive motors while comparing current yaw to target.  
+- Servo steers left/right, motor power adjusts proportionally.  
+- Variants:
+  - `Turn()` → normal calibrated turn.  
+  - `TurnWithoutCalib()` → faster, skips recalibration.  
+  - `Turn_Back()` → reverse turn.  
+
+#### 4. Forward Movement
+- `Move(distance)` drives a set distance using encoders.  
+- Constantly checks yaw and adjusts steering with servo.  
+- Ensures straight driving.  
+- `Move_w_c()` skips recalibration.  
+
+#### 5. Camera Communication (UART)
+EVN Alpha sends single-byte commands:  
+- `1` → detect green box.  
+- `2` → detect red box.  
+- `3` → check brightness.  
+- `4` → detect orange line.  
+- `5` → detect blue line.  
+
+Camera replies with formatted data: `<area,error*>` or `<1*>`.  
+
+#### 6. Open Challenge Routine
+- Calibrates IMU.  
+- Uses camera to detect:  
+  - **Orange line → left path**  
+  - **Blue line → right path**  
+  - **Brightness → walls**  
+- Moves forward, checks brightness → if dark → turn 90°.  
+- Repeats laps until finished.  
+
+#### 7. Obstacle Challenge Routine
+- Searches for **red/green obstacles**.  
+- Uses `pass_obs()` to:  
+  - Read box area + position.  
+  - Adjust steering based on error.  
+  - Slow down when close.  
+  - Perform bypass maneuver if very close.  
+
+---
 ## Robot Construction Guide <a class="anchor" id="robot-construction-guide-"></a>
 **Step 1: Assemble the steering system**  
 - Print 3D models located in /models
@@ -208,7 +263,10 @@ Our chassis combines LEGO components with custom 3D-printed parts, creating a re
 - Upload the control and vision codes located in /src
 - Verify that each component (motors, servos, camera, IMU) responds correctly.
 
+Here is the EVN Alpha control code, responsible for motor control, gyroscope-based stabilization, and coordination with the OpenMV camera
+```
 
+```
 ## License <a class="anchor" id="License"></a>
 
 ```
