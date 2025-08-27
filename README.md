@@ -493,7 +493,7 @@ void setup1() {
   steeringServo.begin();   // Start servo controller
 }
 
-// Standard Arduino setup function
+// Standard setup function
 void setup() {
   board.begin();            // Initialize EVNAlpha board
   Serial.begin(9600);       // Start serial communication for debugging
@@ -836,7 +836,7 @@ void obstacle_challenge() {
 
 // ======================= LOOP =======================
 
-// Arduino loop; executes the challenge once and halts
+// Main loop; executes the challenge once and halts
 void loop() { 
   obstacle_challenge();
   delay(999999);                // Prevent repeating (simulate "end of challenge")
@@ -921,6 +921,31 @@ String requestBlueLine() {
   return msg;
 }
 ```
+### OpenMV Camera Side
+
+#### 1. Color Detection
+- **Orange / Blue line**:  
+  - Detects blobs in bottom ROI.  
+  - Returns `True` if blob is large enough.  
+- **Red / Green box**:  
+  - Detects rectangular blobs.  
+  - Filters by size and shape.  
+  - Returns `[area, error]` for EVN Alpha.  
+
+#### 2. Brightness Detection
+- Reads a central ROI.  
+- Computes average brightness.  
+- Low brightness → wall detected.  
+
+#### 3. UART Control
+- Waits for EVN Alpha command.  
+- Runs appropriate detection function.  
+- Sends results back wrapped in `<...*>`.  
+
+Example:  
+- EVN Alpha sends `1`.  
+- Camera detects green box.  
+- Camera replies: `<500,20*>` (area=500, error=20px right).  
 ---
 ## Robot Construction Guide <a class="anchor" id="robot-construction-guide-"></a>
 **Step 1: Assemble the steering system**  
