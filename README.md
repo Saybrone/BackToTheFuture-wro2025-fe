@@ -35,7 +35,7 @@
 - [The Challenge](#the-challenge)
 - [Vehicle Overview](#vehicle-overview)
   - [V-Photos](#v-photos)
-- [Hardware Components](#hardware-components)
+  - [Hardware Components](#hardware-components)
   - [Electronic Components](#electronic-components)
   - [Mobility Management](#mobility-management)
     - [Powertrain](#powertrain)
