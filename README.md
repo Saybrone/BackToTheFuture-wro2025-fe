@@ -184,7 +184,9 @@ Our chassis combines LEGO components with custom 3D-printed parts, creating a re
 
 #### Electronic Diagram
 </p> <img src= "schemes/CIRCUIT.PNG" alt = "schematic" width ="1000" 
+       
 ## Power and Sense Management <a class="anchor" id="power-and-sense-management"></a>
+
 
 ### Li-ion Battery <a class="anchor" id="li-ion-battery"></a>
 <table> <tr><td> <img src = "other/battery/Battery.png" alt = "Battery" width = 100 </td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Voltage: 3.7V <br>Capacity:2800mAh<br> Diameter: 18mm <br> Length: 65mm <br></td> </tr> </table> 
