@@ -183,7 +183,7 @@ Our chassis combines LEGO components with custom 3D-printed parts, creating a re
 [3D Model](/models/AxleAdapter/AxleAdapter.stl)
 
 #### Electronic Diagram
-</p> <img src= "schemes/CIRCUIT.PNG" alt = "schematic" width ="1000" 
+</p> <img src= "schemes/CIRCUIT.PNG" alt = "schematic" width ="1000" >
        
 ## Power and Sense Management <a class="anchor" id="power-and-sense-management"></a>
 
