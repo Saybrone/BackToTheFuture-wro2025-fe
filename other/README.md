@@ -9,3 +9,5 @@ When you click to  ` motor `  you can find our metal gearmotor with encoder.
 When you click to  ` camera `  you can find the camera we used.
 
 When you click to  ` IMU `  you can find the IMU sensor we used.
+
+When you click to  ` Lego  Differential `  you can find the Lego  differential  we used.

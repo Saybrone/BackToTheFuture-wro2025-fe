@@ -139,8 +139,13 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
       <td>$120</td>
     </tr>
     <tr>
+      <td>Lego Differential</td>
+      <td><a href="https://www.amazon.com/Technical-Differential-Gear-28-Compatible-Building/dp/B0DB82HJGW">Lego Differential</td>
+      <td><img src ="/other/Lego Differential/Lego Differantial.png" alt="Differential" width="150"</td>
+      <td>$2.96</td> 
+    <tr>
       <td colspan="3"><strong>Total Cost</strong></td>
-      <td><strong>$326.88</strong></td>
+      <td><strong>$329.84</strong></td>
     </tr>
   </tbody>
 </table>
@@ -156,6 +161,8 @@ The powertrain converts electrical energy into mechanical motion, driving the ro
 <table> <tr><td> <img src = "other/motor/pixelcut-export.png" alt="Motor" width = "900" </td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Rated Voltage: 6~12V <br> Weight: 10g <br> Revolving Speed: 100RPM @ 6V <br> Load Speed: 80RPM <br> Rated Torque: 2 kg.cm <br> Stall Torque: 16 kg.cm <br><br> This <b>DC Mini Metal Gear Motor</b> is the one we used in our robot. Its <b>light weight</b> and <b>compact size</b> make it suitable for small robotic platforms, while the <b>high torque</b> and <b>low RPM</b> ensure powerful and controlled movement. <br><br> Thanks to its <b>excellent stall characteristics</b>, the motor provides enough force to climb slopes or overcome obstacles, which is highly beneficial for mobile robots. Additionally, the <b>durable metal gears</b> extend the lifetime of the motor, making it reliable for long-term use. <br><br> Another important advantage is that a wheel can be easily mounted on the motor’s output shaft, allowing for simple integration with the robot’s chassis. </td> </tr> </table>
 <p style="margin:0;"> Below, we have included the diagram of our motor for clarity. </p> <img src ="schemes/Motor diagram.jpg" alt= "Diagram" width = "700" style="display:block; margin:0 auto;" />
   
+#### Differential
+<table> <tr><td> <img src = "/other/Lego Differential/Lego Differantial.png" alt="Differential" width = "400" </td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Dimensions: 23 x 16 x 11 cm <br> Weight: 18 g <br><br>This Lego Differential is fully compatible with 3D shapes and Lego parts, allowing for seamless integration. It also features a 28 Teeth Differential Gear with a round axle design, providing smooth rotational movement for our robot. </td> </tr> </table>
 
 ### Steering <a class="anchor" id="steering"></a>
 Our robot uses a **reckless steering** mechanism, a simplified form of Ackermann steering where the wheels are directly turned without complex linkage geometry. This method makes the robot easier to turn and keeps the overall design compact. It is highly effective for lightweight and fast-moving prototypes where simplicity and space efficiency are key.
@@ -167,19 +174,26 @@ Our robot uses a **reckless steering** mechanism, a simplified form of Ackermann
 ### Chassis <a class="anchor" id="chassis"></a>
 Our chassis combines LEGO components with custom 3D-printed parts, creating a reliable and durable structure. The chassis provides mounting points for all motors, controllers, and sensors, ensuring stable alignment and easy integration. Below, 3D models of the parts are included.
 
-#### Motor Holder
-</p> <img src="models/MotorHolder.png" alt = "motor holder" width = "500" display:block; margin:0 auto; width:400px;" />
+#### Motor Mount
+</p> <img src="models/MotorMount/MotorMount.jpeg" alt = "motor mount" width = "500" display:block; margin:0 auto; width:400px;" />
 
-[3D Model](/models/MotorHolder.stl)
+[3D Model](/models/MotorMount/MotorMount.stl)
 
-#### Base Chassis
-</p> <img src="/models/BaseChassis.jpeg" alt = "motor holder" width = "500" display:block; margin:0 auto; width:400px;" />
+#### Motor Lego Adapter
+</p> <img src="/models/MotorLegoAdapter/MotorLegoAdapter.jpeg" alt = "motor lego adapter" width = "500" display:block; margin:0 auto; width:400px;" />
 
-[3D Model](/models/BaseChassis.stl)
+[3D Model](/models/MotorLegoAdapter/MotorLegoAdapter.stl)
+
+#### Axle Adapter
+</p> <img src="/models/AxleAdapter/AxleAdapter.jpeg" alt = "axle adapter" width = "500" display:block; margin:0 auto; width:400px;" />
+
+[3D Model](/models/AxleAdapter/AxleAdapter.stl)
 
 #### Electronic Diagram
-</p> <img src= "schemes/CIRCUIT.PNG" alt = "schematic" width ="1000" 
+</p> <img src= "schemes/CIRCUIT.PNG" alt = "schematic" width ="1000" >
+       
 ## Power and Sense Management <a class="anchor" id="power-and-sense-management"></a>
+
 
 ### Li-ion Battery <a class="anchor" id="li-ion-battery"></a>
 <table> <tr><td> <img src = "other/battery/Battery.png" alt = "Battery" width = 100 </td><td valign="top" style="padding-left: 15px;"> <b>Specifications:</b><br> Voltage: 3.7V <br>Capacity:2800mAh<br> Diameter: 18mm <br> Length: 65mm <br></td> </tr> </table> 
