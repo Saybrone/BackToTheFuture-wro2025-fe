@@ -167,15 +167,20 @@ Our robot uses a **reckless steering** mechanism, a simplified form of Ackermann
 ### Chassis <a class="anchor" id="chassis"></a>
 Our chassis combines LEGO components with custom 3D-printed parts, creating a reliable and durable structure. The chassis provides mounting points for all motors, controllers, and sensors, ensuring stable alignment and easy integration. Below, 3D models of the parts are included.
 
-#### Motor Holder
-</p> <img src="modelss/MotorMount/MotorMount.jpeg" alt = "motor mount" width = "500" display:block; margin:0 auto; width:400px;" />
+#### Motor Mount
+</p> <img src="models/MotorMount/MotorMount.jpeg" alt = "motor mount" width = "500" display:block; margin:0 auto; width:400px;" />
 
-[3D Model](/models/MotorHolder.stl)
+[3D Model](/models/MotorMount/MotorMount.stl)
 
-#### Base Chassis
-</p> <img src="/models/BaseChassis.jpeg" alt = "motor holder" width = "500" display:block; margin:0 auto; width:400px;" />
+#### Motor Lego Adapter
+</p> <img src="/models/MotorLegoAdapter/MotorLegoAdapter.jpeg" alt = "motor lego adapter" width = "500" display:block; margin:0 auto; width:400px;" />
 
-[3D Model](/models/BaseChassis.stl)
+[3D Model](/models/MotorLegoAdapter/MotorLegoAdapter.stl)
+
+#### Axle Adapter
+</p> <img src="/models/AxleAdapter/AxleAdapter.jpeg" alt = "axle adapter" width = "500" display:block; margin:0 auto; width:400px;" />
+
+[3D Model](/models/AxleAdapter/AxleAdapter.stl)
 
 #### Electronic Diagram
 </p> <img src= "schemes/CIRCUIT.PNG" alt = "schematic" width ="1000" 
