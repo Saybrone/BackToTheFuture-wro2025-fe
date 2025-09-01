@@ -139,8 +139,13 @@ This section covers all the parts utilized in the vehicle, such as motors, senso
       <td>$120</td>
     </tr>
     <tr>
+      <td>Lego Differential</td>
+      <td><a href="https://www.amazon.com/Technical-Differential-Gear-28-Compatible-Building/dp/B0DB82HJGW">Lego Differential</td>
+      <td><img src ="/other/Lego Differential/Lego Differantial.png" alt="Differential" width="150"</td>
+      <td>$2.96</td> 
+    <tr>
       <td colspan="3"><strong>Total Cost</strong></td>
-      <td><strong>$326.88</strong></td>
+      <td><strong>$329.84</strong></td>
     </tr>
   </tbody>
 </table>
